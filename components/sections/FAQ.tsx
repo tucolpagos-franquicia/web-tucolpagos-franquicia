@@ -117,7 +117,7 @@ export default function FAQ() {
             ¿Tienes más preguntas?
           </p>
           <a
-            href="https://wa.me/573246830038"
+            href="https://wa.me/573054477618"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-block"

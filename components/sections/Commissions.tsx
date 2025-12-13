@@ -4,34 +4,6 @@ import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import NetworkPattern from '@/components/NetworkPattern'
 
-const commissionTypes = [
-  {
-    category: 'Servicios Públicos',
-    commission: 'Hasta 2.5%',
-    description: 'Energía, agua, gas, telecomunicaciones',
-  },
-  {
-    category: 'Recargas Móviles',
-    commission: 'Hasta 3%',
-    description: 'Todas las operadoras',
-  },
-  {
-    category: 'Apuestas Deportivas',
-    commission: 'Hasta 4%',
-    description: 'Depósitos y retiros',
-  },
-  {
-    category: 'Entretenimiento',
-    commission: 'Hasta 3.5%',
-    description: 'Streaming, videojuegos',
-  },
-  {
-    category: 'Billeteras Digitales',
-    commission: 'Hasta 2%',
-    description: 'Recargas y pagos',
-  },
-]
-
 export default function Commissions() {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -52,43 +24,11 @@ export default function Commissions() {
             Comisiones y Rentabilidad
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Estructura de comisiones competitiva diseñada para maximizar tus ingresos
+            Oportunidad de negocio con estructura de comisiones competitiva y potencial de crecimiento constante
           </p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
-          {/* Tabla de Comisiones */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="overflow-x-auto mb-12"
-          >
-            <table className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-              <thead className="bg-brand-darkGreen text-white">
-                <tr>
-                  <th className="px-6 py-4 text-left font-heading font-semibold">Categoría</th>
-                  <th className="px-6 py-4 text-left font-heading font-semibold">Comisión</th>
-                  <th className="px-6 py-4 text-left font-heading font-semibold">Descripción</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {commissionTypes.map((item, index) => (
-                  <tr
-                    key={item.category}
-                    className="hover:bg-gray-50 transition-colors"
-                  >
-                    <td className="px-6 py-4 font-medium text-brand-darkGreen">{item.category}</td>
-                    <td className="px-6 py-4">
-                      <span className="text-accent-yellow font-bold text-lg">{item.commission}</span>
-                    </td>
-                    <td className="px-6 py-4 text-text-secondary">{item.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </motion.div>
-
           {/* Proyección de Ingresos */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}

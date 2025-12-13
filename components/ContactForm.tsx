@@ -67,7 +67,7 @@ export default function ContactForm({ variant = 'hero' }: ContactFormProps) {
         `Ciudad: ${formData.city}\n` +
         (formData.message ? `Mensaje: ${formData.message}` : '')
       )
-      window.open(`https://wa.me/573246830038?text=${whatsappMessage}`, '_blank')
+      window.open(`https://wa.me/573054477618?text=${whatsappMessage}`, '_blank')
     } catch (error) {
       console.error('Error sending form:', error)
       setSubmitStatus('error')

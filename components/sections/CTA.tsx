@@ -46,7 +46,7 @@ export default function CTA() {
           </p>
           <div className="flex justify-center items-center">
             <a
-              href="https://wa.me/573246830038"
+              href="https://wa.me/573054477618"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#25D366] hover:bg-[#20BA5A] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2"

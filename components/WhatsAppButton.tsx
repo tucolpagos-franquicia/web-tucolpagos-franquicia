@@ -1,7 +1,7 @@
 'use client'
 
 export default function WhatsAppButton() {
-  const phoneNumber = '573246830038'
+  const phoneNumber = '573054477618'
   const message = encodeURIComponent('Hola, estoy interesado en conocer más sobre las franquicias de TuColpagos.')
 
   return (

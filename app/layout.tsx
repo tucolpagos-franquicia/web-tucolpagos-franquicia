@@ -55,7 +55,7 @@ export default function RootLayout({
               logo: 'https://www.tucolpagosfranquicia.com/logo.png',
               contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+57-3246830038',
+                telephone: '+57-3054477618',
                 contactType: 'Customer Service',
                 areaServed: 'CO',
                 availableLanguage: 'Spanish',

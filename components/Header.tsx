@@ -57,7 +57,7 @@ export default function Header() {
               FAQ
             </Link>
             <a
-              href="https://wa.me/573246830038"
+              href="https://wa.me/573054477618"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary text-sm px-6 py-2"
@@ -133,7 +133,7 @@ export default function Header() {
                 FAQ
               </Link>
               <a
-                href="https://wa.me/573246830038"
+                href="https://wa.me/573054477618"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary text-sm px-6 py-2 text-center"
