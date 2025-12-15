@@ -1,5 +1,4 @@
 {
-  "_comment": "Updated: Redirect configuration for domain",
   "redirects": [
     {
       "source": "/(.*)",
