@@ -11,6 +11,8 @@ export default function Hero() {
     threshold: 0.1,
   })
 
+  // Updated: Hero section with "Potencia tu Negocio"
+
   return (
     <section id="hero" ref={ref} className="section-padding bg-white relative overflow-hidden min-h-[85vh] flex items-center">
       {/* Network Pattern */}

@@ -9,6 +9,7 @@ const poppins = Poppins({
   variable: '--font-poppins',
 })
 
+// Updated: Metadata with "Potencia tu Negocio"
 export const metadata: Metadata = {
   title: 'TuColpagos Franquicia - Potencia tu Negocio',
   description: 'Únete a la red de franquicias líder en recaudos, pagos y servicios transaccionales en Colombia. Oportunidad de negocio rentable con respaldo y acompañamiento constante.',

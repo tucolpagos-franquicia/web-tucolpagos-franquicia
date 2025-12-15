@@ -10,6 +10,8 @@ export default function Commissions() {
     threshold: 0.1,
   })
 
+  // Updated: Income projections with new values
+
   const incomeProjections = [
     {
       amount: '$1M - $2M',
