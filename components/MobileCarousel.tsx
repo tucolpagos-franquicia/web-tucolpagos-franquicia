@@ -1,9 +1,9 @@
 'use client'
 
-import { ReactNode, useRef, useState, useEffect } from 'react'
+import { ReactNode, useRef, useState, useEffect, Children } from 'react'
 
 interface MobileCarouselProps {
-  children: ReactNode[]
+  children: ReactNode
   itemsPerView?: number
   className?: string
 }
@@ -12,6 +12,7 @@ export default function MobileCarousel({ children, itemsPerView = 1.2, className
   const scrollRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
+  const childrenArray = Children.toArray(children)
 
   const checkScroll = () => {
     if (scrollRef.current) {
@@ -28,7 +29,7 @@ export default function MobileCarousel({ children, itemsPerView = 1.2, className
       scrollElement.addEventListener('scroll', checkScroll)
       return () => scrollElement.removeEventListener('scroll', checkScroll)
     }
-  }, [children])
+  }, [childrenArray])
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
@@ -50,7 +51,7 @@ export default function MobileCarousel({ children, itemsPerView = 1.2, className
           msOverflowStyle: 'none',
         }}
       >
-        {children.map((child, index) => (
+        {childrenArray.map((child, index) => (
           <div
             key={index}
             className="flex-shrink-0 snap-start"

@@ -35,21 +35,21 @@ export default function Header() {
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#beneficios" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
+            <a href="#beneficios" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
               Beneficios
-            </Link>
-            <Link href="#portafolio" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
+            </a>
+            <a href="#portafolio" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
               Portafolio
-            </Link>
-            <Link href="#comisiones" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
+            </a>
+            <a href="#comisiones" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
               Comisiones
-            </Link>
-            <Link href="#testimonios" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
+            </a>
+            <a href="#testimonios" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
               Testimonios
-            </Link>
-            <Link href="#faq" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
+            </a>
+            <a href="#faq" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
               FAQ
-            </Link>
+            </a>
             <a
               href="https://wa.me/573054477618"
               target="_blank"

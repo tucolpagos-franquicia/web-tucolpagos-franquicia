@@ -28,12 +28,10 @@ export const metadata: Metadata = {
   },
 }
 
-export function generateViewport() {
-  return {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  }
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({
@@ -43,10 +41,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={poppins.variable}>
-      <head>
-        <GoogleAnalytics />
-      </head>
       <body className="font-body antialiased">
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
