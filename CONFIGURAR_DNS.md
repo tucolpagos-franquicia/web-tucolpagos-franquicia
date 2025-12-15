@@ -61,3 +61,4 @@ Una vez que el dominio esté validado:
 2. Asegúrate de que el dominio esté desbloqueado (no en transferencia)
 3. Contacta a Vercel support si después de 24 horas sigue sin validarse
 
+
