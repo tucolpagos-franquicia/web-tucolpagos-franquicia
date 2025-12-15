@@ -30,7 +30,7 @@ export default function Hero() {
             className="mb-8"
           >
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-brand-darkerGreen">Potencia tu Negocio con </span>
+              <span className="text-brand-darkerGreen">Potencia tu Negocio o emprendimiento con </span>
               <span className="text-brand-darkGreen font-semibold">TuColpagos</span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
