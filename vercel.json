@@ -9,7 +9,7 @@
           "value": "tucolpagosfranquicia.com"
         }
       ],
-      "destination": "https://www.tucolpagosfranquicia.com/:path*",
+      "destination": "https://www.tucolpagosfranquicia.com/$1",
       "permanent": true
     }
   ]
