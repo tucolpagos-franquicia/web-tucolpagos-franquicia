@@ -71,26 +71,7 @@ export default function FAQ() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-12"
-        >
-          <p className="text-gray-700 mb-4">¿Tienes más preguntas?</p>
-          <a
-            href="https://wa.me/573054477618"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary inline-block"
-          >
-            Contáctanos por WhatsApp
-          </a>
-        </motion.div>
       </div>
     </section>
   )
 }
-
-
