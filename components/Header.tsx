@@ -45,14 +45,14 @@ export default function Header() {
             <a href="#beneficios" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
               Beneficios
             </a>
+            <a href="#planes" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
+              Planes
+            </a>
             <a href="#portafolio" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
               Portafolio
             </a>
             <a href="#comisiones" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
               Comisiones
-            </a>
-            <a href="#testimonios" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
-              Testimonios
             </a>
             <a href="#faq" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
               FAQ
@@ -107,6 +107,13 @@ export default function Header() {
               Beneficios
             </a>
             <a
+              href="#planes"
+              onClick={handleLinkClick}
+              className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2"
+            >
+              Planes
+            </a>
+            <a
               href="#portafolio"
               onClick={handleLinkClick}
               className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2"
@@ -119,13 +126,6 @@ export default function Header() {
               className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2"
             >
               Comisiones
-            </a>
-            <a
-              href="#testimonios"
-              onClick={handleLinkClick}
-              className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2"
-            >
-              Testimonios
             </a>
             <a
               href="#faq"

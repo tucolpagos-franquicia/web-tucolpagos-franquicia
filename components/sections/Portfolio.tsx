@@ -6,12 +6,42 @@ import NetworkPattern from '@/components/NetworkPattern'
 import MobileCarousel from '@/components/MobileCarousel'
 
 const portfolioItems = [
-  { title: 'BRE-B', description: 'Recaudo de servicios básicos como energía, agua, gas y telecomunicaciones.', gradient: 'from-brand-yellow to-brand-orange' },
-  { title: 'Servicios Públicos', description: 'Pago de impuestos, servicios municipales y entidades gubernamentales.', gradient: 'from-brand-orange to-brand-green' },
-  { title: 'Recargas', description: 'Recarga de minutos, datos y paquetes para todas las operadoras móviles.', gradient: 'from-brand-green to-brand-darkGreen' },
-  { title: 'Apuestas Deportivas', description: 'Depósitos y retiros para plataformas de apuestas deportivas autorizadas.', gradient: 'from-brand-yellow to-brand-orange' },
-  { title: 'Entretenimiento', description: 'Pago de servicios de streaming, videojuegos y entretenimiento digital.', gradient: 'from-brand-orange to-brand-green' },
-  { title: 'Billeteras', description: 'Recarga de billeteras digitales y servicios de pagos móviles.', gradient: 'from-brand-green to-brand-darkGreen' },
+  {
+    title: 'BRE-B',
+    description: 'Olvídate de las largas esperas y los trámites complicados. BRE-B cuenta con todos los bancos y billeteras digitales a nivel nacional. Puedes enviar o recibir dinero de cualquier banco o billetera de manera inmediata. Solo necesitas la llave registrada.',
+    gradient: 'from-brand-yellow to-brand-orange',
+    highlight: 'NUEVO',
+  },
+  {
+    title: 'Corresponsalía Bancaria',
+    description: 'El modelo de corresponsales digitales ha contribuido en gran medida a la inclusión financiera, al permitir la cobertura de los principales bancos en nuestro país. Más de 25 bancos disponibles: Scotiabank, Colpatria, Banco Caja Social, Davivienda, Banco Agrario, Banco Popular, Banco de Bogotá, Banco AV Villas, Banco de Occidente y más.',
+    gradient: 'from-brand-orange to-brand-green',
+    highlight: null,
+  },
+  {
+    title: 'Recargas y Paquetes',
+    description: 'Por muy inteligente que sea tu celular, siempre necesitará de minutos, datos y paquetes todo incluido. Recarga de minutos, datos y paquetes para todas las operadoras móviles.',
+    gradient: 'from-brand-green to-brand-darkGreen',
+    highlight: null,
+  },
+  {
+    title: 'Apuestas Deportivas',
+    description: 'En nuestros puntos aliados podrás hacer recargas de las principales casas de apuestas deportivas online y al instante. Depósitos y retiros para plataformas de apuestas deportivas autorizadas.',
+    gradient: 'from-brand-yellow to-brand-orange',
+    highlight: null,
+  },
+  {
+    title: 'Pines de Streaming & Entretenimiento',
+    description: 'Olvídate de las tarjetas de crédito y obtén nuestros pines prepago para todo tipo de entretenimiento. Netflix, HBO, Prime Video, Office 365, Datacrédito, Free Fire, Payvalida, SimpleTV, Movistar TV, Movilnet, PlayStation, Wii y más.',
+    gradient: 'from-brand-orange to-brand-green',
+    highlight: null,
+  },
+  {
+    title: 'Giros Venezuela',
+    description: 'Giros a Venezuela con la mejor tasa. Transacciones rápidas, seguras y directas a bancos venezolanos. Tasa competitiva y transparente, transferencia segura en minutos, sin consulta en centrales de riesgo.',
+    gradient: 'from-brand-green to-brand-darkGreen',
+    highlight: null,
+  },
 ]
 
 export default function Portfolio() {
@@ -34,15 +64,20 @@ export default function Portfolio() {
             Nuestro Portafolio
           </h2>
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto">
-            Más de 20,000 convenios disponibles para tus clientes
+            Soluciones ágiles y seguras para tu negocio. Más de 20,000 convenios disponibles para tus clientes
           </p>
         </motion.div>
 
         <MobileCarousel itemsPerView={1.2} className="md:hidden">
           {portfolioItems.map((item, index) => (
-            <div key={index} className={`bg-gradient-to-br ${item.gradient} p-6 rounded-xl text-white`}>
-              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-              <p>{item.description}</p>
+            <div key={index} className={`bg-gradient-to-br ${item.gradient} p-6 rounded-xl text-white relative`}>
+              {item.highlight && (
+                <div className="absolute top-4 right-4 bg-white text-brand-darkGreen text-xs font-bold px-3 py-1 rounded-full">
+                  {item.highlight}
+                </div>
+              )}
+              <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+              <p className="text-sm leading-relaxed">{item.description}</p>
             </div>
           ))}
         </MobileCarousel>
@@ -54,10 +89,15 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`bg-gradient-to-br ${item.gradient} p-6 rounded-xl text-white`}
+              className={`bg-gradient-to-br ${item.gradient} p-6 rounded-xl text-white relative transform hover:scale-105 transition-transform duration-300`}
             >
-              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-              <p>{item.description}</p>
+              {item.highlight && (
+                <div className="absolute top-4 right-4 bg-white text-brand-darkGreen text-xs font-bold px-3 py-1 rounded-full">
+                  {item.highlight}
+                </div>
+              )}
+              <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+              <p className="text-sm leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </div>
@@ -65,5 +105,3 @@ export default function Portfolio() {
     </section>
   )
 }
-
-

@@ -11,8 +11,8 @@ const poppins = Poppins({
 
 // Updated: Metadata with "Potencia tu Negocio"
 export const metadata: Metadata = {
-  title: 'TuColpagos Franquicia - Potencia tu Negocio',
-  description: 'Únete a la red de franquicias líder en recaudos, pagos y servicios transaccionales en Colombia. Oportunidad de negocio rentable con respaldo y acompañamiento constante.',
+  title: 'TuColpagos Franquicia - Suscripción 3 Años | Potencia tu Negocio',
+  description: 'Únete a TuColpagos con una suscripción de 3 años. Más de 300 oficinas, más de 25 bancos y plataforma ágil y segura. Planes desde $3M. Sin verificación en centrales de riesgo.',
   keywords: 'franquicia, TuColpagos, recaudos, pagos, servicios transaccionales, Colombia, negocio rentable, franquicia digital',
   authors: [{ name: 'TuColpagos Colombia SAS' }],
   icons: {

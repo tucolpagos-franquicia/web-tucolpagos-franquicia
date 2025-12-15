@@ -33,8 +33,11 @@ export default function Hero() {
               <span className="text-brand-darkerGreen">Potencia tu Negocio o Emprendimiento con </span>
               <span className="text-brand-darkGreen font-semibold">TuColpagos</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Únete a la red de franquicias líder en recaudos, pagos y servicios transaccionales en Colombia. Oportunidad de negocio rentable con respaldo y acompañamiento constante.
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-4">
+              Únete a la red de franquicias líder en recaudos, pagos y servicios transaccionales en Colombia. Suscripción de 3 años con un solo pago inicial.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-brand-darkGreen font-semibold max-w-3xl mx-auto">
+              Más de 300 oficinas • Más de 25 bancos • Plataforma ágil y segura
             </p>
           </motion.div>
 

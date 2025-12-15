@@ -54,8 +54,18 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#planes" className="text-gray-300 hover:text-white transition-colors">
+                  Planes
+                </a>
+              </li>
+              <li>
                 <a href="#portafolio" className="text-gray-300 hover:text-white transition-colors">
                   Portafolio
+                </a>
+              </li>
+              <li>
+                <a href="#requisitos" className="text-gray-300 hover:text-white transition-colors">
+                  Requisitos
                 </a>
               </li>
               <li>

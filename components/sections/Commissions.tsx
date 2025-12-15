@@ -10,8 +10,6 @@ export default function Commissions() {
     threshold: 0.1,
   })
 
-  // Updated: Income projections with new values
-
   const incomeProjections = [
     {
       amount: '$1M - $2M',
@@ -51,8 +49,11 @@ export default function Commissions() {
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-brand-darkGreen">
             Comisiones y Rentabilidad
           </h2>
-          <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-2">
             Oportunidad de negocio con estructura de comisiones competitiva y potencial de crecimiento constante
+          </p>
+          <p className="text-lg md:text-xl text-brand-darkGreen font-semibold">
+            Estructura de comisiones atractiva que te permite generar ingresos desde el primer día
           </p>
         </motion.div>
 
@@ -111,9 +112,24 @@ export default function Commissions() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Información sobre Suscripción */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="mt-12 text-center"
+        >
+          <div className="bg-gradient-to-r from-brand-green/10 to-brand-darkGreen/10 border-2 border-brand-green rounded-xl p-6 max-w-3xl mx-auto">
+            <h3 className="text-xl md:text-2xl font-bold mb-3 text-brand-darkGreen">
+              Suscripción de 3 Años
+            </h3>
+            <p className="text-gray-700 text-base md:text-lg">
+              Con un solo pago inicial tendrás acceso a todos los beneficios de ser aliado TuColpagos durante 3 años completos. Sin pagos mensuales adicionales, sin renovaciones complicadas. Todo incluido en tu inversión inicial.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
 }
-
-

@@ -7,20 +7,20 @@ import MobileCarousel from '@/components/MobileCarousel'
 
 const benefits = [
   {
-    title: 'Mayor Cantidad de Clientes',
-    description: 'Accede a una base de clientes establecida y en crecimiento constante. Más de 300 aliados comerciales confían en nuestra plataforma.',
+    title: 'Plataforma Tecnológica de Pagos',
+    description: 'Plataforma tecnológica de pagos, recaudos y servicios. Más de 8 años de experiencia en corresponsalía bancaria. Vigilado por la Superintendencia Financiera de Colombia.',
   },
   {
-    title: 'Amplio Portafolio',
-    description: 'Ofrece más de 20,000 convenios en servicios públicos, recargas, apuestas deportivas, entretenimiento y billeteras digitales.',
+    title: 'Estructura de Comisiones Atractiva',
+    description: 'Estructura de comisiones atractiva que te permite generar ingresos desde el primer día. Sin pagos mensuales adicionales durante los 3 años de suscripción.',
   },
   {
-    title: 'Respaldo y Acompañamiento',
-    description: 'Recibe capacitación continua, soporte técnico 24/7 y acompañamiento constante para garantizar el éxito de tu negocio.',
+    title: 'Más de 300 Oficinas',
+    description: 'Únete a una red consolidada con más de 300 oficinas en el territorio colombiano. Más de 25 bancos en nuestro portafolio y miles de convenios disponibles.',
   },
   {
-    title: 'Inversión Rentable con Bajos Costos',
-    description: 'Inversión accesible con retorno de inversión atractivo. Comisiones competitivas y bajos costos operativos.',
+    title: 'Suscripción de 3 Años',
+    description: 'Un solo pago inicial para 3 años completos de suscripción. Acceso a todos los beneficios, soporte permanente y actualizaciones de la plataforma incluidas.',
   },
 ]
 
@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
             ¿Por Qué Elegir TuColpagos?
           </h2>
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto">
-            Únete a la red de franquicias más confiable y rentable en servicios transaccionales de Colombia
+            ¡Potencia tu negocio con TuColpagos y obtén ingresos diarios!
           </p>
         </motion.div>
 
@@ -75,5 +75,3 @@ export default function WhyChooseUs() {
     </section>
   )
 }
-
-
