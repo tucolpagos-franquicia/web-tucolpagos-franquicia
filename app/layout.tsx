@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: 'Únete a la red de franquicias líder en recaudos, pagos y servicios transaccionales en Colombia. Oportunidad de negocio rentable con respaldo y acompañamiento constante.',
   keywords: 'franquicia, TuColpagos, recaudos, pagos, servicios transaccionales, Colombia, negocio rentable, franquicia digital',
   authors: [{ name: 'TuColpagos Colombia SAS' }],
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     title: 'TuColpagos Franquicia - Potencia tu Negocio',
     description: 'Únete a la red de franquicias líder en recaudos, pagos y servicios transaccionales en Colombia.',
