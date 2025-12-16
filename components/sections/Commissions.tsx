@@ -52,8 +52,8 @@ export default function Commissions() {
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-2">
             Oportunidad de negocio con estructura de comisiones competitiva y potencial de crecimiento constante
           </p>
-          <p className="text-lg md:text-xl text-brand-darkGreen font-semibold">
-            Estructura de comisiones atractiva que te permite generar ingresos desde el primer día
+          <p className="text-lg md:text-xl text-brand-darkGreen font-semibold max-w-3xl mx-auto">
+            Todos los beneficios incluidos en tu suscripción de 3 años con un solo pago inicial
           </p>
         </motion.div>
 

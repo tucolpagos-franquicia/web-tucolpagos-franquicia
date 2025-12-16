@@ -48,16 +48,18 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <a
-              href="#contacto"
+              href="https://wa.me/573054477618?text=Hola!%20Estoy%20interesado%20en%20TuColpagos%20Franquicia.%20Quisiera%20obtener%20más%20información."
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary w-full sm:w-auto px-8 py-4 text-lg font-semibold"
             >
               Solicitar Información
             </a>
             <a
-              href="#beneficios"
+              href="#planes"
               className="btn-secondary w-full sm:w-auto px-8 py-4 text-lg font-semibold bg-brand-darkGreen text-white hover:bg-brand-darkerGreen"
             >
-              Conocer Más
+              Ver Planes
             </a>
           </motion.div>
         </div>

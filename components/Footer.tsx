@@ -110,8 +110,8 @@ export default function Footer() {
             </ul>
             
             {/* Certificaciones */}
-            <div className="mt-6 pt-6 border-t border-gray-700">
-              <div className="flex flex-wrap gap-4 justify-center">
+            <div className="mt-6">
+              <div className="flex flex-wrap gap-6 justify-center">
                 {certificaciones.map((cert, index) => (
                   <div
                     key={index}
@@ -120,9 +120,9 @@ export default function Footer() {
                     <Image
                       src={`/certificaciones/${cert.image}`}
                       alt={cert.name}
-                      width={150}
-                      height={150}
-                      className="object-contain max-h-20 w-auto mx-auto"
+                      width={180}
+                      height={180}
+                      className="object-contain max-h-28 md:max-h-32 w-auto mx-auto"
                       style={{
                         filter: 'brightness(1.4) contrast(1.3)',
                       }}

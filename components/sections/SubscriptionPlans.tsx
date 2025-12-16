@@ -106,8 +106,8 @@ export default function SubscriptionPlans() {
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-2">
             Elige el plan perfecto para tu punto de recaudo
           </p>
-          <p className="text-lg md:text-xl text-brand-darkGreen font-semibold">
-            Suscripción de 3 años con un solo pago inicial
+          <p className="text-lg md:text-xl text-brand-darkGreen font-semibold max-w-3xl mx-auto">
+            Suscripción de 3 años con un solo pago inicial • Sin pagos mensuales adicionales
           </p>
         </motion.div>
 
@@ -127,13 +127,13 @@ export default function SubscriptionPlans() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
               
               {plan.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
-                  <div className="bg-gradient-to-r from-brand-yellow via-brand-orange to-brand-yellow text-brand-darkGreen text-xs font-black px-5 py-2 rounded-full shadow-2xl border-2 border-white/50 uppercase tracking-wider animate-pulse">
+                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-20 w-full px-2">
+                  <div className="bg-gradient-to-r from-brand-yellow via-brand-orange to-brand-yellow text-brand-darkGreen text-[10px] sm:text-xs font-black px-3 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-2xl border-2 border-white/50 uppercase tracking-wider text-center whitespace-nowrap">
                     ⭐ MÁS POPULAR
                   </div>
                 </div>
               )}
-              <h3 className="text-2xl font-bold mb-3 flex items-center justify-center gap-2 relative z-10 mt-2">
+              <h3 className="text-2xl font-bold mb-3 flex items-center justify-center gap-2 relative z-10 mt-4 sm:mt-2">
                 <span className="text-3xl drop-shadow-lg">{plan.emoji}</span>
                 <span>{plan.name}</span>
               </h3>
@@ -188,7 +188,7 @@ export default function SubscriptionPlans() {
               
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                  <div className="bg-gradient-to-r from-brand-yellow via-brand-orange to-brand-yellow text-brand-darkGreen text-xs font-black px-6 py-2.5 rounded-full shadow-2xl border-2 border-white/50 uppercase tracking-wider animate-pulse">
+                  <div className="bg-gradient-to-r from-brand-yellow via-brand-orange to-brand-yellow text-brand-darkGreen text-xs font-black px-6 py-2.5 rounded-full shadow-2xl border-2 border-white/50 uppercase tracking-wider animate-pulse whitespace-nowrap">
                     ⭐ MÁS POPULAR
                   </div>
                 </div>
