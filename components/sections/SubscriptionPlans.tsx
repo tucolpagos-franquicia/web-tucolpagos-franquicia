@@ -8,6 +8,7 @@ import MobileCarousel from '@/components/MobileCarousel'
 const plans = [
   {
     name: 'PLAN ESTÁNDAR',
+    emoji: '💼',
     price: '$3.000.000',
     investment: 'Inversión inicial en COP',
     duration: 'Suscripción 3 años',
@@ -22,9 +23,11 @@ const plans = [
     exclusive: 'EXCLUSIVO: CUENTES CON NEGOCIO',
     gradient: 'from-brand-yellow to-brand-orange',
     popular: false,
+    whatsappMessage: 'Hola, estoy interesado en el PLAN ESTÁNDAR de TuColpagos por $3.000.000. Me gustaría recibir más información.',
   },
   {
     name: 'PLAN EMPRENDEDOR',
+    emoji: '🚀',
     price: '$6.000.000',
     investment: 'Inversión completa en COP',
     duration: 'Suscripción 3 años',
@@ -45,9 +48,11 @@ const plans = [
     exclusive: null,
     gradient: 'from-brand-orange to-brand-green',
     popular: true,
+    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRENDEDOR de TuColpagos por $6.000.000. Me gustaría recibir más información.',
   },
   {
     name: 'PLAN EMPRESARIAL',
+    emoji: '🏢',
     price: '$9.000.000',
     investment: 'Máximo equipamiento COP',
     duration: 'Suscripción 3 años',
@@ -73,6 +78,7 @@ const plans = [
     exclusive: null,
     gradient: 'from-brand-green to-brand-darkGreen',
     popular: false,
+    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRESARIAL de TuColpagos por $9.000.000. Me gustaría recibir más información.',
   },
 ]
 
@@ -81,6 +87,8 @@ export default function SubscriptionPlans() {
     triggerOnce: true,
     threshold: 0.1,
   })
+
+  const whatsappNumber = '573054477618'
 
   return (
     <section id="planes" ref={ref} className="section-padding bg-white relative overflow-hidden">
@@ -108,34 +116,53 @@ export default function SubscriptionPlans() {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`bg-gradient-to-br ${plan.gradient} p-6 rounded-xl text-white shadow-lg ${
+              className={`bg-gradient-to-br ${plan.gradient} p-6 rounded-2xl text-white shadow-2xl relative overflow-hidden ${
                 plan.popular ? 'ring-4 ring-brand-yellow ring-offset-4' : ''
               }`}
+              style={{
+                boxShadow: '0 20px 40px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1)',
+              }}
             >
+              {/* Efecto de brillo sutil */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+              
               {plan.popular && (
-                <div className="bg-brand-yellow text-brand-darkGreen text-xs font-bold px-3 py-1 rounded-full inline-block mb-4">
-                  MÁS POPULAR
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
+                  <div className="bg-gradient-to-r from-brand-yellow via-brand-orange to-brand-yellow text-brand-darkGreen text-xs font-black px-5 py-2 rounded-full shadow-2xl border-2 border-white/50 uppercase tracking-wider animate-pulse">
+                    ⭐ MÁS POPULAR
+                  </div>
                 </div>
               )}
-              <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-              <div className="text-4xl font-bold mb-2">{plan.price}</div>
-              <div className="text-sm mb-4 opacity-90">{plan.investment}</div>
-              <div className="text-sm font-semibold mb-4 border-t border-white/30 pt-4">
+              <h3 className="text-2xl font-bold mb-3 flex items-center justify-center gap-2 relative z-10 mt-2">
+                <span className="text-3xl drop-shadow-lg">{plan.emoji}</span>
+                <span>{plan.name}</span>
+              </h3>
+              <div className="text-4xl font-bold mb-2 relative z-10 drop-shadow-md">{plan.price}</div>
+              <div className="text-sm mb-4 opacity-90 relative z-10">{plan.investment}</div>
+              <div className="text-sm font-semibold mb-4 border-t border-white/30 pt-4 relative z-10">
                 {plan.duration}
               </div>
-              <ul className="space-y-2 text-sm mb-4">
+              <ul className="space-y-2.5 text-sm mb-4 relative z-10">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start">
-                    <span className="mr-2">✓</span>
-                    <span>{feature}</span>
+                    <span className="mr-2 text-lg font-bold">✓</span>
+                    <span className="leading-relaxed">{feature}</span>
                   </li>
                 ))}
               </ul>
               {plan.exclusive && (
-                <div className="bg-white/20 text-xs font-bold px-3 py-2 rounded mt-4">
+                <div className="bg-white/25 backdrop-blur-sm text-xs font-bold px-4 py-2.5 rounded-lg mt-4 mb-4 border border-white/30 relative z-10">
                   {plan.exclusive}
                 </div>
               )}
+              <a
+                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(plan.whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full bg-white text-brand-darkGreen px-6 py-3.5 rounded-xl font-bold text-center hover:bg-gray-50 transition-all duration-300 mt-4 shadow-lg hover:shadow-xl relative z-10 transform hover:scale-[1.02]"
+              >
+                Paga Aquí
+              </a>
             </div>
           ))}
         </MobileCarousel>
@@ -145,37 +172,57 @@ export default function SubscriptionPlans() {
           {plans.map((plan, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`bg-gradient-to-br ${plan.gradient} p-8 rounded-xl text-white shadow-lg transform hover:scale-105 transition-transform duration-300 ${
+              className={`bg-gradient-to-br ${plan.gradient} p-8 rounded-2xl text-white relative overflow-hidden flex flex-col transform transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl ${
                 plan.popular ? 'ring-4 ring-brand-yellow ring-offset-4 scale-105' : ''
               }`}
+              style={{
+                boxShadow: '0 25px 50px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.1)',
+              }}
             >
+              {/* Efecto de brillo sutil animado */}
+              <div className="absolute top-0 right-0 w-40 h-40 bg-white/15 rounded-full blur-3xl -mr-20 -mt-20 animate-pulse"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -ml-16 -mb-16"></div>
+              
               {plan.popular && (
-                <div className="bg-brand-yellow text-brand-darkGreen text-xs font-bold px-4 py-2 rounded-full inline-block mb-4">
-                  MÁS POPULAR
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                  <div className="bg-gradient-to-r from-brand-yellow via-brand-orange to-brand-yellow text-brand-darkGreen text-xs font-black px-6 py-2.5 rounded-full shadow-2xl border-2 border-white/50 uppercase tracking-wider animate-pulse">
+                    ⭐ MÁS POPULAR
+                  </div>
                 </div>
               )}
-              <h3 className="text-2xl md:text-3xl font-bold mb-3">{plan.name}</h3>
-              <div className="text-4xl md:text-5xl font-bold mb-2">{plan.price}</div>
-              <div className="text-sm mb-4 opacity-90">{plan.investment}</div>
-              <div className="text-base font-semibold mb-6 border-t border-white/30 pt-4">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 flex items-center justify-center gap-3 relative z-10 mt-2">
+                <span className="text-4xl md:text-5xl drop-shadow-lg filter">{plan.emoji}</span>
+                <span className="drop-shadow-md">{plan.name}</span>
+              </h3>
+              <div className="text-4xl md:text-5xl font-bold mb-3 relative z-10 drop-shadow-lg">{plan.price}</div>
+              <div className="text-sm mb-5 opacity-95 relative z-10 font-medium">{plan.investment}</div>
+              <div className="text-base font-semibold mb-6 border-t border-white/30 pt-5 relative z-10">
                 {plan.duration}
               </div>
-              <ul className="space-y-3 text-sm mb-6">
+              <ul className="space-y-3.5 text-sm mb-6 flex-grow relative z-10">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start">
-                    <span className="mr-2 text-lg">✓</span>
-                    <span>{feature}</span>
+                  <li key={idx} className="flex items-start group">
+                    <span className="mr-3 text-xl font-bold group-hover:scale-110 transition-transform">✓</span>
+                    <span className="leading-relaxed">{feature}</span>
                   </li>
                 ))}
               </ul>
               {plan.exclusive && (
-                <div className="bg-white/20 text-xs font-bold px-4 py-3 rounded mt-4">
+                <div className="bg-white/25 backdrop-blur-sm text-xs font-bold px-5 py-3 rounded-xl mt-4 mb-4 border border-white/30 relative z-10 shadow-lg">
                   {plan.exclusive}
                 </div>
               )}
+              <a
+                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(plan.whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full bg-white text-brand-darkGreen px-6 py-4 rounded-xl font-bold text-center hover:bg-gray-50 transition-all duration-300 mt-auto shadow-xl hover:shadow-2xl relative z-10 transform hover:scale-[1.03]"
+              >
+                Paga Aquí
+              </a>
             </motion.div>
           ))}
         </div>
@@ -194,4 +241,3 @@ export default function SubscriptionPlans() {
     </section>
   )
 }
-

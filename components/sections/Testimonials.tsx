@@ -4,11 +4,44 @@ import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import NetworkPattern from '@/components/NetworkPattern'
 import MobileCarousel from '@/components/MobileCarousel'
+import Image from 'next/image'
 
 const testimonials = [
-  { name: 'Carlos Rodríguez', city: 'Medellín, Antioquia', income: '$18M', quote: 'En 6 meses ya recuperé mi inversión. La plataforma es muy fácil de usar y el soporte siempre está disponible.' },
-  { name: 'María González', city: 'Bogotá, Cundinamarca', income: '$22M', quote: 'Lo mejor es la variedad de servicios. Mis clientes pueden pagar todo en un solo lugar. Muy recomendado.' },
-  { name: 'Juan Pérez', city: 'Cali, Valle del Cauca', income: '$15M', quote: 'La capacitación fue excelente. Desde el primer día supe cómo operar y generar ingresos. Excelente oportunidad.' },
+  { 
+    name: 'Carlos Rodríguez', 
+    city: 'Medellín, Antioquia', 
+    income: '$18M', 
+    quote: 'En 6 meses ya recuperé mi inversión. La plataforma es muy fácil de usar y el soporte siempre está disponible.',
+    image: 'puntos-venta (1).jpg'
+  },
+  { 
+    name: 'María González', 
+    city: 'Bogotá, Cundinamarca', 
+    income: '$22M', 
+    quote: 'Lo mejor es la variedad de servicios. Mis clientes pueden pagar todo en un solo lugar. Muy recomendado.',
+    image: 'puntos-venta (2).jpg'
+  },
+  { 
+    name: 'Juan Pérez', 
+    city: 'Cali, Valle del Cauca', 
+    income: '$15M', 
+    quote: 'La capacitación fue excelente. Desde el primer día supe cómo operar y generar ingresos. Excelente oportunidad.',
+    image: 'puntos-venta (3).jpg'
+  },
+  { 
+    name: 'Ana Martínez', 
+    city: 'Barranquilla, Atlántico', 
+    income: '$20M', 
+    quote: 'Excelente oportunidad de negocio. La inversión se recupera rápido y los ingresos son constantes.',
+    image: 'puntos-venta (4).jpg'
+  },
+  { 
+    name: 'Luis Hernández', 
+    city: 'Pereira, Risaralda', 
+    income: '$16M', 
+    quote: 'El acompañamiento es excepcional. Siempre están disponibles para resolver cualquier duda.',
+    image: 'puntos-venta (5).jpg'
+  },
 ]
 
 export default function Testimonials() {
@@ -37,7 +70,15 @@ export default function Testimonials() {
 
         <MobileCarousel itemsPerView={1.2} className="md:hidden">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="card">
+            <div key={index} className="card overflow-hidden">
+              <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
+                <Image
+                  src={`/puntos-venta/${testimonial.image}`}
+                  alt={`Punto de venta ${testimonial.name}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <p className="text-gray-700 mb-4">&quot;{testimonial.quote}&quot;</p>
               <p className="font-semibold text-brand-darkGreen mb-1">{testimonial.name}</p>
               <p className="text-gray-600">{testimonial.city}</p>
@@ -53,8 +94,16 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="card"
+              className="card overflow-hidden"
             >
+              <div className="relative h-56 mb-4 rounded-lg overflow-hidden">
+                <Image
+                  src={`/puntos-venta/${testimonial.image}`}
+                  alt={`Punto de venta ${testimonial.name}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <p className="text-gray-700 mb-4">&quot;{testimonial.quote}&quot;</p>
               <p className="font-semibold text-brand-darkGreen mb-1">{testimonial.name}</p>
               <p className="text-gray-600">{testimonial.city}</p>

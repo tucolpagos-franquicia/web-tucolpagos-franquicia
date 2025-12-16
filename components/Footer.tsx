@@ -3,6 +3,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+const certificaciones = [
+  { name: 'Vigilado Superintendencia Financiera', image: 'vigilado-financiera.png' },
+  { name: 'Vigilado Superintendencia de Industria y Comercio', image: 'vigilado-industria.png' },
+]
+
 export default function Footer() {
   return (
     <footer className="bg-brand-darkGreen text-white">
@@ -103,6 +108,29 @@ export default function Footer() {
                 </span>
               </li>
             </ul>
+            
+            {/* Certificaciones */}
+            <div className="mt-6 pt-6 border-t border-gray-700">
+              <div className="flex flex-wrap gap-4 justify-center">
+                {certificaciones.map((cert, index) => (
+                  <div
+                    key={index}
+                    className="hover:opacity-90 transition-opacity duration-300"
+                  >
+                    <Image
+                      src={`/certificaciones/${cert.image}`}
+                      alt={cert.name}
+                      width={150}
+                      height={150}
+                      className="object-contain max-h-20 w-auto mx-auto"
+                      style={{
+                        filter: 'brightness(1.4) contrast(1.3)',
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 

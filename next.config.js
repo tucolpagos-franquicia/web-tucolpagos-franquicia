@@ -4,6 +4,8 @@ const nextConfig = {
   images: {
     formats: ['image/webp', 'image/avif'],
     unoptimized: false,
+    remotePatterns: [],
+    domains: [],
   },
   compress: true,
 }

@@ -4,6 +4,16 @@ import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import NetworkPattern from '@/components/NetworkPattern'
 import DecorativeCurves from '@/components/DecorativeCurves'
+import Image from 'next/image'
+import MobileCarousel from '@/components/MobileCarousel'
+
+const puntosVenta = [
+  'puntos-venta (1).jpg',
+  'puntos-venta (2).jpg',
+  'puntos-venta (3).jpg',
+  'puntos-venta (4).jpg',
+  'puntos-venta (5).jpg',
+]
 
 const stats = [
   { number: '+300', label: 'Oficinas en el Territorio Colombiano', gradient: 'from-brand-yellow to-brand-orange' },
@@ -100,9 +110,55 @@ export default function TheOpportunity() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-12 text-center"
         >
-          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8">
             El mercado de servicios transaccionales en Colombia está en constante crecimiento. Únete a la revolución de la inclusión financiera.
           </p>
+        </motion.div>
+
+        {/* Galería de Puntos de Venta */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-12"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-brand-darkGreen">
+            Nuestros Puntos de Venta
+          </h3>
+          
+          {/* Mobile Carousel */}
+          <MobileCarousel itemsPerView={1.2} className="md:hidden">
+            {puntosVenta.map((punto, index) => (
+              <div key={index} className="relative h-64 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src={`/puntos-venta/${punto}`}
+                  alt={`Punto de venta TuColpagos ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </MobileCarousel>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {puntosVenta.map((punto, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
+                className="relative h-48 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer group"
+              >
+                <Image
+                  src={`/puntos-venta/${punto}`}
+                  alt={`Punto de venta TuColpagos ${index + 1}`}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
