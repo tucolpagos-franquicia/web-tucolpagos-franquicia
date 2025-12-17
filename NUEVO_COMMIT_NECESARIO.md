@@ -52,3 +52,4 @@ Si `vercel.json` no aparece en GitHub Desktop como modificado, significa que el 
 1. Verifica en GitHub que el último commit tenga el `$schema` en vercel.json
 2. Si no lo tiene, necesitamos hacer un pequeño cambio adicional para forzar el commit
 
+

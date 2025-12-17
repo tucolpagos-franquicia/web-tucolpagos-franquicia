@@ -89,3 +89,4 @@ public/
 2. **Actualizaré los componentes** para mostrar las imágenes automáticamente
 3. **Optimizaré** las imágenes para mejor rendimiento
 
+

@@ -261,3 +261,4 @@ Todas las imágenes deben colocarse en la carpeta **`public/`** del proyecto.
 4. **Consistencia:** Mantener un estilo visual consistente en todas las imágenes
 5. **Responsive:** Las imágenes se mostrarán en diferentes tamaños según el dispositivo
 
+

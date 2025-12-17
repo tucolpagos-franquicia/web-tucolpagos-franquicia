@@ -14,17 +14,23 @@ export default function Commissions() {
     {
       amount: '$1M - $2M',
       period: 'Inicio (Mes 1-4)',
-      gradient: 'from-brand-yellow to-brand-orange',
+      bgColor: 'bg-gradient-to-br from-amber-50 to-orange-50',
+      borderColor: 'border-amber-300',
+      textColor: 'text-amber-900',
     },
     {
       amount: '$3M - $4M',
       period: 'Crecimiento (Mes 4-6)',
-      gradient: 'from-brand-orange to-brand-green',
+      bgColor: 'bg-gradient-to-br from-emerald-50 to-teal-50',
+      borderColor: 'border-emerald-300',
+      textColor: 'text-emerald-900',
     },
     {
       amount: '$5M+',
       period: 'Establecido (Mes 7+)',
-      gradient: 'from-brand-green to-brand-darkGreen',
+      bgColor: 'bg-gradient-to-br from-orange-50 to-red-50',
+      borderColor: 'border-orange-300',
+      textColor: 'text-orange-900',
     },
   ]
 
@@ -74,13 +80,13 @@ export default function Commissions() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className={`bg-gradient-to-br ${projection.gradient} p-6 rounded-xl text-white shadow-lg transform hover:scale-105 transition-transform duration-300`}
+                className={`${projection.bgColor} ${projection.borderColor} border-2 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300`}
               >
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold mb-2">
+                  <div className={`text-3xl md:text-4xl font-bold mb-2 ${projection.textColor}`}>
                     {projection.amount}
                   </div>
-                  <div className="text-lg md:text-xl font-semibold">
+                  <div className={`text-lg md:text-xl font-semibold ${projection.textColor}`}>
                     {projection.period}
                   </div>
                 </div>
@@ -105,10 +111,10 @@ export default function Commissions() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-              className="bg-gradient-to-br from-brand-green to-brand-darkGreen p-6 rounded-xl text-white text-center shadow-lg"
+              className="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200 p-6 rounded-xl text-center shadow-lg"
             >
-              <div className="text-2xl md:text-3xl font-bold mb-2">{factor.label}</div>
-              <div className="text-lg md:text-xl">{factor.value}</div>
+              <div className="text-2xl md:text-3xl font-bold mb-2 text-emerald-900">{factor.label}</div>
+              <div className="text-lg md:text-xl text-emerald-800">{factor.value}</div>
             </motion.div>
           ))}
         </motion.div>

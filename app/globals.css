@@ -67,11 +67,11 @@ body {
 }
 
 .btn-primary {
-  @apply bg-gradient-to-r from-brand-orange to-brand-yellow text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105;
+  @apply bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 hover:from-emerald-700 hover:to-teal-700;
 }
 
 .btn-secondary {
-  @apply bg-brand-darkGreen text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-brand-darkerGreen hover:shadow-lg;
+  @apply bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-orange-700 hover:shadow-lg;
 }
 
 .card {

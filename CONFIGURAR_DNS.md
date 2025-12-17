@@ -62,3 +62,4 @@ Una vez que el dominio esté validado:
 3. Contacta a Vercel support si después de 24 horas sigue sin validarse
 
 
+

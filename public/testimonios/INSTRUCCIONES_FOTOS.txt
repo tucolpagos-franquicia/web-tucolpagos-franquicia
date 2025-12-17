@@ -1,0 +1,44 @@
+═══════════════════════════════════════════════════════════════════
+INSTRUCCIONES PARA LAS FOTOS DE TESTIMONIOS
+═══════════════════════════════════════════════════════════════════
+
+📸 FOTOS NECESARIAS: 5 imágenes de personas
+
+📁 UBICACIÓN:
+   /public/testimonios/
+
+📏 ESPECIFICACIONES TÉCNICAS:
+   - Formato: JPG o PNG (preferiblemente JPG para menor tamaño)
+   - Resolución: 400 x 400 píxeles (cuadradas)
+   - Calidad: Alta definición
+   - Tamaño de archivo: Máximo 200 KB por imagen
+
+📝 NOMBRES DE ARCHIVOS (exactos, sensibles a mayúsculas):
+   1. persona-1.jpg  → Andrés Felipe Vargas (Franquiciado)
+   2. persona-2.jpg  → Sandra Milena Orozco (Franquiciada)
+   3. persona-3.jpg  → Diego Armando Torres (Franquiciado)
+   4. persona-4.jpg  → Liliana Patricia Gómez (Franquiciada)
+   5. persona-5.jpg  → Camilo Andrés Ramírez (Franquiciado)
+
+🎯 TIPO DE FOTOS:
+   - Retratos profesionales o semi-profesionales
+   - Fondo claro o neutro (preferiblemente)
+   - Persona sonriendo, mirando a la cámara
+   - Encuadre: desde los hombros hacia arriba
+   - Buena iluminación
+   - Expresión amigable y profesional
+
+💡 RECOMENDACIONES:
+   - Usar fotos de banco de imágenes (Unsplash, Pexels, etc.)
+   - Buscar "Colombian business people portrait" o "professional headshot"
+   - Asegurarse de que las fotos sean diversas (diferentes edades, géneros)
+   - Evitar fondos muy coloridos o distractores
+   - Las fotos deben verse profesionales pero accesibles
+
+⚠️ IMPORTANTE:
+   - Los nombres de archivo DEBEN ser exactamente como se indican arriba
+   - Si falta alguna foto, aparecerá un error en la página
+   - Las fotos se mostrarán en círculos de 64x64 píxeles en la web
+
+═══════════════════════════════════════════════════════════════════
+

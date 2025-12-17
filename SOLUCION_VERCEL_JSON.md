@@ -48,3 +48,4 @@ En ese caso:
 1. Verifica en GitHub directamente si el archivo tiene `_comment`
 2. Si lo tiene, necesitamos forzar un cambio para actualizarlo
 
+

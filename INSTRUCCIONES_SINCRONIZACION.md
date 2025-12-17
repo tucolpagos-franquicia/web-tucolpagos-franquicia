@@ -106,3 +106,4 @@ El proyecto compila correctamente sin errores:
 - ✅ Sin errores de ESLint
 - ✅ Todos los componentes funcionando
 
+

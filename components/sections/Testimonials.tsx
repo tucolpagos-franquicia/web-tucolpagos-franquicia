@@ -8,39 +8,44 @@ import Image from 'next/image'
 
 const testimonials = [
   { 
-    name: 'Carlos Rodríguez', 
-    city: 'Medellín, Antioquia', 
-    income: '$18M', 
+    name: 'Andrés Felipe Vargas', 
+    role: 'Franquiciado',
+    months: 18,
     quote: 'En 6 meses ya recuperé mi inversión. La plataforma es muy fácil de usar y el soporte siempre está disponible.',
-    image: 'puntos-venta (1).jpg'
+    storeImage: 'puntos-venta (1).jpg',
+    personImage: 'persona-1.jpg'
   },
   { 
-    name: 'María González', 
-    city: 'Bogotá, Cundinamarca', 
-    income: '$22M', 
+    name: 'Sandra Milena Orozco', 
+    role: 'Franquiciada',
+    months: 14,
     quote: 'Lo mejor es la variedad de servicios. Mis clientes pueden pagar todo en un solo lugar. Muy recomendado.',
-    image: 'puntos-venta (2).jpg'
+    storeImage: 'puntos-venta (2).jpg',
+    personImage: 'persona-2.jpg'
   },
   { 
-    name: 'Juan Pérez', 
-    city: 'Cali, Valle del Cauca', 
-    income: '$15M', 
+    name: 'Diego Armando Torres', 
+    role: 'Franquiciado',
+    months: 22,
     quote: 'La capacitación fue excelente. Desde el primer día supe cómo operar y generar ingresos. Excelente oportunidad.',
-    image: 'puntos-venta (3).jpg'
+    storeImage: 'puntos-venta (3).jpg',
+    personImage: 'persona-3.jpg'
   },
   { 
-    name: 'Ana Martínez', 
-    city: 'Barranquilla, Atlántico', 
-    income: '$20M', 
+    name: 'Liliana Patricia Gómez', 
+    role: 'Franquiciada',
+    months: 9,
     quote: 'Excelente oportunidad de negocio. La inversión se recupera rápido y los ingresos son constantes.',
-    image: 'puntos-venta (4).jpg'
+    storeImage: 'puntos-venta (4).jpg',
+    personImage: 'persona-4.jpg'
   },
   { 
-    name: 'Luis Hernández', 
-    city: 'Pereira, Risaralda', 
-    income: '$16M', 
+    name: 'Camilo Andrés Ramírez', 
+    role: 'Franquiciado',
+    months: 16,
     quote: 'El acompañamiento es excepcional. Siempre están disponibles para resolver cualquier duda.',
-    image: 'puntos-venta (5).jpg'
+    storeImage: 'puntos-venta (5).jpg',
+    personImage: 'persona-5.jpg'
   },
 ]
 
@@ -73,16 +78,28 @@ export default function Testimonials() {
             <div key={index} className="card overflow-hidden">
               <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
                 <Image
-                  src={`/puntos-venta/${testimonial.image}`}
+                  src={`/puntos-venta/${testimonial.storeImage}`}
                   alt={`Punto de venta ${testimonial.name}`}
                   fill
                   className="object-cover"
                 />
               </div>
-              <p className="text-gray-700 mb-4">&quot;{testimonial.quote}&quot;</p>
-              <p className="font-semibold text-brand-darkGreen mb-1">{testimonial.name}</p>
-              <p className="text-gray-600">{testimonial.city}</p>
-              <p className="text-brand-green font-bold mt-2">Ingresos mensuales: {testimonial.income}</p>
+              <p className="text-gray-700 mb-4 italic">&quot;{testimonial.quote}&quot;</p>
+              <div className="flex items-center gap-3 mt-4">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-3 border-brand-darkGreen shadow-lg flex-shrink-0">
+                  <Image
+                    src={`/testimonios/${testimonial.personImage}`}
+                    alt={testimonial.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold text-brand-darkGreen">{testimonial.name}</p>
+                  <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                  <p className="text-brand-green font-medium text-sm">{testimonial.months} meses con TuColpagos</p>
+                </div>
+              </div>
             </div>
           ))}
         </MobileCarousel>
@@ -98,16 +115,28 @@ export default function Testimonials() {
             >
               <div className="relative h-56 mb-4 rounded-lg overflow-hidden">
                 <Image
-                  src={`/puntos-venta/${testimonial.image}`}
+                  src={`/puntos-venta/${testimonial.storeImage}`}
                   alt={`Punto de venta ${testimonial.name}`}
                   fill
                   className="object-cover"
                 />
               </div>
-              <p className="text-gray-700 mb-4">&quot;{testimonial.quote}&quot;</p>
-              <p className="font-semibold text-brand-darkGreen mb-1">{testimonial.name}</p>
-              <p className="text-gray-600">{testimonial.city}</p>
-              <p className="text-brand-green font-bold mt-2">Ingresos mensuales: {testimonial.income}</p>
+              <p className="text-gray-700 mb-6 italic">&quot;{testimonial.quote}&quot;</p>
+              <div className="flex items-center gap-4 mt-auto">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-3 border-brand-darkGreen shadow-lg flex-shrink-0">
+                  <Image
+                    src={`/testimonios/${testimonial.personImage}`}
+                    alt={testimonial.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold text-brand-darkGreen">{testimonial.name}</p>
+                  <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                  <p className="text-brand-green font-medium text-sm">{testimonial.months} meses con TuColpagos</p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

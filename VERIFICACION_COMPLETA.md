@@ -106,3 +106,4 @@
 
 **Conclusión**: El proyecto está 100% correcto localmente. Solo falta reconectar GitHub con Vercel para que los deployments funcionen automáticamente.
 
+

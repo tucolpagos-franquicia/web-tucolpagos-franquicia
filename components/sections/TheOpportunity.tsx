@@ -16,9 +16,9 @@ const puntosVenta = [
 ]
 
 const stats = [
-  { number: '+300', label: 'Oficinas en el Territorio Colombiano', gradient: 'from-brand-yellow to-brand-orange' },
-  { number: '+25', label: 'Bancos en Nuestro Portafolio', gradient: 'from-brand-orange to-brand-green' },
-  { number: '8+', label: 'Años de Experiencia en Corresponsalía', gradient: 'from-brand-green to-brand-darkGreen' },
+  { number: '+300', label: 'Oficinas en el Territorio Colombiano', bgColor: 'bg-gradient-to-br from-amber-50 to-orange-50', borderColor: 'border-amber-300', textColor: 'text-amber-900' },
+  { number: '+25', label: 'Bancos en Nuestro Portafolio', bgColor: 'bg-gradient-to-br from-emerald-50 to-teal-50', borderColor: 'border-emerald-300', textColor: 'text-emerald-900' },
+  { number: '8+', label: 'Años de Experiencia en Corresponsalía', bgColor: 'bg-gradient-to-br from-orange-50 to-red-50', borderColor: 'border-orange-300', textColor: 'text-orange-900' },
 ]
 
 const opportunities = [
@@ -69,10 +69,10 @@ export default function TheOpportunity() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`bg-gradient-to-br ${stat.gradient} p-6 rounded-xl text-white text-center shadow-lg`}
+              className={`${stat.bgColor} ${stat.borderColor} border-2 p-6 rounded-xl text-center shadow-lg`}
             >
-              <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
-              <div className="text-lg md:text-xl">{stat.label}</div>
+              <div className={`text-4xl md:text-5xl font-bold mb-2 ${stat.textColor}`}>{stat.number}</div>
+              <div className={`text-lg md:text-xl ${stat.textColor}`}>{stat.label}</div>
             </motion.div>
           ))}
         </div>

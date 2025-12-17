@@ -94,3 +94,4 @@ public/
   └── favicon.ico       (múltiples tamaños, formato ICO)
 ```
 
+

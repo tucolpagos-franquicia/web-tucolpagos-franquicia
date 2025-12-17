@@ -155,3 +155,4 @@ Después de hacer push, verifica:
 
 **Todo está listo y correcto.** Solo necesitas hacer commit y push en GitHub Desktop, y Vercel debería desplegar automáticamente.
 
+

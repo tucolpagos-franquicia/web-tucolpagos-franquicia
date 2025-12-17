@@ -78,3 +78,4 @@ Si necesitas ayuda, comparte:
 - Captura de cualquier error que aparezca
 - Captura del estado en Vercel Dashboard
 
+

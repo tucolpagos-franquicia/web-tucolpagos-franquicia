@@ -71,3 +71,4 @@ Write-Host "7. Haz clic en 'Push origin'" -ForegroundColor White
 Write-Host ""
 Write-Host "Después del push, Vercel debería desplegar automáticamente." -ForegroundColor Green
 
+
