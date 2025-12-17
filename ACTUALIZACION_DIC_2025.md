@@ -237,3 +237,4 @@ Todas las actualizaciones han sido implementadas exitosamente. La página está 
 **Desarrollado por:** Cursor AI Assistant  
 **Para:** TuColpagos Colombia SAS
 
+
