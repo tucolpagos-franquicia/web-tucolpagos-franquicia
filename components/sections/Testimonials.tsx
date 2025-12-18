@@ -51,7 +51,7 @@ export default function Testimonials() {
   })
 
   return (
-    <section id="testimonios" ref={ref} className="section-padding bg-white relative overflow-hidden">
+    <section id="testimonios" ref={ref} className="section-padding relative overflow-hidden">
       <NetworkPattern />
       <div className="container-custom relative z-10">
         <motion.div

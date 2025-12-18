@@ -48,7 +48,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
-    <section id="faq" ref={ref} className="section-padding bg-white relative overflow-hidden">
+    <section id="faq" ref={ref} className="section-padding relative overflow-hidden">
       <NetworkPattern />
       <div className="container-custom relative z-10">
         <motion.div

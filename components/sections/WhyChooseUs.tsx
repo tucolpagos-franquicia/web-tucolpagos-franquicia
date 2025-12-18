@@ -31,7 +31,7 @@ export default function WhyChooseUs() {
   })
 
   return (
-    <section id="beneficios" ref={ref} className="section-padding bg-white relative overflow-hidden">
+    <section id="beneficios" ref={ref} className="section-padding relative overflow-hidden">
       <NetworkPattern />
       <div className="container-custom relative z-10">
         <motion.div

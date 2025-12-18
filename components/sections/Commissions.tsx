@@ -38,7 +38,7 @@ export default function Commissions() {
   ]
 
   return (
-    <section id="comisiones" ref={ref} className="section-padding bg-white relative overflow-hidden">
+    <section id="comisiones" ref={ref} className="section-padding relative overflow-hidden">
       {/* Network Pattern */}
       <NetworkPattern />
 

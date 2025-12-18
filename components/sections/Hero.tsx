@@ -14,7 +14,7 @@ export default function Hero() {
   // Updated: Hero section with "Potencia tu Negocio"
 
   return (
-    <section id="hero" ref={ref} className="section-padding bg-white relative overflow-hidden min-h-[85vh] flex items-center pt-24 md:pt-32">
+    <section id="hero" ref={ref} className="section-padding relative overflow-hidden min-h-[85vh] flex items-center pt-24 md:pt-32">
       {/* Network Pattern */}
       <NetworkPattern />
       
