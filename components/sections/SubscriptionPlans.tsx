@@ -8,7 +8,7 @@ import MobileCarousel from '@/components/MobileCarousel'
 const plans = [
   {
     name: 'PLAN ESTÁNDAR',
-    emoji: '💼',
+    icon: 'work',
     price: '$3.000.000',
     investment: 'Inversión inicial en COP',
     duration: 'Suscripción 3 años',
@@ -30,7 +30,7 @@ const plans = [
   },
   {
     name: 'PLAN EMPRENDEDOR',
-    emoji: '🚀',
+    icon: 'rocket_launch',
     price: '$6.000.000',
     investment: 'Inversión completa en COP',
     duration: 'Suscripción 3 años',
@@ -58,7 +58,7 @@ const plans = [
   },
   {
     name: 'PLAN EMPRESARIAL',
-    emoji: '🏢',
+    icon: 'apartment',
     price: '$9.000.000',
     investment: 'Máximo equipamiento COP',
     duration: 'Suscripción 3 años',
@@ -137,8 +137,17 @@ export default function SubscriptionPlans() {
                   </div>
                 </div>
               )}
-              <h3 className={`text-2xl font-bold mb-3 flex items-center justify-center gap-2 ${plan.textColor}`}>
-                <span className="text-3xl">{plan.emoji}</span>
+              <h3 className={`text-2xl font-black mb-3 flex items-center justify-center gap-3 ${plan.textColor}`}>
+                <span 
+                  className="material-symbols-outlined"
+                  style={{ 
+                    fontSize: '36px', 
+                    color: '#ffffff',
+                    lineHeight: '1'
+                  }}
+                >
+                  {plan.icon}
+                </span>
                 <span>{plan.name}</span>
               </h3>
               <div className={`text-4xl font-bold mb-2 ${plan.textColor}`}>{plan.price}</div>
@@ -194,8 +203,17 @@ export default function SubscriptionPlans() {
                   </div>
                 </div>
               )}
-              <h3 className={`text-2xl md:text-3xl font-bold mb-4 flex items-center justify-center gap-3 relative z-10 ${plan.textColor}`}>
-                <span className="text-4xl md:text-5xl">{plan.emoji}</span>
+              <h3 className={`text-2xl md:text-3xl font-black mb-4 flex items-center justify-center gap-3 relative z-10 ${plan.textColor}`}>
+                <span 
+                  className="material-symbols-outlined"
+                  style={{ 
+                    fontSize: '52px', 
+                    color: '#ffffff',
+                    lineHeight: '1'
+                  }}
+                >
+                  {plan.icon}
+                </span>
                 <span>{plan.name}</span>
               </h3>
               <div className={`text-4xl md:text-5xl font-bold mb-3 relative z-10 ${plan.textColor}`}>{plan.price}</div>

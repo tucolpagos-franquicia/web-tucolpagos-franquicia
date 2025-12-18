@@ -8,22 +8,26 @@ const requirements = [
   {
     title: 'Cédula de Ciudadanía',
     description: 'Ambas caras de la cédula de ciudadanía',
-    icon: '📄',
+    icon: 'badge',
+    iconColor: '#058341',
   },
   {
     title: 'RUT Actualizado',
     description: 'Registro Único Tributario vigente',
-    icon: '📋',
+    icon: 'description',
+    iconColor: '#058341',
   },
   {
     title: 'Certificado de Cámara y Comercio',
     description: 'Documento actualizado de la Cámara de Comercio',
-    icon: '🏢',
+    icon: 'business',
+    iconColor: '#058341',
   },
   {
     title: 'Recibo de Servicio Público',
     description: 'Recibo reciente de cualquier servicio público',
-    icon: '💡',
+    icon: 'receipt',
+    iconColor: '#058341',
   },
 ]
 
@@ -65,7 +69,16 @@ export default function Requirements() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="card text-center"
             >
-              <div className="text-4xl mb-4">{req.icon}</div>
+              <span 
+                className="material-symbols-outlined mx-auto block mb-4"
+                style={{ 
+                  fontSize: '56px', 
+                  color: req.iconColor,
+                  lineHeight: '1'
+                }}
+              >
+                {req.icon}
+              </span>
               <h3 className="text-xl font-bold mb-2 text-brand-darkGreen">{req.title}</h3>
               <p className="text-gray-700 text-sm">{req.description}</p>
             </motion.div>
