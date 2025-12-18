@@ -238,3 +238,4 @@ Todas las actualizaciones han sido implementadas exitosamente. La página está 
 **Para:** TuColpagos Colombia SAS
 
 
+
