@@ -1,9 +1,9 @@
 export default function DecorativeCurves() {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
-      {/* Formas abstractas fluidas - muy sutiles para no tapar imagen de fondo */}
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1] opacity-0">
+      {/* Formas ocultas para no interferir con imagen de fondo */}
       <svg
-        className="absolute top-0 right-0 w-full md:w-1/2 h-1/2 opacity-15"
+        className="absolute top-0 right-0 w-full md:w-1/2 h-1/2"
         viewBox="0 0 600 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ export default function DecorativeCurves() {
       </svg>
 
       <svg
-        className="absolute bottom-0 left-0 w-full md:w-1/2 h-1/2 opacity-15"
+        className="absolute bottom-0 left-0 w-full md:w-1/2 h-1/2"
         viewBox="0 0 600 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
