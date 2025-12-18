@@ -37,49 +37,31 @@ const portfolioItems = [
   {
     title: 'BRE-B',
     description: 'Olvídate de las largas esperas y los trámites complicados. BRE-B cuenta con todos los bancos y billeteras digitales a nivel nacional. Puedes enviar o recibir dinero de cualquier banco o billetera de manera inmediata. Solo necesitas la llave registrada.',
-    bgColor: 'bg-gradient-to-br from-amber-50 to-orange-50',
-    borderColor: 'border-amber-200',
-    textColor: 'text-amber-900',
     highlight: 'NUEVO',
   },
   {
     title: 'Corresponsalía Bancaria',
     description: 'El modelo de corresponsales digitales ha contribuido en gran medida a la inclusión financiera, al permitir la cobertura de los principales bancos en nuestro país. Más de 25 bancos disponibles.',
-    bgColor: 'bg-gradient-to-br from-emerald-50 to-teal-50',
-    borderColor: 'border-emerald-200',
-    textColor: 'text-emerald-900',
     highlight: null,
   },
   {
     title: 'Recargas y Paquetes',
     description: 'Por muy inteligente que sea tu celular, siempre necesitará de minutos, datos y paquetes todo incluido. Recarga de minutos, datos y paquetes para todas las operadoras móviles.',
-    bgColor: 'bg-gradient-to-br from-orange-50 to-red-50',
-    borderColor: 'border-orange-200',
-    textColor: 'text-orange-900',
     highlight: null,
   },
   {
     title: 'Apuestas Deportivas',
     description: 'En nuestros puntos aliados podrás hacer recargas de las principales casas de apuestas deportivas online y al instante. Depósitos y retiros para plataformas de apuestas deportivas autorizadas.',
-    bgColor: 'bg-gradient-to-br from-purple-50 to-pink-50',
-    borderColor: 'border-purple-200',
-    textColor: 'text-purple-900',
     highlight: null,
   },
   {
     title: 'Pines de Streaming & Entretenimiento',
     description: 'Olvídate de las tarjetas de crédito y obtén nuestros pines prepago para todo tipo de entretenimiento. Netflix, HBO, Prime Video, Office 365, Datacrédito, Free Fire, Payvalida, SimpleTV, Movistar TV, Movilnet, PlayStation, Wii y más.',
-    bgColor: 'bg-gradient-to-br from-rose-50 to-red-50',
-    borderColor: 'border-rose-200',
-    textColor: 'text-rose-900',
     highlight: null,
   },
   {
     title: 'Giros Venezuela',
     description: 'Giros a Venezuela con la mejor tasa. Transacciones rápidas, seguras y directas a bancos venezolanos. Tasa competitiva y transparente, transferencia segura en minutos, sin consulta en centrales de riesgo.',
-    bgColor: 'bg-gradient-to-br from-cyan-50 to-sky-50',
-    borderColor: 'border-cyan-200',
-    textColor: 'text-cyan-900',
     highlight: null,
   },
 ]
@@ -110,13 +92,13 @@ export default function Portfolio() {
 
         <MobileCarousel itemsPerView={1.2} className="md:hidden">
           {portfolioItems.map((item, index) => (
-            <div key={index} className={`${item.bgColor} ${item.borderColor} border-2 p-6 rounded-xl relative shadow-lg`}>
+            <div key={index} className="card relative">
               {item.highlight && (
                 <div className="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
                   {item.highlight}
                 </div>
               )}
-              <h3 className={`text-xl font-bold mb-3 ${item.textColor}`}>{item.title}</h3>
+              <h3 className="text-xl font-bold mb-3 text-brand-darkGreen">{item.title}</h3>
               <p className="text-sm leading-relaxed text-gray-700">{item.description}</p>
             </div>
           ))}
@@ -129,14 +111,14 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`${item.bgColor} ${item.borderColor} border-2 p-6 rounded-2xl relative transform hover:scale-[1.03] transition-all duration-300 overflow-hidden shadow-lg hover:shadow-xl`}
+              className="card relative transform hover:scale-[1.03] transition-all duration-300 overflow-hidden"
             >
               {item.highlight && (
                 <div className="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg z-10">
                   {item.highlight}
                 </div>
               )}
-              <h3 className={`text-xl font-bold mb-3 relative z-10 ${item.textColor}`}>{item.title}</h3>
+              <h3 className="text-xl font-bold mb-3 relative z-10 text-brand-darkGreen">{item.title}</h3>
               <p className="text-sm leading-relaxed relative z-10 text-gray-700">{item.description}</p>
             </motion.div>
           ))}

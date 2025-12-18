@@ -21,10 +21,10 @@ const plans = [
       'Camiseta corporativa',
     ],
     exclusive: 'EXCLUSIVO: CUENTES CON NEGOCIO',
-    bgColor: 'bg-gradient-to-br from-amber-50 to-orange-50',
-    borderColor: 'border-amber-200',
-    textColor: 'text-amber-900',
-    buttonColor: 'bg-amber-600 hover:bg-amber-700',
+    bgColor: 'bg-brand-darkGreen',
+    textColor: 'text-white',
+    buttonColor: 'bg-white hover:bg-gray-100',
+    buttonTextColor: 'text-brand-darkGreen',
     popular: false,
     whatsappMessage: 'Hola, estoy interesado en el PLAN ESTÁNDAR de TuColpagos por $3.000.000. Me gustaría recibir más información.',
   },
@@ -49,10 +49,10 @@ const plans = [
       'Camiseta corporativa',
     ],
     exclusive: null,
-    bgColor: 'bg-gradient-to-br from-emerald-50 to-teal-50',
-    borderColor: 'border-emerald-300',
-    textColor: 'text-emerald-900',
-    buttonColor: 'bg-emerald-600 hover:bg-emerald-700',
+    bgColor: 'bg-brand-orange',
+    textColor: 'text-white',
+    buttonColor: 'bg-white hover:bg-gray-100',
+    buttonTextColor: 'text-brand-orange',
     popular: true,
     whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRENDEDOR de TuColpagos por $6.000.000. Me gustaría recibir más información.',
   },
@@ -82,10 +82,10 @@ const plans = [
       'Camisetas corporativas (2 und)',
     ],
     exclusive: null,
-    bgColor: 'bg-gradient-to-br from-orange-50 to-amber-50',
-    borderColor: 'border-orange-200',
-    textColor: 'text-orange-900',
-    buttonColor: 'bg-orange-600 hover:bg-orange-700',
+    bgColor: 'bg-brand-darkGreen',
+    textColor: 'text-white',
+    buttonColor: 'bg-white hover:bg-gray-100',
+    buttonTextColor: 'text-brand-darkGreen',
     popular: false,
     whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRESARIAL de TuColpagos por $9.000.000. Me gustaría recibir más información.',
   },
@@ -125,7 +125,7 @@ export default function SubscriptionPlans() {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`${plan.bgColor} ${plan.borderColor} border-2 p-6 rounded-2xl shadow-xl relative ${
+              className={`${plan.bgColor} ${plan.textColor} p-6 rounded-2xl shadow-xl relative ${
                 plan.popular ? 'mt-6' : ''
               }`}
             >
@@ -142,20 +142,20 @@ export default function SubscriptionPlans() {
                 <span>{plan.name}</span>
               </h3>
               <div className={`text-4xl font-bold mb-2 ${plan.textColor}`}>{plan.price}</div>
-              <div className="text-sm mb-4 text-gray-600">{plan.investment}</div>
-              <div className={`text-sm font-semibold mb-4 border-t ${plan.borderColor} pt-4 ${plan.textColor}`}>
+              <div className={`text-sm mb-4 ${plan.textColor} opacity-90`}>{plan.investment}</div>
+              <div className={`text-sm font-semibold mb-4 border-t border-white/30 pt-4 ${plan.textColor}`}>
                 {plan.duration}
               </div>
-              <ul className="space-y-2.5 text-sm mb-4 text-gray-700">
+              <ul className="space-y-2.5 text-sm mb-4">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start">
                     <span className={`mr-2 text-lg font-bold ${plan.textColor}`}>✓</span>
-                    <span className="leading-relaxed">{feature}</span>
+                    <span className={`leading-relaxed ${plan.textColor}`}>{feature}</span>
                   </li>
                 ))}
               </ul>
               {plan.exclusive && (
-                <div className={`${plan.bgColor} border ${plan.borderColor} text-xs font-bold px-4 py-2.5 rounded-lg mt-4 mb-4 ${plan.textColor}`}>
+                <div className={`bg-white/20 backdrop-blur-sm border border-white/30 text-xs font-bold px-4 py-2.5 rounded-lg mt-4 mb-4 ${plan.textColor}`}>
                   {plan.exclusive}
                 </div>
               )}
@@ -163,7 +163,7 @@ export default function SubscriptionPlans() {
                 href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(plan.whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block w-full ${plan.buttonColor} text-white px-6 py-3.5 rounded-xl font-bold text-center transition-all duration-300 mt-4 shadow-lg hover:shadow-xl transform hover:scale-[1.02]`}
+                className={`block w-full ${plan.buttonColor} ${plan.buttonTextColor || 'text-white'} px-6 py-3.5 rounded-xl font-bold text-center transition-all duration-300 mt-4 shadow-lg hover:shadow-xl transform hover:scale-[1.02]`}
               >
                 Paga Aquí
               </a>
@@ -179,11 +179,11 @@ export default function SubscriptionPlans() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`${plan.bgColor} ${plan.borderColor} border-2 p-8 rounded-2xl relative flex flex-col transform transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl ${
+              className={`${plan.bgColor} ${plan.textColor} p-8 rounded-2xl relative flex flex-col transform transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl ${
                 plan.popular ? 'mt-8' : ''
               }`}
               style={{
-                boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
               }}
             >
               {plan.popular && (
@@ -199,20 +199,20 @@ export default function SubscriptionPlans() {
                 <span>{plan.name}</span>
               </h3>
               <div className={`text-4xl md:text-5xl font-bold mb-3 relative z-10 ${plan.textColor}`}>{plan.price}</div>
-              <div className="text-sm mb-5 relative z-10 font-medium text-gray-600">{plan.investment}</div>
-              <div className={`text-base font-semibold mb-6 border-t ${plan.borderColor} pt-5 relative z-10 ${plan.textColor}`}>
+              <div className={`text-sm mb-5 relative z-10 font-medium ${plan.textColor} opacity-90`}>{plan.investment}</div>
+              <div className={`text-base font-semibold mb-6 border-t border-white/30 pt-5 relative z-10 ${plan.textColor}`}>
                 {plan.duration}
               </div>
-              <ul className="space-y-3.5 text-sm mb-6 flex-grow relative z-10 text-gray-700">
+              <ul className="space-y-3.5 text-sm mb-6 flex-grow relative z-10">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start group">
                     <span className={`mr-3 text-xl font-bold group-hover:scale-110 transition-transform ${plan.textColor}`}>✓</span>
-                    <span className="leading-relaxed">{feature}</span>
+                    <span className={`leading-relaxed ${plan.textColor}`}>{feature}</span>
                   </li>
                 ))}
               </ul>
               {plan.exclusive && (
-                <div className={`${plan.bgColor} border ${plan.borderColor} text-xs font-bold px-5 py-3 rounded-xl mt-4 mb-4 relative z-10 shadow-sm ${plan.textColor}`}>
+                <div className={`bg-white/20 backdrop-blur-sm border border-white/30 text-xs font-bold px-5 py-3 rounded-xl mt-4 mb-4 relative z-10 shadow-sm ${plan.textColor}`}>
                   {plan.exclusive}
                 </div>
               )}
@@ -220,7 +220,7 @@ export default function SubscriptionPlans() {
                 href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(plan.whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block w-full ${plan.buttonColor} text-white px-6 py-4 rounded-xl font-bold text-center transition-all duration-300 mt-auto shadow-lg hover:shadow-xl relative z-10 transform hover:scale-[1.03]`}
+                className={`block w-full ${plan.buttonColor} ${plan.buttonTextColor || 'text-white'} px-6 py-4 rounded-xl font-bold text-center transition-all duration-300 mt-auto shadow-lg hover:shadow-xl relative z-10 transform hover:scale-[1.03]`}
               >
                 Paga Aquí
               </a>
