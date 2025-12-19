@@ -169,7 +169,7 @@ export default function SubscriptionPlans() {
                 </div>
               )}
               <a
-                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(plan.whatsappMessage)}`}
+                href="https://link.mercadopago.com.co/tucolpagos"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`block w-full ${plan.buttonColor} ${plan.buttonTextColor || 'text-white'} px-6 py-3.5 rounded-xl font-bold text-center transition-all duration-300 mt-4 shadow-lg hover:shadow-xl transform hover:scale-[1.02]`}
@@ -235,7 +235,7 @@ export default function SubscriptionPlans() {
                 </div>
               )}
               <a
-                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(plan.whatsappMessage)}`}
+                href="https://link.mercadopago.com.co/tucolpagos"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`block w-full ${plan.buttonColor} ${plan.buttonTextColor || 'text-white'} px-6 py-4 rounded-xl font-bold text-center transition-all duration-300 mt-auto shadow-lg hover:shadow-xl relative z-10 transform hover:scale-[1.03]`}
