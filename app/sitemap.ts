@@ -4,8 +4,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: 'https://www.tucolpagosfranquicia.com',
-      lastModified: new Date('2025-12-17'),
-      changeFrequency: 'weekly',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
       priority: 1,
     },
   ]

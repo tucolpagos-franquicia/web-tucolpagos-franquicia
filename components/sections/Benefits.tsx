@@ -6,42 +6,12 @@ import NetworkPattern from '@/components/NetworkPattern'
 import MobileCarousel from '@/components/MobileCarousel'
 
 const benefits = [
-  { 
-    title: 'Negocio Probado', 
-    description: 'Modelo de negocio validado con años de experiencia en el mercado colombiano.',
-    icon: 'verified',
-    iconColor: '#058341',
-  },
-  { 
-    title: 'Plataforma Segura', 
-    description: 'Tecnología de última generación con certificaciones de seguridad y encriptación.',
-    icon: 'security',
-    iconColor: '#058341',
-  },
-  { 
-    title: 'Capacitación Continua', 
-    description: 'Programa de capacitación inicial y actualizaciones constantes para mantenerte al día.',
-    icon: 'school',
-    iconColor: '#058341',
-  },
-  { 
-    title: 'Comisiones Competitivas', 
-    description: 'Estructura de comisiones atractiva que te permite generar ingresos desde el primer día.',
-    icon: 'trending_up',
-    iconColor: '#058341',
-  },
-  { 
-    title: 'Dashboard en Tiempo Real', 
-    description: 'Monitorea tus ventas, comisiones y estadísticas en tiempo real desde cualquier dispositivo.',
-    icon: 'analytics',
-    iconColor: '#058341',
-  },
-  { 
-    title: 'Soporte 24/7', 
-    description: 'Equipo de soporte técnico disponible las 24 horas para resolver cualquier inconveniente.',
-    icon: 'support_agent',
-    iconColor: '#058341',
-  },
+  { title: 'Negocio Probado', description: 'Modelo de negocio validado con años de experiencia en el mercado colombiano.' },
+  { title: 'Plataforma Segura', description: 'Tecnología de última generación con certificaciones de seguridad y encriptación.' },
+  { title: 'Capacitación Continua', description: 'Programa de capacitación inicial y actualizaciones constantes para mantenerte al día.' },
+  { title: 'Comisiones Competitivas', description: 'Estructura de comisiones atractiva que te permite generar ingresos desde el primer día.' },
+  { title: 'Dashboard en Tiempo Real', description: 'Monitorea tus ventas, comisiones y estadísticas en tiempo real desde cualquier dispositivo.' },
+  { title: 'Soporte 24/7', description: 'Equipo de soporte técnico disponible las 24 horas para resolver cualquier inconveniente.' },
 ]
 
 export default function Benefits() {
@@ -51,7 +21,7 @@ export default function Benefits() {
   })
 
   return (
-    <section ref={ref} className="section-padding relative overflow-hidden">
+    <section ref={ref} className="section-padding bg-white relative overflow-hidden">
       <NetworkPattern />
       <div className="container-custom relative z-10">
         <motion.div
@@ -70,17 +40,7 @@ export default function Benefits() {
 
         <MobileCarousel itemsPerView={1.2} className="md:hidden">
           {benefits.map((benefit, index) => (
-            <div key={index} className="card text-center">
-              <span 
-                className="material-symbols-outlined mx-auto block mb-4"
-                style={{ 
-                  fontSize: '56px', 
-                  color: benefit.iconColor,
-                  lineHeight: '1'
-                }}
-              >
-                {benefit.icon}
-              </span>
+            <div key={index} className="card">
               <h3 className="text-xl font-bold mb-3 text-brand-darkGreen">{benefit.title}</h3>
               <p className="text-gray-700">{benefit.description}</p>
             </div>
@@ -94,18 +54,8 @@ export default function Benefits() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="card text-center"
+              className="card"
             >
-              <span 
-                className="material-symbols-outlined mx-auto block mb-4"
-                style={{ 
-                  fontSize: '60px', 
-                  color: benefit.iconColor,
-                  lineHeight: '1'
-                }}
-              >
-                {benefit.icon}
-              </span>
               <h3 className="text-xl font-bold mb-3 text-brand-darkGreen">{benefit.title}</h3>
               <p className="text-gray-700">{benefit.description}</p>
             </motion.div>

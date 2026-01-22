@@ -8,39 +8,39 @@ import Image from 'next/image'
 
 const testimonials = [
   { 
-    role: 'Franquiciado',
-    months: 28,
+    name: 'Carlos Rodríguez', 
+    city: 'Medellín, Antioquia', 
+    income: '$18M', 
     quote: 'En 6 meses ya recuperé mi inversión. La plataforma es muy fácil de usar y el soporte siempre está disponible.',
-    storeImage: 'puntos-venta (1).jpg',
-    personImage: 'persona-1.jpg'
+    image: 'puntos-venta (1).jpg'
   },
   { 
-    role: 'Franquiciada',
-    months: 45,
+    name: 'María González', 
+    city: 'Bogotá, Cundinamarca', 
+    income: '$22M', 
     quote: 'Lo mejor es la variedad de servicios. Mis clientes pueden pagar todo en un solo lugar. Muy recomendado.',
-    storeImage: 'puntos-venta (2).jpg',
-    personImage: 'persona-2.jpg'
+    image: 'puntos-venta (2).jpg'
   },
   { 
-    role: 'Franquiciado',
-    months: 33,
+    name: 'Juan Pérez', 
+    city: 'Cali, Valle del Cauca', 
+    income: '$15M', 
     quote: 'La capacitación fue excelente. Desde el primer día supe cómo operar y generar ingresos. Excelente oportunidad.',
-    storeImage: 'puntos-venta (3).jpg',
-    personImage: 'persona-3.jpg'
+    image: 'puntos-venta (3).jpg'
   },
   { 
-    role: 'Franquiciada',
-    months: 52,
+    name: 'Ana Martínez', 
+    city: 'Barranquilla, Atlántico', 
+    income: '$20M', 
     quote: 'Excelente oportunidad de negocio. La inversión se recupera rápido y los ingresos son constantes.',
-    storeImage: 'puntos-venta (4).jpg',
-    personImage: 'persona-4.jpg'
+    image: 'puntos-venta (4).jpg'
   },
   { 
-    role: 'Franquiciado',
-    months: 19,
+    name: 'Luis Hernández', 
+    city: 'Pereira, Risaralda', 
+    income: '$16M', 
     quote: 'El acompañamiento es excepcional. Siempre están disponibles para resolver cualquier duda.',
-    storeImage: 'puntos-venta (5).jpg',
-    personImage: 'persona-5.jpg'
+    image: 'puntos-venta (5).jpg'
   },
 ]
 
@@ -51,7 +51,7 @@ export default function Testimonials() {
   })
 
   return (
-    <section id="testimonios" ref={ref} className="section-padding relative overflow-hidden">
+    <section id="testimonios" ref={ref} className="section-padding bg-white relative overflow-hidden">
       <NetworkPattern />
       <div className="container-custom relative z-10">
         <motion.div
@@ -73,27 +73,16 @@ export default function Testimonials() {
             <div key={index} className="card overflow-hidden">
               <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
                 <Image
-                  src={`/puntos-venta/${testimonial.storeImage}`}
-                  alt={`Punto de venta TuColpagos`}
+                  src={`/puntos-venta/${testimonial.image}`}
+                  alt={`Punto de venta ${testimonial.name}`}
                   fill
                   className="object-cover"
                 />
               </div>
-              <p className="text-gray-700 mb-4 italic">&quot;{testimonial.quote}&quot;</p>
-              <div className="flex items-center gap-3 mt-4">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden border-3 border-brand-darkGreen shadow-lg flex-shrink-0">
-                  <Image
-                    src={`/testimonios/${testimonial.personImage}`}
-                    alt={testimonial.role}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="font-semibold text-brand-darkGreen">{testimonial.role}</p>
-                  <p className="text-brand-green font-medium text-sm">{testimonial.months} meses con TuColpagos</p>
-                </div>
-              </div>
+              <p className="text-gray-700 mb-4">&quot;{testimonial.quote}&quot;</p>
+              <p className="font-semibold text-brand-darkGreen mb-1">{testimonial.name}</p>
+              <p className="text-gray-600">{testimonial.city}</p>
+              <p className="text-brand-green font-bold mt-2">Ingresos mensuales: {testimonial.income}</p>
             </div>
           ))}
         </MobileCarousel>
@@ -109,27 +98,16 @@ export default function Testimonials() {
             >
               <div className="relative h-56 mb-4 rounded-lg overflow-hidden">
                 <Image
-                  src={`/puntos-venta/${testimonial.storeImage}`}
-                  alt={`Punto de venta TuColpagos`}
+                  src={`/puntos-venta/${testimonial.image}`}
+                  alt={`Punto de venta ${testimonial.name}`}
                   fill
                   className="object-cover"
                 />
               </div>
-              <p className="text-gray-700 mb-6 italic">&quot;{testimonial.quote}&quot;</p>
-              <div className="flex items-center gap-4 mt-auto">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden border-3 border-brand-darkGreen shadow-lg flex-shrink-0">
-                  <Image
-                    src={`/testimonios/${testimonial.personImage}`}
-                    alt={testimonial.role}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="font-semibold text-brand-darkGreen">{testimonial.role}</p>
-                  <p className="text-brand-green font-medium text-sm">{testimonial.months} meses con TuColpagos</p>
-                </div>
-              </div>
+              <p className="text-gray-700 mb-4">&quot;{testimonial.quote}&quot;</p>
+              <p className="font-semibold text-brand-darkGreen mb-1">{testimonial.name}</p>
+              <p className="text-gray-600">{testimonial.city}</p>
+              <p className="text-brand-green font-bold mt-2">Ingresos mensuales: {testimonial.income}</p>
             </motion.div>
           ))}
         </div>

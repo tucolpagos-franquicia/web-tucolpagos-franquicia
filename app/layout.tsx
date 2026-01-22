@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
-import MaterialSymbolsLoader from '@/components/MaterialSymbolsLoader'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -48,7 +47,6 @@ export default function RootLayout({
   return (
     <html lang="es" className={poppins.variable}>
       <body className="font-body antialiased">
-        <MaterialSymbolsLoader />
         <GoogleAnalytics />
         {children}
       </body>
