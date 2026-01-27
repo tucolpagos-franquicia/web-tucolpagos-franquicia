@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "framer-motion": "^12.29.2",
     "next": "^16.1.0-canary.19",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^10.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.23",
