@@ -103,8 +103,8 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span>
-                  Carrera 4 #38–61 Lc2<br />
-                  Centro Montería-Córdoba
+                  Av. Circunvalar #31-69<br />
+                  Montería, Córdoba
                 </span>
               </li>
             </ul>
