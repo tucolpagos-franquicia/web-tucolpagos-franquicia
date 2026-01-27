@@ -8,26 +8,22 @@ const requirements = [
   {
     title: 'Cédula de Ciudadanía',
     description: 'Ambas caras de la cédula de ciudadanía',
-    icon: 'badge',
-    iconColor: '#058341',
+    icon: '📄',
   },
   {
     title: 'RUT Actualizado',
     description: 'Registro Único Tributario vigente',
-    icon: 'description',
-    iconColor: '#058341',
+    icon: '📋',
   },
   {
     title: 'Certificado de Cámara y Comercio',
     description: 'Documento actualizado de la Cámara de Comercio',
-    icon: 'business',
-    iconColor: '#058341',
+    icon: '🏢',
   },
   {
     title: 'Recibo de Servicio Público',
     description: 'Recibo reciente de cualquier servicio público',
-    icon: 'receipt',
-    iconColor: '#058341',
+    icon: '💡',
   },
 ]
 
@@ -38,7 +34,7 @@ export default function Requirements() {
   })
 
   return (
-    <section id="requisitos" ref={ref} className="section-padding relative overflow-hidden">
+    <section id="requisitos" ref={ref} className="section-padding bg-white relative overflow-hidden">
       <NetworkPattern />
       <div className="container-custom relative z-10">
         <motion.div
@@ -69,16 +65,7 @@ export default function Requirements() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="card text-center"
             >
-              <span 
-                className="material-symbols-outlined mx-auto block mb-4"
-                style={{ 
-                  fontSize: '56px', 
-                  color: req.iconColor,
-                  lineHeight: '1'
-                }}
-              >
-                {req.icon}
-              </span>
+              <div className="text-4xl mb-4">{req.icon}</div>
               <h3 className="text-xl font-bold mb-2 text-brand-darkGreen">{req.title}</h3>
               <p className="text-gray-700 text-sm">{req.description}</p>
             </motion.div>

@@ -14,31 +14,28 @@ export default function Commissions() {
     {
       amount: '$1M - $2M',
       period: 'Inicio (Mes 1-4)',
-      bgColor: 'bg-brand-darkGreen',
-      textColor: 'text-white',
+      gradient: 'from-brand-yellow to-brand-orange',
     },
     {
       amount: '$3M - $4M',
       period: 'Crecimiento (Mes 4-6)',
-      bgColor: 'bg-brand-orange',
-      textColor: 'text-white',
+      gradient: 'from-brand-orange to-brand-green',
     },
     {
       amount: '$5M+',
       period: 'Establecido (Mes 7+)',
-      bgColor: 'bg-brand-darkGreen',
-      textColor: 'text-white',
+      gradient: 'from-brand-green to-brand-darkGreen',
     },
   ]
 
   const successFactors = [
-    { label: 'Baja', value: 'Inversión Inicial', bgColor: 'bg-brand-darkGreen', textColor: 'text-white' },
-    { label: 'Rápido', value: 'Retorno de Inversión', bgColor: 'bg-brand-orange', textColor: 'text-white' },
-    { label: 'Alto', value: 'Potencial de Crecimiento', bgColor: 'bg-brand-darkGreen', textColor: 'text-white' },
+    { label: 'Baja', value: 'Inversión Inicial' },
+    { label: 'Rápido', value: 'Retorno de Inversión' },
+    { label: 'Alto', value: 'Potencial de Crecimiento' },
   ]
 
   return (
-    <section id="comisiones" ref={ref} className="section-padding relative overflow-hidden">
+    <section id="comisiones" ref={ref} className="section-padding bg-white relative overflow-hidden">
       {/* Network Pattern */}
       <NetworkPattern />
 
@@ -77,13 +74,13 @@ export default function Commissions() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className={`${projection.bgColor} ${projection.textColor} p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300`}
+                className={`bg-gradient-to-br ${projection.gradient} p-6 rounded-xl text-white shadow-lg transform hover:scale-105 transition-transform duration-300`}
               >
                 <div className="text-center">
-                  <div className={`text-3xl md:text-4xl font-bold mb-2 ${projection.textColor}`}>
+                  <div className="text-3xl md:text-4xl font-bold mb-2">
                     {projection.amount}
                   </div>
-                  <div className={`text-lg md:text-xl font-semibold ${projection.textColor}`}>
+                  <div className="text-lg md:text-xl font-semibold">
                     {projection.period}
                   </div>
                 </div>
@@ -108,10 +105,10 @@ export default function Commissions() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-              className={`${factor.bgColor} ${factor.textColor} p-6 rounded-xl text-center shadow-lg`}
+              className="bg-gradient-to-br from-brand-green to-brand-darkGreen p-6 rounded-xl text-white text-center shadow-lg"
             >
-              <div className={`text-2xl md:text-3xl font-bold mb-2 ${factor.textColor}`}>{factor.label}</div>
-              <div className={`text-lg md:text-xl ${factor.textColor}`}>{factor.value}</div>
+              <div className="text-2xl md:text-3xl font-bold mb-2">{factor.label}</div>
+              <div className="text-lg md:text-xl">{factor.value}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -123,7 +120,7 @@ export default function Commissions() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-12 text-center"
         >
-          <div className="card max-w-3xl mx-auto">
+          <div className="bg-gradient-to-r from-brand-green/10 to-brand-darkGreen/10 border-2 border-brand-green rounded-xl p-6 max-w-3xl mx-auto">
             <h3 className="text-xl md:text-2xl font-bold mb-3 text-brand-darkGreen">
               Suscripción de 3 Años
             </h3>
