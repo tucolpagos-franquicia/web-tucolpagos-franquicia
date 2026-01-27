@@ -16,7 +16,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Cerrar menú móvil al hacer clic en un enlace
   const handleLinkClick = () => {
     setMobileMenuOpen(false)
   }
@@ -40,7 +39,6 @@ export default function Header() {
             />
           </Link>
 
-          {/* Menú Desktop */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#beneficios" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
               Beneficios
@@ -58,7 +56,7 @@ export default function Header() {
               FAQ
             </a>
             <a
-              href="https://wa.me/573054477618"
+              href="https://link.mercadopago.com.co/tucolpagos"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-brand-darkGreen text-white px-6 py-2 rounded-lg font-semibold hover:bg-brand-darkerGreen transition-colors"
@@ -67,7 +65,6 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Botón Menú Móvil */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
@@ -92,50 +89,29 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Menú Móvil Desplegable */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
             mobileMenuOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
           }`}
         >
           <div className="flex flex-col space-y-4 py-4 border-t border-gray-200">
-            <a
-              href="#beneficios"
-              onClick={handleLinkClick}
-              className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2"
-            >
+            <a href="#beneficios" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
               Beneficios
             </a>
-            <a
-              href="#planes"
-              onClick={handleLinkClick}
-              className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2"
-            >
+            <a href="#planes" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
               Planes
             </a>
-            <a
-              href="#portafolio"
-              onClick={handleLinkClick}
-              className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2"
-            >
+            <a href="#portafolio" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
               Portafolio
             </a>
-            <a
-              href="#comisiones"
-              onClick={handleLinkClick}
-              className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2"
-            >
+            <a href="#comisiones" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
               Comisiones
             </a>
-            <a
-              href="#faq"
-              onClick={handleLinkClick}
-              className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2"
-            >
+            <a href="#faq" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
               FAQ
             </a>
             <a
-              href="https://wa.me/573054477618"
+              href="https://link.mercadopago.com.co/tucolpagos"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleLinkClick}
