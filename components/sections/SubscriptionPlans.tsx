@@ -8,8 +8,8 @@ import MobileCarousel from '@/components/MobileCarousel'
 const plans = [
   {
     name: 'PLAN ESTÁNDAR',
-    emoji: '💼',
-    price: '$3.990.000',
+    icon: 'work',
+    price: '$3.960.000',
     investment: 'Inversión inicial en COP',
     duration: 'Suscripción 3 años',
     features: [
@@ -21,14 +21,14 @@ const plans = [
       'Camiseta corporativa',
     ],
     exclusive: 'EXCLUSIVO: CLIENTES CON NEGOCIO',
-    gradient: 'from-brand-yellow to-brand-orange',
+    bgColor: 'bg-brand-darkGreen',
     popular: false,
-    whatsappMessage: 'Hola, estoy interesado en el PLAN ESTÁNDAR de TuColpagos por $3.990.000. Me gustaría recibir más información.',
+    whatsappMessage: 'Hola, estoy interesado en el PLAN ESTÁNDAR de TuColpagos por $3.960.000. Me gustaría recibir más información.',
   },
   {
     name: 'PLAN EMPRENDEDOR',
-    emoji: '🚀',
-    price: '$6.990.000',
+    icon: 'rocket_launch',
+    price: '$6.960.000',
     investment: 'Inversión completa en COP',
     duration: 'Suscripción 3 años',
     features: [
@@ -46,14 +46,14 @@ const plans = [
       'Camiseta corporativa',
     ],
     exclusive: null,
-    gradient: 'from-brand-orange to-brand-green',
+    bgColor: 'bg-brand-orange',
     popular: true,
-    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRENDEDOR de TuColpagos por $6.990.000. Me gustaría recibir más información.',
+    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRENDEDOR de TuColpagos por $6.960.000. Me gustaría recibir más información.',
   },
   {
     name: 'PLAN EMPRESARIAL',
-    emoji: '🏢',
-    price: '$9.990.000',
+    icon: 'business',
+    price: '$9.960.000',
     investment: 'Máximo equipamiento COP',
     duration: 'Suscripción 3 años',
     features: [
@@ -76,9 +76,9 @@ const plans = [
       'Camisetas corporativas (2 und)',
     ],
     exclusive: null,
-    gradient: 'from-brand-green to-brand-darkGreen',
+    bgColor: 'bg-brand-darkGreen',
     popular: false,
-    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRESARIAL de TuColpagos por $9.990.000. Me gustaría recibir más información.',
+    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRESARIAL de TuColpagos por $9.960.000. Me gustaría recibir más información.',
   },
 ]
 
@@ -91,9 +91,9 @@ export default function SubscriptionPlans() {
   const whatsappNumber = '573054477618'
 
   return (
-    <section id="planes" ref={ref} className="section-padding relative overflow-hidden">
+    <section id="planes" ref={ref} className="section-padding relative">
       <NetworkPattern />
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-10 pt-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -116,25 +116,23 @@ export default function SubscriptionPlans() {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`bg-gradient-to-br ${plan.gradient} p-6 rounded-2xl text-white shadow-2xl relative overflow-hidden ${
-                plan.popular ? 'ring-4 ring-brand-yellow ring-offset-4' : ''
+              className={`${plan.bgColor} p-6 rounded-2xl text-white shadow-2xl relative ${
+                plan.popular ? 'ring-4 ring-brand-yellow ring-offset-4 pt-10' : ''
               }`}
               style={{
                 boxShadow: '0 20px 40px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1)',
               }}
             >
-              {/* Efecto de brillo sutil */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-              
               {plan.popular && (
-                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-20 w-full px-2">
-                  <div className="bg-gradient-to-r from-brand-yellow via-brand-orange to-brand-yellow text-brand-darkGreen text-[10px] sm:text-xs font-black px-3 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-2xl border-2 border-white/50 uppercase tracking-wider text-center whitespace-nowrap">
-                    ⭐ MÁS POPULAR
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20 w-full px-2">
+                  <div className="bg-brand-yellow text-brand-darkGreen text-[10px] sm:text-xs font-black px-3 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-2xl border-2 border-white/50 uppercase tracking-wider text-center whitespace-nowrap flex items-center justify-center gap-1">
+                    <span className="material-symbols-outlined text-sm">star</span>
+                    <span>MÁS POPULAR</span>
                   </div>
                 </div>
               )}
-              <h3 className="text-2xl font-bold mb-3 flex items-center justify-center gap-2 relative z-10 mt-4 sm:mt-2">
-                <span className="text-3xl drop-shadow-lg">{plan.emoji}</span>
+              <h3 className="text-2xl font-bold mb-3 flex items-center justify-center gap-2 relative z-10 mt-6 sm:mt-4">
+                <span className="material-symbols-outlined text-4xl drop-shadow-lg">{plan.icon}</span>
                 <span>{plan.name}</span>
               </h3>
               <div className="text-4xl font-bold mb-2 relative z-10 drop-shadow-md">{plan.price}</div>
@@ -175,26 +173,23 @@ export default function SubscriptionPlans() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`bg-gradient-to-br ${plan.gradient} p-8 rounded-2xl text-white relative overflow-hidden flex flex-col transform transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl ${
-                plan.popular ? 'ring-4 ring-brand-yellow ring-offset-4 scale-105' : ''
+              className={`${plan.bgColor} p-8 rounded-2xl text-white relative flex flex-col transform transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl ${
+                plan.popular ? 'ring-4 ring-brand-yellow ring-offset-4 scale-105 pt-12' : ''
               }`}
               style={{
                 boxShadow: '0 25px 50px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.1)',
               }}
             >
-              {/* Efecto de brillo sutil animado */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-white/15 rounded-full blur-3xl -mr-20 -mt-20 animate-pulse"></div>
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -ml-16 -mb-16"></div>
-              
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                  <div className="bg-gradient-to-r from-brand-yellow via-brand-orange to-brand-yellow text-brand-darkGreen text-xs font-black px-6 py-2.5 rounded-full shadow-2xl border-2 border-white/50 uppercase tracking-wider animate-pulse whitespace-nowrap">
-                    ⭐ MÁS POPULAR
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
+                  <div className="bg-brand-yellow text-brand-darkGreen text-xs font-black px-6 py-2.5 rounded-full shadow-2xl border-2 border-white/50 uppercase tracking-wider whitespace-nowrap flex items-center justify-center gap-1">
+                    <span className="material-symbols-outlined text-base">star</span>
+                    <span>MÁS POPULAR</span>
                   </div>
                 </div>
               )}
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 flex items-center justify-center gap-3 relative z-10 mt-2">
-                <span className="text-4xl md:text-5xl drop-shadow-lg filter">{plan.emoji}</span>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 flex items-center justify-center gap-3 relative z-10 mt-4">
+                <span className="material-symbols-outlined text-5xl md:text-6xl drop-shadow-lg">{plan.icon}</span>
                 <span className="drop-shadow-md">{plan.name}</span>
               </h3>
               <div className="text-4xl md:text-5xl font-bold mb-3 relative z-10 drop-shadow-lg">{plan.price}</div>
