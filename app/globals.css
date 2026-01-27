@@ -1,5 +1,19 @@
 @tailwind base;
 @tailwind components;
+
+/* Coloca aquí tus clases con @apply (en la capa de components) */
+.container-custom {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+/* Reemplaza sm:px-6 / lg:px-8 en @apply por @screen */
+@screen sm {
+  .container-custom { @apply px-6; }
+}
+@screen lg {
+  .container-custom { @apply px-8; }
+}
+
 @tailwind utilities;
 
 /* resto de CSS global */
