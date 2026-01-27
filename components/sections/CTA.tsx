@@ -12,7 +12,7 @@ export default function CTA() {
   })
 
   return (
-    <section id="contacto" ref={ref} className="section-padding bg-white relative overflow-hidden">
+    <section id="contacto" ref={ref} className="section-padding relative overflow-hidden">
       {/* Network Pattern */}
       <NetworkPattern />
       

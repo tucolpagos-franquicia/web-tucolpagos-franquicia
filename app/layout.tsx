@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import MaterialSymbolsLoader from '@/components/MaterialSymbolsLoader'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -45,8 +46,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={poppins.variable} style={{ '--font-poppins': poppins.style.fontFamily } as React.CSSProperties}>
-      <body className="font-body antialiased" style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}>
+    <html lang="es" className={poppins.variable}>
+      <body className="font-body antialiased">
+        <MaterialSymbolsLoader />
         <GoogleAnalytics />
         {children}
       </body>

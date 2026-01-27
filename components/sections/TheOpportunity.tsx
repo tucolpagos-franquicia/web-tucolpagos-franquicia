@@ -16,9 +16,9 @@ const puntosVenta = [
 ]
 
 const stats = [
-  { number: '+300', label: 'Oficinas en el Territorio Colombiano', gradient: 'from-brand-yellow to-brand-orange' },
-  { number: '+25', label: 'Bancos en Nuestro Portafolio', gradient: 'from-brand-orange to-brand-green' },
-  { number: '8+', label: 'Años de Experiencia en Corresponsalía', gradient: 'from-brand-green to-brand-darkGreen' },
+  { number: '+300', label: 'Oficinas en el Territorio Colombiano', bgColor: 'bg-brand-darkGreen', textColor: 'text-white' },
+  { number: '+25', label: 'Bancos en Nuestro Portafolio', bgColor: 'bg-brand-orange', textColor: 'text-white' },
+  { number: '8+', label: 'Años de Experiencia en Corresponsalía', bgColor: 'bg-brand-darkGreen', textColor: 'text-white' },
 ]
 
 const opportunities = [
@@ -43,7 +43,7 @@ export default function TheOpportunity() {
   })
 
   return (
-    <section ref={ref} className="section-padding bg-white relative overflow-hidden">
+    <section ref={ref} className="section-padding relative overflow-hidden">
       <NetworkPattern />
       <DecorativeCurves />
       <div className="container-custom relative z-10">
@@ -69,10 +69,10 @@ export default function TheOpportunity() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`bg-gradient-to-br ${stat.gradient} p-6 rounded-xl text-white text-center shadow-lg`}
+              className={`${stat.bgColor} ${stat.textColor} p-6 rounded-xl text-center shadow-lg`}
             >
-              <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
-              <div className="text-lg md:text-xl">{stat.label}</div>
+              <div className={`text-4xl md:text-5xl font-bold mb-2 ${stat.textColor}`}>{stat.number}</div>
+              <div className={`text-lg md:text-xl ${stat.textColor}`}>{stat.label}</div>
             </motion.div>
           ))}
         </div>
