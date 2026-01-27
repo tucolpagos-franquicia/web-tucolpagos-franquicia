@@ -1,1 +1,16 @@
-
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "tucolpagosfranquicia.com"
+        }
+      ],
+      "destination": "https://www.tucolpagosfranquicia.com/$1",
+      "permanent": true
+    }
+  ]
+}
