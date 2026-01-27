@@ -14,17 +14,17 @@ export default function Commissions() {
     {
       amount: '$1M - $2M',
       period: 'Inicio (Mes 1-4)',
-      gradient: 'from-brand-yellow to-brand-orange',
+      bgColor: 'bg-brand-orange',
     },
     {
       amount: '$3M - $4M',
       period: 'Crecimiento (Mes 4-6)',
-      gradient: 'from-brand-orange to-brand-green',
+      bgColor: 'bg-brand-orange',
     },
     {
       amount: '$5M+',
       period: 'Establecido (Mes 7+)',
-      gradient: 'from-brand-green to-brand-darkGreen',
+      bgColor: 'bg-brand-darkGreen',
     },
   ]
 
@@ -35,7 +35,7 @@ export default function Commissions() {
   ]
 
   return (
-    <section id="comisiones" ref={ref} className="section-padding relative overflow-hidden">
+    <section id="comisiones" ref={ref} className="section-padding relative">
       {/* Network Pattern */}
       <NetworkPattern />
 
@@ -67,20 +67,20 @@ export default function Commissions() {
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-brand-darkGreen">
             Proyección de Ingresos Mensuales
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
             {incomeProjections.map((projection, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className={`bg-gradient-to-br ${projection.gradient} p-6 rounded-xl text-white shadow-lg transform hover:scale-105 transition-transform duration-300`}
+                className={`${projection.bgColor} p-5 sm:p-6 rounded-xl text-white shadow-lg transform hover:scale-105 transition-transform duration-300`}
               >
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold mb-2">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
                     {projection.amount}
                   </div>
-                  <div className="text-lg md:text-xl font-semibold">
+                  <div className="text-base sm:text-lg md:text-xl font-semibold">
                     {projection.period}
                   </div>
                 </div>
@@ -97,7 +97,7 @@ export default function Commissions() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto"
         >
           {successFactors.map((factor, index) => (
             <motion.div
@@ -105,10 +105,10 @@ export default function Commissions() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-              className="bg-gradient-to-br from-brand-green to-brand-darkGreen p-6 rounded-xl text-white text-center shadow-lg"
+              className="bg-brand-darkGreen p-5 sm:p-6 rounded-xl text-white text-center shadow-lg"
             >
-              <div className="text-2xl md:text-3xl font-bold mb-2">{factor.label}</div>
-              <div className="text-lg md:text-xl">{factor.value}</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">{factor.label}</div>
+              <div className="text-base sm:text-lg md:text-xl">{factor.value}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -120,7 +120,7 @@ export default function Commissions() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-12 text-center"
         >
-          <div className="bg-gradient-to-r from-brand-green/10 to-brand-darkGreen/10 border-2 border-brand-green rounded-xl p-6 max-w-3xl mx-auto">
+          <div className="bg-brand-darkGreen/10 border-2 border-brand-darkGreen rounded-xl p-6 max-w-3xl mx-auto">
             <h3 className="text-xl md:text-2xl font-bold mb-3 text-brand-darkGreen">
               Suscripción de 3 Años
             </h3>

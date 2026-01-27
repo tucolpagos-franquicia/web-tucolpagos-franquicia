@@ -37,37 +37,37 @@ const portfolioItems = [
   {
     title: 'BRE-B',
     description: 'Olvídate de las largas esperas y los trámites complicados. BRE-B cuenta con todos los bancos y billeteras digitales a nivel nacional. Puedes enviar o recibir dinero de cualquier banco o billetera de manera inmediata. Solo necesitas la llave registrada.',
-    gradient: 'from-brand-yellow to-brand-orange',
+    bgColor: 'bg-brand-orange',
     highlight: 'NUEVO',
   },
   {
     title: 'Corresponsalía Bancaria',
     description: 'El modelo de corresponsales digitales ha contribuido en gran medida a la inclusión financiera, al permitir la cobertura de los principales bancos en nuestro país. Más de 25 bancos disponibles.',
-    gradient: 'from-brand-orange to-brand-green',
+    bgColor: 'bg-brand-darkGreen',
     highlight: null,
   },
   {
     title: 'Recargas y Paquetes',
     description: 'Por muy inteligente que sea tu celular, siempre necesitará de minutos, datos y paquetes todo incluido. Recarga de minutos, datos y paquetes para todas las operadoras móviles.',
-    gradient: 'from-brand-green to-brand-darkGreen',
+    bgColor: 'bg-brand-darkGreen',
     highlight: null,
   },
   {
     title: 'Apuestas Deportivas',
     description: 'En nuestros puntos aliados podrás hacer recargas de las principales casas de apuestas deportivas online y al instante. Depósitos y retiros para plataformas de apuestas deportivas autorizadas.',
-    gradient: 'from-brand-yellow to-brand-orange',
+    bgColor: 'bg-brand-orange',
     highlight: null,
   },
   {
     title: 'Pines de Streaming & Entretenimiento',
     description: 'Olvídate de las tarjetas de crédito y obtén nuestros pines prepago para todo tipo de entretenimiento. Netflix, HBO, Prime Video, Office 365, Datacrédito, Free Fire, Payvalida, SimpleTV, Movistar TV, Movilnet, PlayStation, Wii y más.',
-    gradient: 'from-brand-orange to-brand-green',
+    bgColor: 'bg-brand-orange',
     highlight: null,
   },
   {
     title: 'Giros Venezuela',
     description: 'Giros a Venezuela con la mejor tasa. Transacciones rápidas, seguras y directas a bancos venezolanos. Tasa competitiva y transparente, transferencia segura en minutos, sin consulta en centrales de riesgo.',
-    gradient: 'from-brand-green to-brand-darkGreen',
+    bgColor: 'bg-brand-darkGreen',
     highlight: null,
   },
 ]
@@ -79,7 +79,7 @@ export default function Portfolio() {
   })
 
   return (
-    <section id="portafolio" ref={ref} className="section-padding relative overflow-hidden">
+    <section id="portafolio" ref={ref} className="section-padding relative">
       <NetworkPattern />
       <div className="container-custom relative z-10">
         <motion.div
@@ -96,16 +96,16 @@ export default function Portfolio() {
           </p>
         </motion.div>
 
-        <MobileCarousel itemsPerView={1.2} className="md:hidden">
+        <MobileCarousel itemsPerView={1.2} className="md:hidden mb-8">
           {portfolioItems.map((item, index) => (
-            <div key={index} className={`bg-gradient-to-br ${item.gradient} p-6 rounded-xl text-white relative`}>
+            <div key={index} className={`${item.bgColor} p-5 sm:p-6 rounded-xl text-white relative shadow-lg min-h-[200px] flex flex-col`}>
               {item.highlight && (
-                <div className="absolute top-4 right-4 bg-white text-brand-darkGreen text-xs font-bold px-3 py-1 rounded-full">
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white text-brand-darkGreen text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full shadow-lg z-10">
                   {item.highlight}
                 </div>
               )}
-              <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-              <p className="text-sm leading-relaxed">{item.description}</p>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 relative z-10 pr-16">{item.title}</h3>
+              <p className="text-xs sm:text-sm leading-relaxed relative z-10 flex-grow">{item.description}</p>
             </div>
           ))}
         </MobileCarousel>
@@ -117,20 +117,18 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`bg-gradient-to-br ${item.gradient} p-6 rounded-2xl text-white relative transform hover:scale-[1.03] transition-all duration-300 overflow-hidden`}
+              className={`${item.bgColor} p-6 lg:p-8 rounded-2xl text-white relative transform hover:scale-[1.03] transition-all duration-300 flex flex-col min-h-[220px]`}
               style={{
                 boxShadow: '0 20px 40px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1)',
               }}
             >
-              {/* Efecto de brillo sutil */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-16 -mt-16"></div>
               {item.highlight && (
                 <div className="absolute top-4 right-4 bg-white text-brand-darkGreen text-xs font-bold px-4 py-1.5 rounded-full shadow-lg z-10">
                   {item.highlight}
                 </div>
               )}
-              <h3 className="text-xl font-bold mb-3 relative z-10 drop-shadow-md">{item.title}</h3>
-              <p className="text-sm leading-relaxed relative z-10">{item.description}</p>
+              <h3 className="text-xl lg:text-2xl font-bold mb-3 relative z-10 drop-shadow-md pr-16">{item.title}</h3>
+              <p className="text-sm lg:text-base leading-relaxed relative z-10 flex-grow">{item.description}</p>
             </motion.div>
           ))}
         </div>

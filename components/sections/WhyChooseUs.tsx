@@ -39,7 +39,7 @@ export default function WhyChooseUs() {
   })
 
   return (
-    <section id="beneficios" ref={ref} className="section-padding relative overflow-hidden">
+    <section id="beneficios" ref={ref} className="section-padding relative">
       <NetworkPattern />
       <div className="container-custom relative z-10">
         <motion.div
@@ -56,21 +56,21 @@ export default function WhyChooseUs() {
           </p>
         </motion.div>
 
-        <MobileCarousel itemsPerView={1.2} className="md:hidden">
+        <MobileCarousel itemsPerView={1.2} className="md:hidden mb-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="card text-center">
+            <div key={index} className="card text-center min-h-[240px] flex flex-col">
               <span 
-                className="material-symbols-outlined mx-auto block mb-4"
+                className="material-symbols-outlined mx-auto block mb-3 sm:mb-4"
                 style={{ 
-                  fontSize: '56px', 
+                  fontSize: '48px', 
                   color: benefit.iconColor,
                   lineHeight: '1'
                 }}
               >
                 {benefit.icon}
               </span>
-              <h3 className="text-xl font-bold mb-3 text-brand-darkGreen">{benefit.title}</h3>
-              <p className="text-gray-700">{benefit.description}</p>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-brand-darkGreen">{benefit.title}</h3>
+              <p className="text-sm sm:text-base text-gray-700 flex-grow">{benefit.description}</p>
             </div>
           ))}
         </MobileCarousel>
@@ -82,20 +82,20 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="card text-center"
+              className="card text-center min-h-[280px] flex flex-col"
             >
               <span 
                 className="material-symbols-outlined mx-auto block mb-4"
                 style={{ 
-                  fontSize: '60px', 
+                  fontSize: '64px', 
                   color: benefit.iconColor,
                   lineHeight: '1'
                 }}
               >
                 {benefit.icon}
               </span>
-              <h3 className="text-xl font-bold mb-3 text-brand-darkGreen">{benefit.title}</h3>
-              <p className="text-gray-700">{benefit.description}</p>
+              <h3 className="text-xl lg:text-2xl font-bold mb-3 text-brand-darkGreen">{benefit.title}</h3>
+              <p className="text-gray-700 flex-grow">{benefit.description}</p>
             </motion.div>
           ))}
         </div>

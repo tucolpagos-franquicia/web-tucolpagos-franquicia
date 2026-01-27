@@ -19,7 +19,7 @@ export default function Platform() {
   })
 
   return (
-    <section ref={ref} className="section-padding relative overflow-hidden">
+    <section ref={ref} className="section-padding relative">
       <NetworkPattern />
       <div className="container-custom relative z-10">
         <motion.div
@@ -36,11 +36,11 @@ export default function Platform() {
           </p>
         </motion.div>
 
-        <MobileCarousel itemsPerView={1.2} className="md:hidden">
+        <MobileCarousel itemsPerView={1.2} className="md:hidden mb-8">
           {features.map((feature, index) => (
-            <div key={index} className="card">
-              <h3 className="text-xl font-bold mb-3 text-brand-darkGreen">{feature.title}</h3>
-              <p className="text-gray-700">{feature.description}</p>
+            <div key={index} className="card min-h-[180px]">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-brand-darkGreen">{feature.title}</h3>
+              <p className="text-sm sm:text-base text-gray-700">{feature.description}</p>
             </div>
           ))}
         </MobileCarousel>
@@ -52,10 +52,10 @@ export default function Platform() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="card"
+              className="card min-h-[200px] flex flex-col"
             >
-              <h3 className="text-xl font-bold mb-3 text-brand-darkGreen">{feature.title}</h3>
-              <p className="text-gray-700">{feature.description}</p>
+              <h3 className="text-xl lg:text-2xl font-bold mb-3 text-brand-darkGreen">{feature.title}</h3>
+              <p className="text-gray-700 flex-grow">{feature.description}</p>
             </motion.div>
           ))}
         </div>

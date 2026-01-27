@@ -19,7 +19,7 @@ export default function HowItWorks() {
   })
 
   return (
-    <section ref={ref} className="section-padding relative overflow-hidden">
+    <section ref={ref} className="section-padding relative">
       <NetworkPattern />
       <div className="container-custom relative z-10">
         <motion.div
@@ -36,7 +36,7 @@ export default function HowItWorks() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -45,11 +45,11 @@ export default function HowItWorks() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="bg-brand-darkGreen text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+              <div className="bg-brand-darkGreen text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4">
                 {step.number}
               </div>
-              <h3 className="text-xl font-bold mb-2 text-brand-darkGreen">{step.title}</h3>
-              <p className="text-gray-700">{step.description}</p>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-brand-darkGreen">{step.title}</h3>
+              <p className="text-sm sm:text-base text-gray-700">{step.description}</p>
             </motion.div>
           ))}
         </div>
