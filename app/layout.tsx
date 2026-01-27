@@ -45,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={poppins.variable}>
-      <body className="font-body antialiased">
+    <html lang="es" className={poppins.variable} style={{ '--font-poppins': poppins.style.fontFamily } as React.CSSProperties}>
+      <body className="font-body antialiased" style={{ fontFamily: 'var(--font-poppins), Poppins, sans-serif' }}>
         <GoogleAnalytics />
         {children}
       </body>
