@@ -10,7 +10,7 @@ const plans = [
     name: 'PLAN ESTÁNDAR',
     icon: 'work',
     price: '$3.960.000',
-    investment: 'Inversión inicial en COP',
+    investment: 'Incluye saldo inicial',
     duration: 'Suscripción 3 años',
     features: [
       'Plataforma Digital',
@@ -54,7 +54,7 @@ const plans = [
     name: 'PLAN EMPRESARIAL',
     icon: 'business',
     price: '$9.960.000',
-    investment: 'Máximo equipamiento COP',
+    investment: 'Incluye saldo inicial',
     duration: 'Suscripción 3 años',
     features: [
       'Plataforma Digital',
