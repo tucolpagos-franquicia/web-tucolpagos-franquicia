@@ -9,36 +9,36 @@ import Image from 'next/image'
 const testimonials = [
   { 
     name: 'Carlos Rodríguez', 
-    city: 'Medellín, Antioquia', 
-    income: '$18M', 
+    city: 'Montería, Córdoba', 
+    months: 12, 
     quote: 'En 6 meses ya recuperé mi inversión. La plataforma es muy fácil de usar y el soporte siempre está disponible.',
     image: 'puntos-venta (1).jpg'
   },
   { 
     name: 'María González', 
-    city: 'Bogotá, Cundinamarca', 
-    income: '$22M', 
+    city: 'Rioacha, Guajira', 
+    months: 18, 
     quote: 'Lo mejor es la variedad de servicios. Mis clientes pueden pagar todo en un solo lugar. Muy recomendado.',
     image: 'puntos-venta (2).jpg'
   },
   { 
     name: 'Juan Pérez', 
-    city: 'Cali, Valle del Cauca', 
-    income: '$15M', 
+    city: 'Valledupar, Cesar', 
+    months: 24, 
     quote: 'La capacitación fue excelente. Desde el primer día supe cómo operar y generar ingresos. Excelente oportunidad.',
     image: 'puntos-venta (3).jpg'
   },
   { 
     name: 'Ana Martínez', 
-    city: 'Barranquilla, Atlántico', 
-    income: '$20M', 
+    city: 'Medellín, Antioquia', 
+    months: 30, 
     quote: 'Excelente oportunidad de negocio. La inversión se recupera rápido y los ingresos son constantes.',
     image: 'puntos-venta (4).jpg'
   },
   { 
     name: 'Luis Hernández', 
     city: 'Pereira, Risaralda', 
-    income: '$16M', 
+    months: 15, 
     quote: 'El acompañamiento es excepcional. Siempre están disponibles para resolver cualquier duda.',
     image: 'puntos-venta (5).jpg'
   },
@@ -51,7 +51,7 @@ export default function Testimonials() {
   })
 
   return (
-    <section id="testimonios" ref={ref} className="section-padding relative overflow-hidden">
+    <section id="testimonios" ref={ref} className="section-padding relative">
       <NetworkPattern />
       <div className="container-custom relative z-10">
         <motion.div
@@ -82,7 +82,7 @@ export default function Testimonials() {
               <p className="text-gray-700 mb-4">&quot;{testimonial.quote}&quot;</p>
               <p className="font-semibold text-brand-darkGreen mb-1">{testimonial.name}</p>
               <p className="text-gray-600">{testimonial.city}</p>
-              <p className="text-brand-green font-bold mt-2">Ingresos mensuales: {testimonial.income}</p>
+              <p className="text-brand-green font-bold mt-2">{testimonial.months} Meses con TuColpagos</p>
             </div>
           ))}
         </MobileCarousel>
@@ -107,7 +107,7 @@ export default function Testimonials() {
               <p className="text-gray-700 mb-4">&quot;{testimonial.quote}&quot;</p>
               <p className="font-semibold text-brand-darkGreen mb-1">{testimonial.name}</p>
               <p className="text-gray-600">{testimonial.city}</p>
-              <p className="text-brand-green font-bold mt-2">Ingresos mensuales: {testimonial.income}</p>
+              <p className="text-brand-green font-bold mt-2">{testimonial.months} Meses con TuColpagos</p>
             </motion.div>
           ))}
         </div>
