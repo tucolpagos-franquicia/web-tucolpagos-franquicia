@@ -9,8 +9,8 @@ const plans = [
   {
     name: 'PLAN ESTÁNDAR',
     icon: 'work',
-    price: '$3.960.000',
-    investment: 'Incluye saldo inicial para operar',
+    price: '$6.960.000',
+    investment: '+$3.000.000 de cupo en plataforma',
     duration: 'Suscripción 3 años',
     features: [
       'Plataforma Digital',
@@ -23,13 +23,13 @@ const plans = [
     exclusive: 'EXCLUSIVO: CLIENTES CON NEGOCIO',
     bgColor: 'bg-brand-darkGreen',
     popular: false,
-    whatsappMessage: 'Hola, estoy interesado en el PLAN ESTÁNDAR de TuColpagos por $3.960.000. Me gustaría recibir más información.',
+    whatsappMessage: 'Hola, estoy interesado en el PLAN ESTÁNDAR de TuColpagos por $6.960.000. Me gustaría recibir más información.',
   },
   {
     name: 'PLAN EMPRENDEDOR',
     icon: 'rocket_launch',
-    price: '$6.960.000',
-    investment: 'Incluye saldo inicial para operar',
+    price: '$11.960.000',
+    investment: '+$5.000.000 de cupo en plataforma',
     duration: 'Suscripción 3 años',
     features: [
       'Plataforma Digital',
@@ -48,13 +48,13 @@ const plans = [
     exclusive: null,
     bgColor: 'bg-brand-orange',
     popular: true,
-    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRENDEDOR de TuColpagos por $6.960.000. Me gustaría recibir más información.',
+    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRENDEDOR de TuColpagos por $11.960.000. Me gustaría recibir más información.',
   },
   {
     name: 'PLAN EMPRESARIAL',
     icon: 'business',
-    price: '$9.960.000',
-    investment: 'Incluye saldo inicial para operar',
+    price: '$16.960.000',
+    investment: '+$7.000.000 de cupo en plataforma',
     duration: 'Suscripción 3 años',
     features: [
       'Plataforma Digital',
@@ -78,7 +78,7 @@ const plans = [
     exclusive: null,
     bgColor: 'bg-brand-darkGreen',
     popular: false,
-    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRESARIAL de TuColpagos por $9.960.000. Me gustaría recibir más información.',
+    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRESARIAL de TuColpagos por $16.960.000. Me gustaría recibir más información.',
   },
 ]
 
@@ -136,7 +136,7 @@ export default function SubscriptionPlans() {
                 <span>{plan.name}</span>
               </h3>
               <div className="text-4xl font-bold mb-2 relative z-10 drop-shadow-md">{plan.price}</div>
-              <div className="text-sm mb-4 opacity-90 relative z-10">{plan.investment}</div>
+              <div className="text-sm mb-4 opacity-90 relative z-10 font-bold">{plan.investment}</div>
               <div className="text-sm font-semibold mb-4 border-t border-white/30 pt-4 relative z-10">
                 {plan.duration}
               </div>
@@ -193,7 +193,7 @@ export default function SubscriptionPlans() {
                 <span className="drop-shadow-md">{plan.name}</span>
               </h3>
               <div className="text-4xl md:text-5xl font-bold mb-3 relative z-10 drop-shadow-lg">{plan.price}</div>
-              <div className="text-sm mb-5 opacity-95 relative z-10 font-medium">{plan.investment}</div>
+              <div className="text-sm mb-5 opacity-95 relative z-10 font-bold">{plan.investment}</div>
               <div className="text-base font-semibold mb-6 border-t border-white/30 pt-5 relative z-10">
                 {plan.duration}
               </div>
