@@ -10,7 +10,7 @@ const plans = [
     name: 'PLAN ESTÁNDAR',
     icon: 'work',
     price: '$6.960.000',
-    investment: '+$3.000.000 de cupo en plataforma',
+    investment: 'incluye $3.000.000 en plataforma',
     duration: 'Suscripción 3 años',
     features: [
       'Plataforma Digital',
@@ -29,7 +29,7 @@ const plans = [
     name: 'PLAN EMPRENDEDOR',
     icon: 'rocket_launch',
     price: '$11.960.000',
-    investment: '+$5.000.000 de cupo en plataforma',
+    investment: 'incluye $5.000.000 en plataforma',
     duration: 'Suscripción 3 años',
     features: [
       'Plataforma Digital',
@@ -54,7 +54,7 @@ const plans = [
     name: 'PLAN EMPRESARIAL',
     icon: 'business',
     price: '$16.960.000',
-    investment: '+$7.000.000 de cupo en plataforma',
+    investment: 'incluye $7.000.000 en plataforma',
     duration: 'Suscripción 3 años',
     features: [
       'Plataforma Digital',
