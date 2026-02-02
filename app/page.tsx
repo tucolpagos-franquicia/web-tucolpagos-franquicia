@@ -14,6 +14,7 @@ import Testimonials from '@/components/sections/Testimonials'
 import Platform from '@/components/sections/Platform'
 import FAQ from '@/components/sections/FAQ'
 import CTA from '@/components/sections/CTA'
+import Sustainability from '@/components/sections/Sustainability'
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       <Platform />
       <FAQ />
       <CTA />
+      <Sustainability />
       <Footer />
       <WhatsAppButton />
     </main>
