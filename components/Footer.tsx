@@ -55,7 +55,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a href="#beneficios" className="text-gray-300 hover:text-white transition-colors">
-                  Beneficios
+                  Nosotros
                 </a>
               </li>
               <li>
@@ -69,18 +69,18 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#requisitos" className="text-gray-300 hover:text-white transition-colors">
-                  Requisitos
-                </a>
-              </li>
-              <li>
-                <a href="#comisiones" className="text-gray-300 hover:text-white transition-colors">
-                  Comisiones
+                <a href="#sostenibilidad" className="text-gray-300 hover:text-white transition-colors">
+                  Sostenibilidad
                 </a>
               </li>
               <li>
                 <a href="#faq" className="text-gray-300 hover:text-white transition-colors">
-                  Preguntas Frecuentes
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a href="#contacto" className="text-gray-300 hover:text-white transition-colors">
+                  Contacto
                 </a>
               </li>
             </ul>

@@ -118,28 +118,29 @@ export default function SubscriptionPlans() {
           </p>
         </motion.div>
 
-        {/* Mobile Carousel */}
-        <MobileCarousel itemsPerView={1.2} className="md:hidden mb-8">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`${plan.bgColor} p-6 rounded-2xl text-white shadow-2xl relative ${
-                plan.popular ? 'ring-4 ring-brand-yellow ring-offset-4 pt-12' : ''
-              }`}
-              style={{
-                boxShadow: '0 20px 40px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1)',
-              }}
-            >
-              {plan.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
-                  <div className="bg-brand-yellow text-brand-darkGreen text-[10px] sm:text-xs font-black px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-2xl border-2 border-white/50 uppercase tracking-wider whitespace-nowrap flex items-center justify-center gap-1">
-                    <span className="material-symbols-outlined text-xs sm:text-sm">star</span>
-                    <span>MÁS POPULAR</span>
+        {/* Mobile Carousel - pt-12 deja espacio para el badge MÁS POPULAR; px-2 evita que se corte */}
+        <div className="md:hidden mb-8 pt-12 px-2">
+          <MobileCarousel itemsPerView={1.2}>
+            {plans.map((plan, index) => (
+              <div
+                key={index}
+                className={`${plan.bgColor} p-6 rounded-2xl text-white shadow-2xl relative ${
+                  plan.popular ? 'ring-4 ring-brand-yellow ring-offset-4 pt-12 mt-8' : ''
+                }`}
+                style={{
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1)',
+                }}
+              >
+                {plan.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20 w-full max-w-[200px] flex justify-center px-2 box-content">
+                    <div className="bg-brand-yellow text-brand-darkGreen text-[10px] sm:text-xs font-black px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-2xl border-2 border-white/50 uppercase tracking-wider whitespace-nowrap flex items-center justify-center gap-1 shrink-0">
+                      <span className="material-symbols-outlined text-xs sm:text-sm">star</span>
+                      <span>MÁS POPULAR</span>
+                    </div>
                   </div>
-                </div>
-              )}
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 flex flex-wrap items-center justify-center gap-2 relative z-10 mt-6 sm:mt-4 text-center">
-                <span className="material-symbols-outlined text-3xl sm:text-4xl drop-shadow-lg flex-shrink-0">{plan.icon}</span>
+                )}
+              <h3 className="text-2xl font-bold mb-3 flex flex-wrap items-center justify-center gap-2 relative z-10 mt-6 sm:mt-4 text-center">
+                <span className="material-symbols-outlined text-4xl drop-shadow-lg flex-shrink-0">{plan.icon}</span>
                 <span className="break-words">{plan.name}</span>
               </h3>
               <div className="text-4xl font-bold mb-2 relative z-10 drop-shadow-md">{plan.price}</div>
@@ -173,7 +174,8 @@ export default function SubscriptionPlans() {
               </a>
             </div>
           ))}
-        </MobileCarousel>
+          </MobileCarousel>
+        </div>
 
         {/* Desktop Grid */}
         <div className="hidden md:grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">

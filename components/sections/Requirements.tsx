@@ -3,6 +3,7 @@
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import NetworkPattern from '@/components/NetworkPattern'
+import MobileCarousel from '@/components/MobileCarousel'
 
 const requirements = [
   {
@@ -60,7 +61,28 @@ export default function Requirements() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-8">
+        {/* Carrusel móvil: 4 elementos */}
+        <MobileCarousel itemsPerView={1.2} className="md:hidden mb-8">
+          {requirements.map((req, index) => (
+            <div key={index} className="card text-center min-h-[200px] flex flex-col">
+              <span 
+                className="material-symbols-outlined mx-auto block mb-4"
+                style={{ 
+                  fontSize: '48px', 
+                  color: req.iconColor,
+                  lineHeight: '1'
+                }}
+              >
+                {req.icon}
+              </span>
+              <h3 className="text-lg font-bold mb-2 text-brand-darkGreen">{req.title}</h3>
+              <p className="text-gray-700 text-sm flex-grow">{req.description}</p>
+            </div>
+          ))}
+        </MobileCarousel>
+
+        {/* Grid desktop */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-8">
           {requirements.map((req, index) => (
             <motion.div
               key={index}

@@ -3,6 +3,7 @@
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import NetworkPattern from '@/components/NetworkPattern'
+import MobileCarousel from '@/components/MobileCarousel'
 
 const blocks = [
   {
@@ -52,7 +53,32 @@ export default function Sustainability() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        {/* Carrusel móvil: 3 elementos */}
+        <MobileCarousel itemsPerView={1.2} className="md:hidden mb-8">
+          {blocks.map((block, index) => (
+            <div
+              key={index}
+              className="card flex flex-col p-6 min-h-[220px] hover:shadow-2xl transition-shadow duration-300"
+            >
+              <span
+                className="material-symbols-outlined mb-4 text-brand-darkGreen"
+                style={{ fontSize: '48px', lineHeight: '1' }}
+                aria-hidden
+              >
+                {block.icon}
+              </span>
+              <h3 className="text-xl font-bold mb-3 text-brand-darkGreen">
+                {block.title}
+              </h3>
+              <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+                {block.description}
+              </p>
+            </div>
+          ))}
+        </MobileCarousel>
+
+        {/* Grid desktop */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {blocks.map((block, index) => (
             <motion.div
               key={index}

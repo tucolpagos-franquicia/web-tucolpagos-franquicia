@@ -93,11 +93,11 @@ export default function Header() {
         </div>
 
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            mobileMenuOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
+          className={`md:hidden transition-all duration-300 ease-in-out ${
+            mobileMenuOpen ? 'max-h-[85vh] overflow-y-auto opacity-100 mt-4' : 'max-h-0 overflow-hidden opacity-0'
           }`}
         >
-          <div className="flex flex-col space-y-4 py-4 border-t border-gray-200">
+          <div className="flex flex-col space-y-4 py-4 pb-6 border-t border-gray-200">
             <a href="#beneficios" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
               Nosotros
             </a>
