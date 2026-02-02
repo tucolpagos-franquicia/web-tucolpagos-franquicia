@@ -138,9 +138,9 @@ export default function SubscriptionPlans() {
                   </div>
                 </div>
               )}
-              <h3 className="text-2xl font-bold mb-3 flex items-center justify-center gap-2 relative z-10 mt-6 sm:mt-4">
-                <span className="material-symbols-outlined text-4xl drop-shadow-lg">{plan.icon}</span>
-                <span>{plan.name}</span>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 flex flex-wrap items-center justify-center gap-2 relative z-10 mt-6 sm:mt-4 text-center">
+                <span className="material-symbols-outlined text-3xl sm:text-4xl drop-shadow-lg flex-shrink-0">{plan.icon}</span>
+                <span className="break-words">{plan.name}</span>
               </h3>
               <div className="text-4xl font-bold mb-2 relative z-10 drop-shadow-md">{plan.price}</div>
               <div className="text-sm mb-4 opacity-90 relative z-10 font-bold">{plan.investment}</div>

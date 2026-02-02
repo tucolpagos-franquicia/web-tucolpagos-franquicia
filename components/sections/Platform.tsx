@@ -6,10 +6,10 @@ import NetworkPattern from '@/components/NetworkPattern'
 import MobileCarousel from '@/components/MobileCarousel'
 
 const features = [
-  { title: 'Interfaz Intuitiva', description: 'Plataforma fácil de usar, diseñada para que cualquier persona pueda operarla sin complicaciones.' },
-  { title: 'Seguridad Máxima', description: 'Encriptación de datos, certificaciones de seguridad y cumplimiento de normativas financieras.' },
-  { title: 'Reportes 24/7', description: 'Accede a reportes detallados de ventas, comisiones y estadísticas en tiempo real desde cualquier dispositivo.' },
-  { title: 'Integración Bancaria', description: 'Conectado con los principales bancos de Colombia para transacciones seguras y rápidas.' },
+  { title: 'Interfaz Intuitiva', icon: 'touch_app', description: 'Plataforma fácil de usar, diseñada para que cualquier persona pueda operarla sin complicaciones.' },
+  { title: 'Seguridad Máxima', icon: 'shield', description: 'Encriptación de datos, certificaciones de seguridad y cumplimiento de normativas financieras.' },
+  { title: 'Reportes 24/7', icon: 'analytics', description: 'Accede a reportes detallados de ventas, comisiones y estadísticas en tiempo real desde cualquier dispositivo.' },
+  { title: 'Integración Bancaria', icon: 'account_balance', description: 'Conectado con los principales bancos de Colombia para transacciones seguras y rápidas.' },
 ]
 
 export default function Platform() {
@@ -39,6 +39,7 @@ export default function Platform() {
         <MobileCarousel itemsPerView={1.2} className="md:hidden mb-8">
           {features.map((feature, index) => (
             <div key={index} className="card min-h-[180px]">
+              <span className="material-symbols-outlined block mb-3 text-brand-darkGreen" style={{ fontSize: '48px', lineHeight: '1' }}>{feature.icon}</span>
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-brand-darkGreen">{feature.title}</h3>
               <p className="text-sm sm:text-base text-gray-700">{feature.description}</p>
             </div>
@@ -54,6 +55,7 @@ export default function Platform() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="card min-h-[200px] flex flex-col"
             >
+              <span className="material-symbols-outlined block mb-4 text-brand-darkGreen" style={{ fontSize: '56px', lineHeight: '1' }}>{feature.icon}</span>
               <h3 className="text-xl lg:text-2xl font-bold mb-3 text-brand-darkGreen">{feature.title}</h3>
               <p className="text-gray-700 flex-grow">{feature.description}</p>
             </motion.div>

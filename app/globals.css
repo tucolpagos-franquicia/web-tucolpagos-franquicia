@@ -54,6 +54,13 @@ main {
   background: transparent;
   position: relative;
   z-index: 1;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Custom Scrollbar */

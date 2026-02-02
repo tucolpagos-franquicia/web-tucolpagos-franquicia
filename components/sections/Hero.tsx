@@ -14,7 +14,7 @@ export default function Hero() {
   // Updated: Hero section with "Potencia tu Negocio"
 
   return (
-    <section id="hero" ref={ref} className="section-padding relative overflow-hidden min-h-[85vh] flex items-center pt-24 md:pt-32">
+    <section id="hero" ref={ref} className="section-padding relative overflow-hidden min-h-[85vh] flex items-center pt-24 md:pt-32 w-full min-w-0">
       {/* Network Pattern */}
       <NetworkPattern />
       
@@ -29,7 +29,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight px-2">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight px-2 break-words">
               <span className="text-brand-darkerGreen">Potencia tu Negocio o Emprendimiento con </span>
               <span className="text-brand-darkGreen font-semibold">TuColpagos</span>
             </h1>

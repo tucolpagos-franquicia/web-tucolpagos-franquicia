@@ -45,7 +45,7 @@ export default function MobileCarousel({ children, itemsPerView = 1.2, className
     <div className={`relative ${className}`}>
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-4"
+        className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-4 w-full max-w-full min-w-0"
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
