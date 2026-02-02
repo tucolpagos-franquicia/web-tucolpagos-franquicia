@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 import NetworkPattern from '@/components/NetworkPattern'
 import MobileCarousel from '@/components/MobileCarousel'
 
+const categorySubtitles = ['Plataforma Digital', 'Marketing & Branding', 'Infraestructura & Diseño', 'Equipamiento Tecnológico']
+
 const plans = [
   {
     name: 'PLAN ESTÁNDAR',
@@ -142,14 +144,17 @@ export default function SubscriptionPlans() {
               </h3>
               <div className="text-4xl font-bold mb-2 relative z-10 drop-shadow-md">{plan.price}</div>
               <div className="text-sm mb-4 opacity-90 relative z-10 font-bold">{plan.investment}</div>
-              <div className="text-sm font-semibold mb-4 border-t border-white/30 pt-4 relative z-10">
-                {plan.duration}
-              </div>
               <ul className="space-y-2.5 text-sm mb-4 relative z-10">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start">
-                    <span className="mr-2 text-lg font-bold">✓</span>
-                    <span className="leading-relaxed">{feature}</span>
+                    {categorySubtitles.includes(feature) ? (
+                      <span className="text-base font-bold leading-relaxed">{feature}</span>
+                    ) : (
+                      <>
+                        <span className="mr-2 text-lg font-bold">✓</span>
+                        <span className="leading-relaxed">{feature}</span>
+                      </>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -199,14 +204,17 @@ export default function SubscriptionPlans() {
               </h3>
               <div className="text-4xl md:text-5xl font-bold mb-3 relative z-10 drop-shadow-lg">{plan.price}</div>
               <div className="text-sm mb-5 opacity-95 relative z-10 font-bold">{plan.investment}</div>
-              <div className="text-base font-semibold mb-6 border-t border-white/30 pt-5 relative z-10">
-                {plan.duration}
-              </div>
               <ul className="space-y-3.5 text-sm mb-6 flex-grow relative z-10">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start group">
-                    <span className="mr-3 text-xl font-bold group-hover:scale-110 transition-transform">✓</span>
-                    <span className="leading-relaxed">{feature}</span>
+                    {categorySubtitles.includes(feature) ? (
+                      <span className="text-base font-bold leading-relaxed">{feature}</span>
+                    ) : (
+                      <>
+                        <span className="mr-3 text-xl font-bold group-hover:scale-110 transition-transform">✓</span>
+                        <span className="leading-relaxed">{feature}</span>
+                      </>
+                    )}
                   </li>
                 ))}
               </ul>
