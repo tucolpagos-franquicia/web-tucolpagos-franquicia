@@ -135,7 +135,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300 text-sm">
-          © 2025 TuColpagos Colombia SAS. Todos los derechos reservados.
+          © 2026 TuColpagos Colombia SAS. Todos los derechos reservados.
         </div>
       </div>
     </footer>
