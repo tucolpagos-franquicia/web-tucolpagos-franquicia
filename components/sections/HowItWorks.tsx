@@ -5,11 +5,11 @@ import { motion } from 'framer-motion'
 import NetworkPattern from '@/components/NetworkPattern'
 
 const steps = [
-  { number: '01', title: 'Solicita Información', description: 'Completa el formulario o contáctanos directamente. Nuestro equipo se pondrá en contacto contigo en menos de 24 horas.' },
-  { number: '02', title: 'Evaluación', description: 'Revisamos tu perfil y ubicación para asegurar que cumples con los requisitos y que hay oportunidad en tu zona.' },
-  { number: '03', title: 'Capacitación', description: 'Recibe capacitación completa sobre la plataforma, procesos comerciales y mejores prácticas para el éxito.' },
-  { number: '04', title: 'Credenciales y Activación', description: 'Obtén tus credenciales de acceso, configura tu punto de venta y comienza a operar con nuestro respaldo.' },
-  { number: '05', title: 'Genera Ingresos', description: 'Comienza a atender clientes y generar comisiones desde el primer día. Monitorea todo desde tu dashboard.' },
+  { number: '01', icon: 'contact_page', title: 'Solicita Información', description: 'Completa el formulario o contáctanos directamente. Nuestro equipo se pondrá en contacto contigo en menos de 24 horas.' },
+  { number: '02', icon: 'fact_check', title: 'Evaluación', description: 'Revisamos tu perfil y ubicación para asegurar que cumples con los requisitos y que hay oportunidad en tu zona.' },
+  { number: '03', icon: 'school', title: 'Capacitación', description: 'Recibe capacitación completa sobre la plataforma, procesos comerciales y mejores prácticas para el éxito.' },
+  { number: '04', icon: 'vpn_key', title: 'Credenciales y Activación', description: 'Obtén tus credenciales de acceso, configura tu punto de venta y comienza a operar con nuestro respaldo.' },
+  { number: '05', icon: 'trending_up', title: 'Genera Ingresos', description: 'Comienza a atender clientes y generar comisiones desde el primer día. Monitorea todo desde tu dashboard.' },
 ]
 
 export default function HowItWorks() {
@@ -19,7 +19,7 @@ export default function HowItWorks() {
   })
 
   return (
-    <section ref={ref} className="section-padding relative">
+    <section id="proceso" ref={ref} className="section-padding relative">
       <NetworkPattern />
       <div className="container-custom relative z-10">
         <motion.div
@@ -45,8 +45,8 @@ export default function HowItWorks() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="bg-brand-darkGreen text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4">
-                {step.number}
+              <div className="bg-brand-darkGreen text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="material-symbols-outlined text-2xl sm:text-3xl">{step.icon}</span>
               </div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-brand-darkGreen">{step.title}</h3>
               <p className="text-sm sm:text-base text-gray-700">{step.description}</p>

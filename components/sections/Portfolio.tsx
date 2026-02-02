@@ -36,36 +36,42 @@ const billeteras = [
 const portfolioItems = [
   {
     title: 'BRE-B',
+    icon: 'swap_horiz',
     description: 'Olvídate de las largas esperas y los trámites complicados. BRE-B cuenta con todos los bancos y billeteras digitales a nivel nacional. Puedes enviar o recibir dinero de cualquier banco o billetera de manera inmediata. Solo necesitas la llave registrada.',
     bgColor: 'bg-brand-orange',
     highlight: 'NUEVO',
   },
   {
     title: 'Corresponsalía Bancaria',
+    icon: 'account_balance',
     description: 'El modelo de corresponsales digitales ha contribuido en gran medida a la inclusión financiera, al permitir la cobertura de los principales bancos en nuestro país. Más de 25 bancos disponibles.',
     bgColor: 'bg-brand-darkGreen',
     highlight: null,
   },
   {
     title: 'Recargas y Paquetes',
+    icon: 'phonelink_ring',
     description: 'Por muy inteligente que sea tu celular, siempre necesitará de minutos, datos y paquetes todo incluido. Recarga de minutos, datos y paquetes para todas las operadoras móviles.',
     bgColor: 'bg-brand-darkGreen',
     highlight: null,
   },
   {
     title: 'Apuestas Deportivas',
+    icon: 'sports_esports',
     description: 'En nuestros puntos aliados podrás hacer recargas de las principales casas de apuestas deportivas online y al instante. Depósitos y retiros para plataformas de apuestas deportivas autorizadas.',
     bgColor: 'bg-brand-orange',
     highlight: null,
   },
   {
     title: 'Pines de Streaming & Entretenimiento',
+    icon: 'live_tv',
     description: 'Olvídate de las tarjetas de crédito y obtén nuestros pines prepago para todo tipo de entretenimiento. Netflix, HBO, Prime Video, Office 365, Datacrédito, Free Fire, Payvalida, SimpleTV, Movistar TV, Movilnet, PlayStation, Wii y más.',
     bgColor: 'bg-brand-orange',
     highlight: null,
   },
   {
     title: 'Giros Venezuela',
+    icon: 'payments',
     description: 'Giros a Venezuela con la mejor tasa. Transacciones rápidas, seguras y directas a bancos venezolanos. Tasa competitiva y transparente, transferencia segura en minutos, sin consulta en centrales de riesgo.',
     bgColor: 'bg-brand-darkGreen',
     highlight: null,
@@ -104,7 +110,10 @@ export default function Portfolio() {
                   {item.highlight}
                 </div>
               )}
-              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 relative z-10 pr-16">{item.title}</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 relative z-10 pr-16 flex items-center gap-2">
+                <span className="material-symbols-outlined text-2xl">{item.icon}</span>
+                <span>{item.title}</span>
+              </h3>
               <p className="text-xs sm:text-sm leading-relaxed relative z-10 flex-grow">{item.description}</p>
             </div>
           ))}
@@ -127,7 +136,10 @@ export default function Portfolio() {
                   {item.highlight}
                 </div>
               )}
-              <h3 className="text-xl lg:text-2xl font-bold mb-3 relative z-10 drop-shadow-md pr-16">{item.title}</h3>
+              <h3 className="text-xl lg:text-2xl font-bold mb-3 relative z-10 drop-shadow-md pr-16 flex items-center gap-2">
+                <span className="material-symbols-outlined text-3xl">{item.icon}</span>
+                <span>{item.title}</span>
+              </h3>
               <p className="text-sm lg:text-base leading-relaxed relative z-10 flex-grow">{item.description}</p>
             </motion.div>
           ))}

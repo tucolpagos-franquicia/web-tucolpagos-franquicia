@@ -43,7 +43,7 @@ export default function TheOpportunity() {
   })
 
   return (
-    <section ref={ref} className="section-padding relative">
+    <section id="oportunidad" ref={ref} className="section-padding relative">
       <NetworkPattern />
       <DecorativeCurves />
       <div className="container-custom relative z-10">
@@ -85,7 +85,7 @@ export default function TheOpportunity() {
           className="text-center mb-8"
         >
           <h3 className="text-2xl md:text-3xl font-bold mb-6 text-brand-darkGreen">
-            Nuestras agencias TuColpagos te ofrecen:
+            Nuestros corresponsales TuColpagos te ofrecen:
           </h3>
         </motion.div>
 

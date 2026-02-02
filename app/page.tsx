@@ -26,6 +26,7 @@ export default function Home() {
       <SubscriptionPlans />
       <Portfolio />
       <Benefits />
+      <Sustainability />
       <Requirements />
       <Commissions />
       <HowItWorks />
@@ -33,7 +34,6 @@ export default function Home() {
       <Platform />
       <FAQ />
       <CTA />
-      <Sustainability />
       <Footer />
       <WhatsAppButton />
     </main>

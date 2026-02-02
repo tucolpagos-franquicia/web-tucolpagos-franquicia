@@ -19,7 +19,7 @@ export default function Platform() {
   })
 
   return (
-    <section ref={ref} className="section-padding relative">
+    <section id="plataforma" ref={ref} className="section-padding relative">
       <NetworkPattern />
       <div className="container-custom relative z-10">
         <motion.div

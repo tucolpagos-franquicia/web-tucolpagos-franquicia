@@ -39,27 +39,30 @@ export default function Header() {
             />
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#beneficios" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
-              Beneficios
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <a href="#beneficios" className="text-gray-700 hover:text-brand-darkGreen transition-colors whitespace-nowrap">
+              Nosotros
             </a>
-            <a href="#planes" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
+            <a href="#planes" className="text-gray-700 hover:text-brand-darkGreen transition-colors whitespace-nowrap">
               Planes
             </a>
-            <a href="#portafolio" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
+            <a href="#portafolio" className="text-gray-700 hover:text-brand-darkGreen transition-colors whitespace-nowrap">
               Portafolio
             </a>
-            <a href="#comisiones" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
-              Comisiones
+            <a href="#sostenibilidad" className="text-gray-700 hover:text-brand-darkGreen transition-colors whitespace-nowrap">
+              Sostenibilidad
             </a>
-            <a href="#faq" className="text-gray-700 hover:text-brand-darkGreen transition-colors">
+            <a href="#faq" className="text-gray-700 hover:text-brand-darkGreen transition-colors whitespace-nowrap">
               FAQ
+            </a>
+            <a href="#contacto" className="text-gray-700 hover:text-brand-darkGreen transition-colors whitespace-nowrap">
+              Contacto
             </a>
             <a
               href="https://link.mercadopago.com.co/tucolpagos"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-brand-darkGreen text-white px-6 py-2 rounded-lg font-semibold hover:bg-brand-darkerGreen transition-colors"
+              className="bg-brand-darkGreen text-white px-6 py-2 rounded-lg font-semibold hover:bg-brand-darkerGreen transition-colors whitespace-nowrap"
             >
               Paga Aquí
             </a>
@@ -96,7 +99,7 @@ export default function Header() {
         >
           <div className="flex flex-col space-y-4 py-4 border-t border-gray-200">
             <a href="#beneficios" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
-              Beneficios
+              Nosotros
             </a>
             <a href="#planes" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
               Planes
@@ -104,11 +107,14 @@ export default function Header() {
             <a href="#portafolio" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
               Portafolio
             </a>
-            <a href="#comisiones" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
-              Comisiones
+            <a href="#sostenibilidad" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
+              Sostenibilidad
             </a>
             <a href="#faq" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
               FAQ
+            </a>
+            <a href="#contacto" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
+              Contacto
             </a>
             <a
               href="https://link.mercadopago.com.co/tucolpagos"
