@@ -89,7 +89,18 @@ export default function TheOpportunity() {
           </h3>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Carrusel móvil: 3 elementos "Nuestros corresponsales te ofrecen" */}
+        <MobileCarousel itemsPerView={1.2} className="md:hidden mb-8">
+          {opportunities.map((opportunity, index) => (
+            <div key={index} className="card text-center min-h-[200px] flex flex-col">
+              <h4 className="text-lg font-bold mb-3 text-brand-darkGreen">{opportunity.title}</h4>
+              <p className="text-gray-700 text-sm flex-grow">{opportunity.description}</p>
+            </div>
+          ))}
+        </MobileCarousel>
+
+        {/* Grid desktop */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6">
           {opportunities.map((opportunity, index) => (
             <motion.div
               key={index}
