@@ -1,12 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
-
-const certificaciones = [
-  { name: 'Vigilado Superintendencia Financiera', image: 'vigilado-financiera.png' },
-  { name: 'Vigilado Superintendencia de Industria y Comercio', image: 'vigilado-industria.png' },
-]
 
 export default function Footer() {
   return (
@@ -108,29 +102,6 @@ export default function Footer() {
                 </span>
               </li>
             </ul>
-            
-            {/* Certificaciones */}
-            <div className="mt-6">
-              <div className="flex flex-wrap gap-6 justify-center">
-                {certificaciones.map((cert, index) => (
-                  <div
-                    key={index}
-                    className="hover:opacity-90 transition-opacity duration-300"
-                  >
-                    <Image
-                      src={`/certificaciones/${cert.image}`}
-                      alt={cert.name}
-                      width={180}
-                      height={180}
-                      className="object-contain max-h-28 md:max-h-32 w-auto mx-auto"
-                      style={{
-                        filter: 'brightness(1.4) contrast(1.3)',
-                      }}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 
