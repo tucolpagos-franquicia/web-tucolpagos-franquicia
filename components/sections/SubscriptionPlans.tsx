@@ -11,8 +11,7 @@ const plans = [
   {
     name: 'PLAN ESTÁNDAR',
     icon: 'work',
-    price: '$6.960.000',
-    investment: 'Incluye $3.000.000 en plataforma',
+    price: '$3.960.000',
     duration: 'Suscripción 3 años',
     features: [
       'Plataforma Digital',
@@ -27,13 +26,12 @@ const plans = [
     exclusive: 'EXCLUSIVO: CLIENTES CON NEGOCIO',
     bgColor: 'bg-brand-darkGreen',
     popular: false,
-    whatsappMessage: 'Hola, estoy interesado en el PLAN ESTÁNDAR de TuColpagos por $6.960.000. Me gustaría recibir más información.',
+    whatsappMessage: 'Hola, estoy interesado en el PLAN ESTÁNDAR de TuColpagos por $3.960.000. Me gustaría recibir más información.',
   },
   {
     name: 'PLAN EMPRENDEDOR',
     icon: 'rocket_launch',
-    price: '$11.960.000',
-    investment: 'Incluye $5.000.000 en plataforma',
+    price: '$6.960.000',
     duration: 'Suscripción 3 años',
     features: [
       'Plataforma Digital',
@@ -54,13 +52,12 @@ const plans = [
     exclusive: null,
     bgColor: 'bg-brand-orange',
     popular: true,
-    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRENDEDOR de TuColpagos por $11.960.000. Me gustaría recibir más información.',
+    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRENDEDOR de TuColpagos por $6.960.000. Me gustaría recibir más información.',
   },
   {
     name: 'PLAN EMPRESARIAL',
     icon: 'business',
-    price: '$16.960.000',
-    investment: 'Incluye $7.000.000 en plataforma',
+    price: '$9.960.000',
     duration: 'Suscripción 3 años',
     features: [
       'Plataforma Digital',
@@ -85,7 +82,7 @@ const plans = [
     exclusive: null,
     bgColor: 'bg-brand-darkGreen',
     popular: false,
-    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRESARIAL de TuColpagos por $16.960.000. Me gustaría recibir más información.',
+    whatsappMessage: 'Hola, estoy interesado en el PLAN EMPRESARIAL de TuColpagos por $9.960.000. Me gustaría recibir más información.',
   },
 ]
 
@@ -143,8 +140,7 @@ export default function SubscriptionPlans() {
                 <span className="material-symbols-outlined text-4xl drop-shadow-lg flex-shrink-0">{plan.icon}</span>
                 <span className="break-words">{plan.name}</span>
               </h3>
-              <div className="text-4xl font-bold mb-2 relative z-10 drop-shadow-md">{plan.price}</div>
-              <div className="text-sm mb-4 opacity-90 relative z-10 font-bold">{plan.investment}</div>
+              <div className="text-4xl font-bold mb-4 relative z-10 drop-shadow-md">{plan.price}</div>
               <ul className="space-y-2.5 text-sm mb-4 relative z-10">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start">
@@ -204,8 +200,7 @@ export default function SubscriptionPlans() {
                 <span className="material-symbols-outlined text-5xl md:text-6xl drop-shadow-lg">{plan.icon}</span>
                 <span className="drop-shadow-md">{plan.name}</span>
               </h3>
-              <div className="text-4xl md:text-5xl font-bold mb-3 relative z-10 drop-shadow-lg">{plan.price}</div>
-              <div className="text-sm mb-5 opacity-95 relative z-10 font-bold">{plan.investment}</div>
+              <div className="text-4xl md:text-5xl font-bold mb-5 relative z-10 drop-shadow-lg">{plan.price}</div>
               <ul className="space-y-3.5 text-sm mb-6 flex-grow relative z-10">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start group">

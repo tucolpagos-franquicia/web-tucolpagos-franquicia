@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: '¿Cuál es la inversión inicial requerida?',
-    answer: 'Ofrecemos 3 planes: Plan Estándar ($6.960.000), Plan Emprendedor ($11.960.000) y Plan Empresarial ($16.960.000). Todos incluyen suscripción de 3 años con un solo pago inicial. El plan varía según el equipamiento y servicios adicionales que necesites.',
+    answer: 'Ofrecemos 3 planes: Plan Estándar ($3.960.000), Plan Emprendedor ($6.960.000) y Plan Empresarial ($9.960.000). Todos incluyen suscripción de 3 años con un solo pago inicial. El plan varía según el equipamiento y servicios adicionales que necesites.',
   },
   {
     question: '¿Necesito experiencia previa en el sector financiero?',

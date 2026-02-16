@@ -12,18 +12,18 @@ export default function Commissions() {
 
   const incomeProjections = [
     {
-      amount: '$1M - $2M',
-      period: 'Inicio (Mes 1-4)',
+      amount: '$500K - $1M',
+      period: 'Inicio (Mes 1-3)',
       bgColor: 'bg-brand-orange',
     },
     {
-      amount: '$3M - $4M',
-      period: 'Crecimiento (Mes 4-6)',
+      amount: '$2M - $3M',
+      period: 'Crecimiento (Mes 4-8)',
       bgColor: 'bg-brand-orange',
     },
     {
-      amount: '$5M+',
-      period: 'Establecido (Mes 7+)',
+      amount: '$4M+',
+      period: 'Establecido (Mes 12+)',
       bgColor: 'bg-brand-darkGreen',
     },
   ]
