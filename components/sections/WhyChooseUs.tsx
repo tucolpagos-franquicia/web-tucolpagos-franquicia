@@ -94,7 +94,17 @@ export default function WhyChooseUs() {
               >
                 {benefit.icon}
               </span>
-              <h3 className="text-xl lg:text-2xl font-bold mb-3 text-brand-darkGreen">{benefit.title}</h3>
+              <h3 className="text-xl lg:text-2xl font-bold mb-3 text-brand-darkGreen">
+                {benefit.title === 'Más de 300 Oficinas' ? (
+                  <>
+                    Más de
+                    <br className="hidden md:block" />
+                    <span>300 Oficinas</span>
+                  </>
+                ) : (
+                  benefit.title
+                )}
+              </h3>
               <p className="text-gray-700 flex-grow">{benefit.description}</p>
             </motion.div>
           ))}

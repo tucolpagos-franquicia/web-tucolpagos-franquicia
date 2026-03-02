@@ -42,6 +42,13 @@ const testimonials = [
     quote: 'El acompañamiento es excepcional. Siempre están disponibles para resolver cualquier duda.',
     image: 'puntos-venta (5).jpg'
   },
+  { 
+    name: 'Libia', 
+    city: 'Montelíbano, Córdoba', 
+    months: 12, 
+    quote: 'Una gran oportunidad para crecer. La red TuColpagos me ha permitido ofrecer más servicios a mi comunidad.',
+    image: 'puntos-venta (6).jpg'
+  },
 ]
 
 export default function Testimonials() {
