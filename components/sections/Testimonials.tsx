@@ -8,36 +8,36 @@ import Image from 'next/image'
 
 const testimonials = [
   { 
-    name: 'Carlos Rodríguez', 
+    name: 'Luisa', 
     city: 'Montería, Córdoba', 
     months: 12, 
     quote: 'En 6 meses ya recuperé mi inversión. La plataforma es muy fácil de usar y el soporte siempre está disponible.',
     image: 'puntos-venta (1).jpg'
   },
   { 
-    name: 'María González', 
-    city: 'Rioacha, Guajira', 
+    name: '', 
+    city: 'Villa Cielo', 
     months: 18, 
     quote: 'Lo mejor es la variedad de servicios. Mis clientes pueden pagar todo en un solo lugar. Muy recomendado.',
     image: 'puntos-venta (2).jpg'
   },
   { 
-    name: 'Juan Pérez', 
-    city: 'Valledupar, Cesar', 
-    months: 24, 
+    name: 'Jenny', 
+    city: 'Sahagún, Córdoba', 
+    months: 6, 
     quote: 'La capacitación fue excelente. Desde el primer día supe cómo operar y generar ingresos. Excelente oportunidad.',
     image: 'puntos-venta (3).jpg'
   },
   { 
-    name: 'Ana Martínez', 
-    city: 'Medellín, Antioquia', 
+    name: 'Julieth', 
+    city: 'Montería, Córdoba', 
     months: 30, 
     quote: 'Excelente oportunidad de negocio. La inversión se recupera rápido y los ingresos son constantes.',
     image: 'puntos-venta (4).jpg'
   },
   { 
-    name: 'Luis Hernández', 
-    city: 'Pereira, Risaralda', 
+    name: 'Eliana', 
+    city: 'Chinú, Córdoba', 
     months: 15, 
     quote: 'El acompañamiento es excepcional. Siempre están disponibles para resolver cualquier duda.',
     image: 'puntos-venta (5).jpg'
@@ -80,7 +80,7 @@ export default function Testimonials() {
                 />
               </div>
               <p className="text-gray-700 mb-4">&quot;{testimonial.quote}&quot;</p>
-              <p className="font-semibold text-brand-darkGreen mb-1">{testimonial.name}</p>
+              {testimonial.name ? <p className="font-semibold text-brand-darkGreen mb-1">{testimonial.name}</p> : null}
               <p className="text-gray-600">{testimonial.city}</p>
               <p className="text-brand-green font-bold mt-2">{testimonial.months} Meses con TuColpagos</p>
             </div>
@@ -105,7 +105,7 @@ export default function Testimonials() {
                 />
               </div>
               <p className="text-gray-700 mb-4">&quot;{testimonial.quote}&quot;</p>
-              <p className="font-semibold text-brand-darkGreen mb-1">{testimonial.name}</p>
+              {testimonial.name ? <p className="font-semibold text-brand-darkGreen mb-1">{testimonial.name}</p> : null}
               <p className="text-gray-600">{testimonial.city}</p>
               <p className="text-brand-green font-bold mt-2">{testimonial.months} Meses con TuColpagos</p>
             </motion.div>
