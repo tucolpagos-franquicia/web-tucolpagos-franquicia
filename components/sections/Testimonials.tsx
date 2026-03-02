@@ -15,16 +15,16 @@ const testimonials = [
     image: 'puntos-venta (1).jpg'
   },
   { 
-    name: '', 
+    name: 'Luz', 
     city: 'Villa Cielo', 
-    months: 18, 
+    months: 6, 
     quote: 'Lo mejor es la variedad de servicios. Mis clientes pueden pagar todo en un solo lugar. Muy recomendado.',
     image: 'puntos-venta (2).jpg'
   },
   { 
     name: 'Jenny', 
     city: 'Sahagún, Córdoba', 
-    months: 6, 
+    months: 18, 
     quote: 'La capacitación fue excelente. Desde el primer día supe cómo operar y generar ingresos. Excelente oportunidad.',
     image: 'puntos-venta (3).jpg'
   },
