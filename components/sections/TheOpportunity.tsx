@@ -50,7 +50,8 @@ export default function TheOpportunity() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false)
   const [selectedImageIndex, setSelectedImageIndex] = useState(0)
   const [zoomed, setZoomed] = useState(false)
-  const previewImages = puntosVenta.slice(0, 6)
+  const previewImagesMobile = puntosVenta.slice(0, 6)
+  const previewImagesDesktop = puntosVenta.slice(0, 5)
 
   const openGallery = (index: number) => {
     setSelectedImageIndex(index)
@@ -183,7 +184,7 @@ export default function TheOpportunity() {
           
           {/* Mobile Carousel */}
           <MobileCarousel itemsPerView={1.2} className="md:hidden">
-            {previewImages.map((punto, index) => (
+            {previewImagesMobile.map((punto, index) => (
               <button
                 key={index}
                 type="button"
@@ -209,14 +210,14 @@ export default function TheOpportunity() {
 
           {/* Desktop Grid */}
           <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {previewImages.map((punto, index) => (
+            {previewImagesDesktop.map((punto, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
                 className="relative h-48 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer group"
-                onClick={() => openGallery(index)}
+                onClick={() => openGallery(index === 4 ? 5 : index)}
               >
                 <Image
                   src={`/puntos-venta/${punto}`}
@@ -224,7 +225,7 @@ export default function TheOpportunity() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                {index === 5 ? (
+                {index === 4 ? (
                   <div className="absolute inset-0 bg-black/45 flex items-center justify-center">
                     <span className="bg-white/95 text-brand-darkGreen px-4 py-2 rounded-lg font-bold text-sm">
                       Ver más
