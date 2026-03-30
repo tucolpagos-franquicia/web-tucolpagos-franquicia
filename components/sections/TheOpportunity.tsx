@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import NetworkPattern from '@/components/NetworkPattern'
@@ -13,6 +14,11 @@ const puntosVenta = [
   'puntos-venta (3).jpg',
   'puntos-venta (4).jpg',
   'puntos-venta (5).jpg',
+  'puntos-venta (6).jpg',
+  'puntos-venta (7).jpg',
+  'puntos-venta (8).jpg',
+  'puntos-venta (9).jpg',
+  'puntos-venta (10).jpg',
 ]
 
 const stats = [
@@ -41,6 +47,44 @@ export default function TheOpportunity() {
     triggerOnce: true,
     threshold: 0.1,
   })
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false)
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+  const [zoomed, setZoomed] = useState(false)
+  const previewImages = puntosVenta.slice(0, 6)
+
+  const openGallery = (index: number) => {
+    setSelectedImageIndex(index)
+    setZoomed(false)
+    setIsGalleryOpen(true)
+  }
+
+  const closeGallery = () => {
+    setIsGalleryOpen(false)
+    setZoomed(false)
+  }
+
+  const goToPrevious = () => {
+    setSelectedImageIndex((prev) => (prev === 0 ? puntosVenta.length - 1 : prev - 1))
+    setZoomed(false)
+  }
+
+  const goToNext = () => {
+    setSelectedImageIndex((prev) => (prev === puntosVenta.length - 1 ? 0 : prev + 1))
+    setZoomed(false)
+  }
+
+  useEffect(() => {
+    if (!isGalleryOpen) return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') closeGallery()
+      if (event.key === 'ArrowLeft') goToPrevious()
+      if (event.key === 'ArrowRight') goToNext()
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isGalleryOpen])
 
   return (
     <section id="oportunidad" ref={ref} className="section-padding relative">
@@ -139,27 +183,40 @@ export default function TheOpportunity() {
           
           {/* Mobile Carousel */}
           <MobileCarousel itemsPerView={1.2} className="md:hidden">
-            {puntosVenta.map((punto, index) => (
-              <div key={index} className="relative h-64 rounded-xl overflow-hidden shadow-lg">
+            {previewImages.map((punto, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => openGallery(index)}
+                className="relative h-64 rounded-xl overflow-hidden shadow-lg w-full text-left"
+              >
                 <Image
                   src={`/puntos-venta/${punto}`}
                   alt={`Punto de venta TuColpagos ${index + 1}`}
                   fill
                   className="object-cover"
                 />
-              </div>
+                {index === 5 ? (
+                  <div className="absolute inset-0 bg-black/45 flex items-center justify-center">
+                    <span className="bg-white/95 text-brand-darkGreen px-4 py-2 rounded-lg font-bold text-sm">
+                      Ver más
+                    </span>
+                  </div>
+                ) : null}
+              </button>
             ))}
           </MobileCarousel>
 
           {/* Desktop Grid */}
           <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {puntosVenta.map((punto, index) => (
+            {previewImages.map((punto, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
                 className="relative h-48 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer group"
+                onClick={() => openGallery(index)}
               >
                 <Image
                   src={`/puntos-venta/${punto}`}
@@ -167,11 +224,110 @@ export default function TheOpportunity() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
+                {index === 5 ? (
+                  <div className="absolute inset-0 bg-black/45 flex items-center justify-center">
+                    <span className="bg-white/95 text-brand-darkGreen px-4 py-2 rounded-lg font-bold text-sm">
+                      Ver más
+                    </span>
+                  </div>
+                ) : null}
               </motion.div>
             ))}
           </div>
         </motion.div>
       </div>
+
+      {isGalleryOpen ? (
+        <div className="fixed inset-0 z-[90] bg-black/85 p-4 md:p-8 flex items-center justify-center">
+          <div className="relative w-full max-w-6xl max-h-[92vh] bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <button
+              type="button"
+              onClick={closeGallery}
+              className="absolute top-3 right-3 z-20 w-10 h-10 rounded-full bg-black/70 text-white hover:bg-black transition-colors"
+              aria-label="Cerrar galería"
+            >
+              ✕
+            </button>
+
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] h-full">
+              <div className="relative bg-gray-100 min-h-[280px] sm:min-h-[380px] lg:min-h-[520px] overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setZoomed((prev) => !prev)}
+                  className={`absolute inset-0 w-full h-full ${zoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'}`}
+                  aria-label={zoomed ? 'Reducir zoom' : 'Ampliar zoom'}
+                >
+                  <div className={`relative w-full h-full transition-transform duration-300 ${zoomed ? 'scale-150' : 'scale-100'}`}>
+                    <Image
+                      src={`/puntos-venta/${puntosVenta[selectedImageIndex]}`}
+                      alt={`Punto de venta TuColpagos ${selectedImageIndex + 1}`}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 70vw"
+                    />
+                  </div>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={goToPrevious}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/75 transition-colors"
+                  aria-label="Imagen anterior"
+                >
+                  ‹
+                </button>
+                <button
+                  type="button"
+                  onClick={goToNext}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/75 transition-colors"
+                  aria-label="Imagen siguiente"
+                >
+                  ›
+                </button>
+              </div>
+
+              <div className="p-4 border-t lg:border-t-0 lg:border-l border-gray-200 bg-white">
+                <div className="flex items-center justify-between mb-3">
+                  <p className="text-sm font-semibold text-brand-darkGreen">
+                    Imagen {selectedImageIndex + 1} de {puntosVenta.length}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setZoomed((prev) => !prev)}
+                    className="text-xs md:text-sm px-3 py-1.5 rounded-md bg-brand-darkGreen text-white hover:bg-brand-darkerGreen transition-colors"
+                  >
+                    {zoomed ? 'Reducir' : 'Zoom'}
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-5 lg:grid-cols-2 gap-2 max-h-[220px] lg:max-h-[460px] overflow-y-auto pr-1">
+                  {puntosVenta.map((punto, index) => (
+                    <button
+                      key={punto}
+                      type="button"
+                      onClick={() => {
+                        setSelectedImageIndex(index)
+                        setZoomed(false)
+                      }}
+                      className={`relative h-16 lg:h-24 rounded-lg overflow-hidden border-2 transition-colors ${
+                        selectedImageIndex === index ? 'border-brand-darkGreen' : 'border-transparent'
+                      }`}
+                      aria-label={`Seleccionar imagen ${index + 1}`}
+                    >
+                      <Image
+                        src={`/puntos-venta/${punto}`}
+                        alt={`Miniatura punto de venta ${index + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </section>
   )
 }
