@@ -14,11 +14,11 @@ export default function Hero() {
     <section
       id="hero"
       ref={ref}
-      className="section-padding relative flex min-h-[85vh] w-full min-w-0 items-center overflow-hidden pt-24 md:pt-32"
+      className="section-padding relative isolate flex min-h-[85vh] w-full min-w-0 items-center overflow-hidden bg-white pt-24 md:pt-32"
     >
       <HeroCollageBackground />
 
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-[2]">
         <div className="mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
