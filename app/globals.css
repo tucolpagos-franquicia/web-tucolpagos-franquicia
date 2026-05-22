@@ -122,23 +122,6 @@ img {
   scroll-padding-inline: 1rem;
 }
 
-/* Hero collage: celdas altas, pocas filas, imagen 4:3 completa */
-.hero-collage-grid > * {
-  aspect-ratio: 4 / 3;
-  height: auto;
-}
-
-@media (min-width: 640px) {
-  .hero-collage-grid {
-    grid-auto-rows: 1fr;
-  }
-
-  .hero-collage-grid > * {
-    aspect-ratio: auto;
-    height: 100%;
-  }
-}
-
 /* Hero: líneas de red animadas (suave) */
 @keyframes hero-network-pulse {
   0%,
