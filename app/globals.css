@@ -91,6 +91,37 @@ img {
   display: none;
 }
 
+/* Carrusel de corresponsales: ancho por breakpoint */
+.corresponsales-slide {
+  width: min(82vw, 340px);
+}
+
+@media (min-width: 640px) {
+  .corresponsales-slide {
+    width: min(42vw, 320px);
+  }
+}
+
+@media (min-width: 768px) {
+  .corresponsales-slide {
+    width: calc((100% - 2rem) / 3);
+    min-width: 260px;
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .corresponsales-slide {
+    width: calc((100% - 3rem) / 4);
+    min-width: 240px;
+    max-width: 300px;
+  }
+}
+
+.corresponsales-track {
+  scroll-padding-inline: 1rem;
+}
+
 /* Utility Classes */
 .container-custom {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
