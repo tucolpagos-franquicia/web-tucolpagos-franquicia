@@ -232,8 +232,8 @@ export default function CorresponsalesCarousel() {
   return (
     <div className="relative">
       <div className="mb-5 flex justify-center">
-        <span className="inline-block rounded-full bg-brand-darkGreen/8 px-3 py-1 text-xs font-medium tracking-wide text-brand-darkGreen sm:text-sm">
-          +300 corresponsales en Colombia
+        <span className="inline-block rounded-full bg-brand-darkGreen/8 px-4 py-1.5 text-sm font-medium tracking-wide text-brand-darkGreen sm:text-base">
+          +400 corresponsales en Colombia
         </span>
       </div>
 

@@ -122,6 +122,40 @@ img {
   scroll-padding-inline: 1rem;
 }
 
+/* Hero: líneas de red animadas (suave) */
+@keyframes hero-network-pulse {
+  0%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.2;
+  }
+  50% {
+    stroke-dashoffset: 12;
+    opacity: 0.35;
+  }
+}
+
+.hero-network-line {
+  stroke-dasharray: 8 6;
+  animation: hero-network-pulse 8s ease-in-out infinite;
+}
+
+.hero-network-line-delay {
+  animation-delay: 2s;
+}
+
+.hero-network-line-delay-2 {
+  animation-delay: 4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-network-line,
+  .hero-network-line-delay,
+  .hero-network-line-delay-2 {
+    animation: none;
+  }
+}
+
 /* Utility Classes */
 .container-custom {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
