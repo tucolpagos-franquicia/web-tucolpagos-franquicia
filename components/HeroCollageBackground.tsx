@@ -50,28 +50,28 @@ export default function HeroCollageBackground() {
 
   return (
     <div className="pointer-events-none absolute inset-0 z-[1] min-h-full overflow-hidden bg-white" aria-hidden>
-      {/* Mosaico de todas las sedes — visible en bordes gracias a la máscara */}
       <motion.div
         className="absolute inset-0 opacity-70 sm:opacity-65 md:opacity-60"
         style={MASK_STYLE}
         initial={false}
-        animate={reduceMotion ? undefined : { scale: [1, 1.015, 1] }}
+        animate={reduceMotion ? undefined : { scale: [1, 1.01, 1] }}
         transition={
           reduceMotion
             ? undefined
             : { duration: 18, repeat: Infinity, ease: 'easeInOut' }
         }
       >
-        <div className="grid h-full min-h-[85vh] w-full grid-cols-3 gap-2 p-2 sm:grid-cols-4 sm:gap-2.5 sm:p-3 md:grid-cols-5 md:gap-3 lg:grid-cols-6">
+        {/* 6×3 móvil / 9×2 escritorio: celdas grandes, poco espacio, foto completa 4:3 */}
+        <div className="hero-collage-grid grid h-full min-h-[85vh] w-full grid-cols-6 grid-rows-3 gap-0.5 p-0.5 sm:grid-cols-9 sm:grid-rows-2 sm:gap-1 sm:p-1">
           {PUNTOS_VENTA_IMAGES.map((filename, i) => (
             <motion.div
               key={filename}
-              className="relative h-[4.5rem] overflow-hidden rounded-xl shadow-md ring-1 ring-white/60 sm:h-[5.25rem] md:h-[6rem] lg:h-[6.75rem]"
+              className="relative min-h-0 w-full overflow-hidden rounded-lg shadow-sm ring-1 ring-white/70 sm:rounded-xl"
               initial={false}
               animate={
                 reduceMotion
                   ? undefined
-                  : { y: [0, i % 2 === 0 ? -6 : 6, 0] }
+                  : { y: [0, i % 2 === 0 ? -4 : 4, 0] }
               }
               transition={
                 reduceMotion
@@ -80,7 +80,7 @@ export default function HeroCollageBackground() {
                       duration: 8 + (i % 5),
                       repeat: Infinity,
                       ease: 'easeInOut',
-                      delay: i * 0.15,
+                      delay: i * 0.12,
                     }
               }
             >
@@ -88,8 +88,8 @@ export default function HeroCollageBackground() {
                 src={getPuntoVentaSrc(filename)}
                 alt=""
                 fill
-                className="object-cover"
-                sizes="(max-width: 640px) 25vw, 180px"
+                className="object-contain bg-white/40 p-0.5"
+                sizes="(max-width: 640px) 16vw, 11vw"
                 priority={i < 6}
               />
             </motion.div>
@@ -97,12 +97,10 @@ export default function HeroCollageBackground() {
         </div>
       </motion.div>
 
-      {/* Red de nodos */}
       <div className="absolute inset-0 opacity-50 mix-blend-multiply">
         <HeroNetworkOverlay />
       </div>
 
-      {/* Cortina blanca suave: centro legible, bordes dejan ver el collage */}
       <div
         className="absolute inset-0"
         style={{
