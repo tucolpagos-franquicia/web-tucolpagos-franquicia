@@ -171,10 +171,8 @@ function GalleryLightbox({ isOpen, selectedIndex, onClose, onSelect }: GalleryLi
 export default function CorresponsalesCarousel() {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [activeDot, setActiveDot] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
   const [isGalleryOpen, setIsGalleryOpen] = useState(false)
   const [galleryIndex, setGalleryIndex] = useState(0)
-  const count = IMAGES.length
 
   const scrollToIndex = useCallback((index: number) => {
     const el = scrollRef.current
@@ -196,10 +194,10 @@ export default function CorresponsalesCarousel() {
   }, [activeDot, count, scrollToIndex])
 
   useEffect(() => {
-    if (isPaused || isGalleryOpen || count <= 1) return
+    if (isGalleryOpen || count <= 1) return
     const id = setInterval(scrollNext, AUTO_PLAY_MS)
     return () => clearInterval(id)
-  }, [isPaused, isGalleryOpen, count, scrollNext])
+  }, [isGalleryOpen, count, scrollNext])
 
   useEffect(() => {
     const el = scrollRef.current
@@ -228,46 +226,24 @@ export default function CorresponsalesCarousel() {
   const openGallery = (index: number) => {
     setGalleryIndex(index)
     setIsGalleryOpen(true)
-    setIsPaused(true)
   }
 
   return (
-    <div className="relative rounded-3xl border border-brand-darkGreen/10 bg-gradient-to-b from-white via-white to-emerald-50/40 p-4 shadow-inner sm:p-6 md:p-8">
-      <div className="mb-6 flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
-        <div>
-          <span className="mb-2 inline-block rounded-full bg-brand-darkGreen/10 px-4 py-1 text-sm font-semibold text-brand-darkGreen">
-            +300 corresponsales en Colombia
-          </span>
-          <p className="max-w-xl text-sm text-gray-600 md:text-base">
-            Carrusel automático con todos nuestros aliados. Haz clic en cualquier foto para verla en grande.
-          </p>
-        </div>
-        <button
-          type="button"
-          onClick={() => setIsPaused((p) => !p)}
-          className="inline-flex items-center gap-2 rounded-full border border-brand-darkGreen/30 bg-white px-4 py-2 text-sm font-medium text-brand-darkGreen shadow-sm transition-colors hover:bg-brand-darkGreen/5"
-          aria-pressed={isPaused}
-          aria-label={isPaused ? 'Reanudar carrusel' : 'Pausar carrusel'}
-        >
-          <span className="material-symbols-outlined text-lg leading-none">
-            {isPaused ? 'play_arrow' : 'pause'}
-          </span>
-          {isPaused ? 'Reanudar' : 'Pausar'}
-        </button>
+    <div className="relative">
+      <div className="mb-5 flex justify-center">
+        <span className="inline-block rounded-full bg-brand-darkGreen/8 px-3 py-1 text-xs font-medium tracking-wide text-brand-darkGreen sm:text-sm">
+          +300 corresponsales en Colombia
+        </span>
       </div>
 
-      <div
-        className="group relative"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        <div className="pointer-events-none absolute inset-y-2 left-0 z-10 w-6 bg-gradient-to-r from-white to-transparent sm:w-12" />
-        <div className="pointer-events-none absolute inset-y-2 right-0 z-10 w-6 bg-gradient-to-l from-white to-transparent sm:w-12" />
+      <div className="group relative">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-white/90 to-transparent sm:w-14" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-white/90 to-transparent sm:w-14" />
 
         <button
           type="button"
           onClick={scrollPrev}
-          className="absolute -left-1 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-xl text-brand-darkGreen shadow-lg ring-1 ring-gray-200 transition-all hover:scale-105 hover:bg-brand-darkGreen hover:text-white sm:flex md:-left-3"
+          className="absolute -left-1 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200/80 bg-white/90 text-lg text-brand-darkGreen shadow-sm backdrop-blur-sm transition-all hover:border-brand-darkGreen/30 hover:bg-white sm:flex md:-left-2"
           aria-label="Anterior"
         >
           ‹
@@ -275,7 +251,7 @@ export default function CorresponsalesCarousel() {
         <button
           type="button"
           onClick={scrollNext}
-          className="absolute -right-1 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-xl text-brand-darkGreen shadow-lg ring-1 ring-gray-200 transition-all hover:scale-105 hover:bg-brand-darkGreen hover:text-white sm:flex md:-right-3"
+          className="absolute -right-1 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200/80 bg-white/90 text-lg text-brand-darkGreen shadow-sm backdrop-blur-sm transition-all hover:border-brand-darkGreen/30 hover:bg-white sm:flex md:-right-2"
           aria-label="Siguiente"
         >
           ›
@@ -295,16 +271,16 @@ export default function CorresponsalesCarousel() {
         </div>
       </div>
 
-      <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-1.5">
         {IMAGES.map((_, index) => (
           <button
             key={index}
             type="button"
             onClick={() => scrollToIndex(index)}
-            className={`h-2 rounded-full transition-all ${
+            className={`rounded-full transition-all duration-300 ${
               index === activeDot
-                ? 'w-8 bg-brand-darkGreen'
-                : 'w-2 bg-gray-300 hover:bg-brand-darkGreen/50'
+                ? 'h-1.5 w-6 bg-brand-darkGreen'
+                : 'h-1.5 w-1.5 bg-gray-300 hover:bg-brand-darkGreen/40'
             }`}
             aria-label={`Ir a imagen ${index + 1}`}
             aria-current={index === activeDot}
@@ -312,17 +288,10 @@ export default function CorresponsalesCarousel() {
         ))}
       </div>
 
-      <p className="mt-4 text-center text-xs text-gray-500">
-        {count} sedes en galería · WebP 1200×900 px (4:3)
-      </p>
-
       <GalleryLightbox
         isOpen={isGalleryOpen}
         selectedIndex={galleryIndex}
-        onClose={() => {
-          setIsGalleryOpen(false)
-          setIsPaused(false)
-        }}
+        onClose={() => setIsGalleryOpen(false)}
         onSelect={setGalleryIndex}
       />
     </div>
@@ -342,26 +311,29 @@ function CarouselCard({
     <motion.button
       type="button"
       onClick={onOpen}
-      className="corresponsales-slide group/card relative shrink-0 snap-center overflow-hidden rounded-2xl text-left shadow-lg ring-1 ring-gray-200/80 transition-shadow hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-darkGreen"
-      whileHover={{ y: -4 }}
+      className="corresponsales-slide group/card relative shrink-0 snap-center overflow-hidden rounded-xl text-left shadow-md ring-1 ring-black/5 transition-all duration-300 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-darkGreen"
+      whileHover={{ y: -2 }}
       transition={{ duration: 0.2 }}
+      aria-label={`Ver ${label} en grande`}
     >
       <div className="relative aspect-[4/3] w-full bg-gray-100">
         <Image
           src={getPuntoVentaSrc(filename)}
           alt={`Corresponsal TuColpagos — ${label}`}
           fill
-          className="object-cover transition-transform duration-500 group-hover/card:scale-105"
+          className="object-cover transition-transform duration-500 group-hover/card:scale-[1.03]"
           sizes="(max-width: 640px) 82vw, (max-width: 1024px) 42vw, 280px"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-2 p-3 sm:p-4">
-          <span className="text-sm font-semibold leading-tight text-white drop-shadow-md sm:text-base">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-90" />
+        <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-2 p-3 sm:p-3.5">
+          <span className="text-sm font-medium leading-snug text-white/95 sm:text-[0.9375rem]">
             {label}
           </span>
-          <span className="flex items-center gap-1 rounded-full bg-white/95 px-2.5 py-1 text-xs font-bold text-brand-darkGreen shadow-sm">
-            <span className="material-symbols-outlined text-base leading-none">zoom_in</span>
-            Ampliar
+          <span
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/90 text-brand-darkGreen shadow-sm backdrop-blur-sm transition-transform group-hover/card:scale-105"
+            aria-hidden
+          >
+            <span className="material-symbols-outlined text-[1.125rem] leading-none">zoom_in</span>
           </span>
         </div>
       </div>
