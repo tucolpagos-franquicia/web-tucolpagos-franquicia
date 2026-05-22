@@ -13,36 +13,36 @@ type CollagePiece = {
   opacity: number
 }
 
-/** Móvil: solo esquinas y laterales — nada detrás del texto central */
+/** Móvil: esquinas y laterales, más grandes y un poco más al centro */
 const MOBILE_COLLAGE: CollagePiece[] = [
-  { imageIndex: 0, position: 'top-[0.5%] left-[-3%]', size: 'w-[36vw] max-w-[132px]', rotate: -10, opacity: 0.58 },
-  { imageIndex: 1, position: 'top-[1%] right-[-3%]', size: 'w-[34vw] max-w-[126px]', rotate: 9, opacity: 0.56 },
-  { imageIndex: 4, position: 'left-[-5%] top-[58%]', size: 'w-[30vw] max-w-[112px]', rotate: -6, opacity: 0.5 },
-  { imageIndex: 5, position: 'right-[-5%] top-[56%]', size: 'w-[30vw] max-w-[110px]', rotate: 7, opacity: 0.5 },
-  { imageIndex: 10, position: 'bottom-[1%] left-[-2%]', size: 'w-[35vw] max-w-[130px]', rotate: 5, opacity: 0.57 },
-  { imageIndex: 11, position: 'bottom-[0.5%] right-[-2%]', size: 'w-[34vw] max-w-[125px]', rotate: -8, opacity: 0.56 },
+  { imageIndex: 0, position: 'top-[1%] left-[3%]', size: 'w-[42vw] max-w-[168px]', rotate: -10, opacity: 0.6 },
+  { imageIndex: 1, position: 'top-[2%] right-[3%]', size: 'w-[40vw] max-w-[162px]', rotate: 9, opacity: 0.58 },
+  { imageIndex: 4, position: 'left-[2%] top-[56%]', size: 'w-[38vw] max-w-[148px]', rotate: -6, opacity: 0.54 },
+  { imageIndex: 5, position: 'right-[2%] top-[54%]', size: 'w-[38vw] max-w-[145px]', rotate: 7, opacity: 0.54 },
+  { imageIndex: 10, position: 'bottom-[2%] left-[4%]', size: 'w-[41vw] max-w-[165px]', rotate: 5, opacity: 0.59 },
+  { imageIndex: 11, position: 'bottom-[1%] right-[4%]', size: 'w-[40vw] max-w-[160px]', rotate: -8, opacity: 0.58 },
 ]
 
-/** Escritorio: collage orgánico en todo el perímetro */
+/** Escritorio: collage orgánico, más grande y más cerca del contenido central */
 const DESKTOP_COLLAGE: CollagePiece[] = [
-  { imageIndex: 0, position: 'top-[1%] left-[0%]', size: 'w-[14vw] max-w-[178px]', rotate: -9, opacity: 0.52 },
-  { imageIndex: 1, position: 'top-[2%] right-[0%]', size: 'w-[13vw] max-w-[168px]', rotate: 8, opacity: 0.5 },
-  { imageIndex: 2, position: 'top-[11%] left-[14%]', size: 'w-[11vw] max-w-[150px]', rotate: 5, opacity: 0.46 },
-  { imageIndex: 3, position: 'top-[9%] right-[12%]', size: 'w-[10.5vw] max-w-[145px]', rotate: -6, opacity: 0.48 },
-  { imageIndex: 4, position: 'top-[22%] left-[-1%]', size: 'w-[12vw] max-w-[160px]', rotate: -4, opacity: 0.5 },
-  { imageIndex: 5, position: 'top-[20%] right-[0%]', size: 'w-[11.5vw] max-w-[155px]', rotate: 7, opacity: 0.49 },
-  { imageIndex: 6, position: 'top-[38%] left-[2%]', size: 'w-[10vw] max-w-[140px]', rotate: 6, opacity: 0.44 },
-  { imageIndex: 7, position: 'top-[36%] right-[1%]', size: 'w-[10.5vw] max-w-[142px]', rotate: -5, opacity: 0.45 },
-  { imageIndex: 8, position: 'top-[48%] left-[10%]', size: 'w-[9vw] max-w-[130px]', rotate: 4, opacity: 0.42 },
-  { imageIndex: 9, position: 'top-[46%] right-[9%]', size: 'w-[9.5vw] max-w-[135px]', rotate: -7, opacity: 0.43 },
-  { imageIndex: 10, position: 'bottom-[20%] left-[0%]', size: 'w-[13.5vw] max-w-[172px]', rotate: 5, opacity: 0.51 },
-  { imageIndex: 11, position: 'bottom-[18%] right-[0%]', size: 'w-[13vw] max-w-[165px]', rotate: -8, opacity: 0.5 },
-  { imageIndex: 12, position: 'bottom-[32%] left-[12%]', size: 'w-[10vw] max-w-[138px]', rotate: -3, opacity: 0.4 },
-  { imageIndex: 13, position: 'bottom-[30%] right-[11%]', size: 'w-[9.5vw] max-w-[132px]', rotate: 6, opacity: 0.41 },
-  { imageIndex: 14, position: 'bottom-[8%] left-[18%]', size: 'w-[11vw] max-w-[148px]', rotate: 4, opacity: 0.47 },
-  { imageIndex: 15, position: 'bottom-[6%] right-[16%]', size: 'w-[10.5vw] max-w-[144px]', rotate: -5, opacity: 0.46 },
-  { imageIndex: 16, position: 'top-[58%] left-[20%]', size: 'w-[8.5vw] max-w-[125px]', rotate: 9, opacity: 0.38 },
-  { imageIndex: 17, position: 'top-[56%] right-[19%]', size: 'w-[9vw] max-w-[128px]', rotate: -6, opacity: 0.39 },
+  { imageIndex: 0, position: 'top-[2%] left-[5%]', size: 'w-[17vw] max-w-[220px]', rotate: -9, opacity: 0.55 },
+  { imageIndex: 1, position: 'top-[3%] right-[5%]', size: 'w-[16.5vw] max-w-[210px]', rotate: 8, opacity: 0.53 },
+  { imageIndex: 2, position: 'top-[10%] left-[18%]', size: 'w-[14vw] max-w-[185px]', rotate: 5, opacity: 0.5 },
+  { imageIndex: 3, position: 'top-[9%] right-[17%]', size: 'w-[13.5vw] max-w-[180px]', rotate: -6, opacity: 0.51 },
+  { imageIndex: 4, position: 'top-[20%] left-[4%]', size: 'w-[15vw] max-w-[195px]', rotate: -4, opacity: 0.53 },
+  { imageIndex: 5, position: 'top-[19%] right-[4%]', size: 'w-[14.5vw] max-w-[190px]', rotate: 7, opacity: 0.52 },
+  { imageIndex: 6, position: 'top-[36%] left-[6%]', size: 'w-[13vw] max-w-[175px]', rotate: 6, opacity: 0.48 },
+  { imageIndex: 7, position: 'top-[34%] right-[6%]', size: 'w-[13.5vw] max-w-[178px]', rotate: -5, opacity: 0.49 },
+  { imageIndex: 8, position: 'top-[46%] left-[14%]', size: 'w-[12vw] max-w-[165px]', rotate: 4, opacity: 0.46 },
+  { imageIndex: 9, position: 'top-[44%] right-[13%]', size: 'w-[12.5vw] max-w-[170px]', rotate: -7, opacity: 0.47 },
+  { imageIndex: 10, position: 'bottom-[18%] left-[5%]', size: 'w-[16.5vw] max-w-[215px]', rotate: 5, opacity: 0.54 },
+  { imageIndex: 11, position: 'bottom-[16%] right-[5%]', size: 'w-[16vw] max-w-[208px]', rotate: -8, opacity: 0.53 },
+  { imageIndex: 12, position: 'bottom-[30%] left-[16%]', size: 'w-[12.5vw] max-w-[168px]', rotate: -3, opacity: 0.44 },
+  { imageIndex: 13, position: 'bottom-[28%] right-[15%]', size: 'w-[12vw] max-w-[162px]', rotate: 6, opacity: 0.45 },
+  { imageIndex: 14, position: 'bottom-[7%] left-[22%]', size: 'w-[13.5vw] max-w-[185px]', rotate: 4, opacity: 0.5 },
+  { imageIndex: 15, position: 'bottom-[5%] right-[21%]', size: 'w-[13vw] max-w-[180px]', rotate: -5, opacity: 0.49 },
+  { imageIndex: 16, position: 'top-[56%] left-[24%]', size: 'w-[11.5vw] max-w-[155px]', rotate: 9, opacity: 0.42 },
+  { imageIndex: 17, position: 'top-[54%] right-[23%]', size: 'w-[11.5vw] max-w-[152px]', rotate: -6, opacity: 0.43 },
 ]
 
 function HeroNetworkOverlay() {
@@ -74,9 +74,9 @@ function HeroNetworkOverlay() {
 
 const MASK_DESKTOP: CSSProperties = {
   WebkitMaskImage:
-    'radial-gradient(ellipse 56% 50% at 50% 44%, transparent 20%, rgba(0,0,0,0.4) 48%, black 78%)',
+    'radial-gradient(ellipse 50% 46% at 50% 44%, transparent 22%, rgba(0,0,0,0.45) 50%, black 80%)',
   maskImage:
-    'radial-gradient(ellipse 56% 50% at 50% 44%, transparent 20%, rgba(0,0,0,0.4) 48%, black 78%)',
+    'radial-gradient(ellipse 50% 46% at 50% 44%, transparent 22%, rgba(0,0,0,0.45) 50%, black 80%)',
 }
 
 function CollageTile({
@@ -122,7 +122,7 @@ function CollageTile({
           alt=""
           fill
           className="rounded-2xl object-contain"
-          sizes="(max-width: 768px) 36vw, 180px"
+          sizes="(max-width: 768px) 42vw, 220px"
           priority={index < 4}
         />
       </div>
@@ -186,7 +186,7 @@ export default function HeroCollageBackground() {
         className="absolute inset-0 md:hidden"
         style={{
           background:
-            'radial-gradient(ellipse 88% 58% at 50% 46%, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.88) 38%, rgba(255,255,255,0.5) 62%, rgba(255,255,255,0.2) 100%)',
+            'radial-gradient(ellipse 82% 54% at 50% 46%, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.82) 36%, rgba(255,255,255,0.45) 60%, rgba(255,255,255,0.18) 100%)',
         }}
       />
       <div
