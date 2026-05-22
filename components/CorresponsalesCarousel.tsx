@@ -173,6 +173,7 @@ export default function CorresponsalesCarousel() {
   const [activeDot, setActiveDot] = useState(0)
   const [isGalleryOpen, setIsGalleryOpen] = useState(false)
   const [galleryIndex, setGalleryIndex] = useState(0)
+  const count = IMAGES.length
 
   const scrollToIndex = useCallback((index: number) => {
     const el = scrollRef.current
