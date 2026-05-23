@@ -152,9 +152,14 @@ export default function Portfolio() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-12"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-brand-darkGreen">
-            Nuestros Aliados Bancarios y Billeteras Digitales
-          </h3>
+          <div className="mb-8 text-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-brand-darkGreen">
+              Bancos disponibles para depósitos y retiros
+            </h3>
+            <p className="mt-2 text-base md:text-lg text-gray-600">
+              mediante el sistema de pagos Bre-B.
+            </p>
+          </div>
           
           {/* Bancos */}
           <div className="mb-8">

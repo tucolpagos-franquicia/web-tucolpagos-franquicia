@@ -8,7 +8,7 @@ import MobileCarousel from '@/components/MobileCarousel'
 import CorresponsalesCarousel from '@/components/CorresponsalesCarousel'
 
 const stats = [
-  { number: '+300', label: 'Oficinas en el Territorio Colombiano', bgColor: 'bg-brand-darkGreen', textColor: 'text-white' },
+  { number: '+400', label: 'Corresponsales en Colombia', bgColor: 'bg-brand-darkGreen', textColor: 'text-white' },
   { number: '+25', label: 'Bancos en Nuestro Portafolio', bgColor: 'bg-brand-orange', textColor: 'text-white' },
   { number: '8+', label: 'Años de Experiencia en Corresponsalía', bgColor: 'bg-brand-darkGreen', textColor: 'text-white' },
 ]
@@ -49,7 +49,8 @@ export default function TheOpportunity() {
             Nuestra Presencia
           </h2>
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-8">
-            ¡Contamos con una plataforma ÁGIL Y SEGURA!
+            ¡Contamos con una plataforma{' '}
+            <span className="font-bold lowercase">ágil y segura</span>!
           </p>
         </motion.div>
 

@@ -11,7 +11,12 @@ const benefits = [
   { title: 'Capacitación Continua', icon: 'school', description: 'Programa de capacitación inicial y actualizaciones constantes para mantenerte al día.' },
   { title: 'Comisiones Competitivas', icon: 'payments', description: 'Estructura de comisiones atractiva que te permite generar ingresos desde el primer día.' },
   { title: 'Dashboard en Tiempo Real', icon: 'dashboard', description: 'Monitorea tus ventas, comisiones y estadísticas en tiempo real desde cualquier dispositivo.' },
-  { title: 'Soporte 24/7', icon: 'support_agent', description: 'Equipo de soporte técnico disponible las 24 horas para resolver cualquier inconveniente.' },
+  {
+    title: 'Soporte Técnico',
+    icon: 'support_agent',
+    description:
+      'Equipo de soporte técnico disponible de lunes a sábado para resolver cualquier inconveniente.',
+  },
 ]
 
 export default function Benefits() {

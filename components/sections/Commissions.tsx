@@ -17,12 +17,12 @@ export default function Commissions() {
       bgColor: 'bg-brand-orange',
     },
     {
-      amount: '$2M - $3M',
+      amount: '$1M - $2M',
       period: 'Crecimiento (Mes 4-8)',
       bgColor: 'bg-brand-orange',
     },
     {
-      amount: '$4M+',
+      amount: '$3M+',
       period: 'Establecido (Mes 12+)',
       bgColor: 'bg-brand-darkGreen',
     },
