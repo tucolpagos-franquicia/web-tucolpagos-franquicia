@@ -59,7 +59,7 @@ export default function Header() {
               Contacto
             </a>
             <a
-              href="https://link.mercadopago.com.co/tucolpagos"
+              href="https://link.mercadopago.com.co/tucolpagoscol"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-brand-darkGreen text-white px-6 py-2 rounded-lg font-semibold hover:bg-brand-darkerGreen transition-colors whitespace-nowrap"
@@ -117,7 +117,7 @@ export default function Header() {
               Contacto
             </a>
             <a
-              href="https://link.mercadopago.com.co/tucolpagos"
+              href="https://link.mercadopago.com.co/tucolpagoscol"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleLinkClick}
