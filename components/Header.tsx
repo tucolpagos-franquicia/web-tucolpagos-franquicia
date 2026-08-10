@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+const INGRESAR_URL = 'https://portal.tucolpagos.com/'
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -58,14 +60,22 @@ export default function Header() {
             <a href="#contacto" className="text-gray-700 hover:text-brand-darkGreen transition-colors whitespace-nowrap">
               Contacto
             </a>
-            <a
-              href="https://link.mercadopago.com.co/tucolpagoscol"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-brand-darkGreen text-white px-6 py-2 rounded-lg font-semibold hover:bg-brand-darkerGreen transition-colors whitespace-nowrap"
-            >
-              Paga Aquí
-            </a>
+            <div className="flex items-center gap-2 lg:gap-3 shrink-0">
+              <a
+                href={INGRESAR_URL}
+                className="bg-brand-orange text-white px-6 py-2 rounded-lg font-semibold hover:bg-orange-600 transition-colors whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange"
+              >
+                Ingresar
+              </a>
+              <a
+                href="https://link.mercadopago.com.co/tucolpagoscol"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-brand-darkGreen text-white px-6 py-2 rounded-lg font-semibold hover:bg-brand-darkerGreen transition-colors whitespace-nowrap"
+              >
+                Paga Aquí
+              </a>
+            </div>
           </div>
 
           <button
@@ -115,6 +125,13 @@ export default function Header() {
             </a>
             <a href="#contacto" onClick={handleLinkClick} className="text-gray-700 hover:text-brand-darkGreen transition-colors py-2">
               Contacto
+            </a>
+            <a
+              href={INGRESAR_URL}
+              onClick={handleLinkClick}
+              className="bg-brand-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange"
+            >
+              Ingresar
             </a>
             <a
               href="https://link.mercadopago.com.co/tucolpagoscol"
